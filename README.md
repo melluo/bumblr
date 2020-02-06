@@ -1,24 +1,16 @@
-# README
+# bumblr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+bumblr is a full-stack web application cloning social media site Tumblr
 
-Things you may want to cover:
+# Features
 
-* Ruby version
+* User authentication: Users can signup and login. Demo account is available for trial. Users who are not logged in will not have access certain fetaures of the site and will be redirected to sign in. 
 
-* System dependencies
+* User Dashboard: Users have access to personalized feeds with content they have reblogged, created, and content from users they follow. 
 
-* Configuration
+* User Posts: Users can create their own content ranging from text, images, quotes, links, audio, and videos. Users may also add tags to their posts.
 
-* Database creation
+* Content Interaction: Users can reblog content from their dashboard. Users may also like and comment on other user posts. Reblogs, likes, and comments will increments the notes on a post.
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
