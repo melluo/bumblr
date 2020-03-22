@@ -1,3 +1,10 @@
-<%# <%if logged_in?%>
-<%# <script id="bootstrap-current-user" type="text/javascript"> //adding the script to the window  %>
- %>
+<%if logged_in?%>
+    <script id="bootstrap-current-user" type="text/javascript"> //adding the script to the window 
+    window.currentUser = <%= render(
+        "api/users/user.json.jbuilder",
+        user: current_user
+     ).html_safe %>
+     </script>
+<% end %>
+
+<div id="root">Bumblr: see what the buzz is about</div>

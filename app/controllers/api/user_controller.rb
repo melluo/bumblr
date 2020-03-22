@@ -10,6 +10,7 @@ class UserController < ApplicationController
     end
 
     def index  #index is showing all users
+        @user = User.all
         render :index
     end
     
@@ -17,6 +18,9 @@ class UserController < ApplicationController
         @user = User.find(params[:id])
         render :show
     end
+    def destroy
+    end
+    private
 
     def user_params
         params.require(:user).permit(:username, :password, :email)
