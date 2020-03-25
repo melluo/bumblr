@@ -1,12 +1,15 @@
 import React from 'react';
 import { connect } from 'react';
 import SignUp from './signup';
-import { signup } from '../../actions/session_actions';
+import { signup, clearSessionErrors } from '../../actions/session_actions';
 
+const mapStateToProps = (state) => ({
+    formType: "Sign Up",
+    errors: state.errors
+})
 mapDispatchToProps = (dispatch) => {
-    signup: () => dispatch(signup),
-    clearErrors: () => dispatch(clearErrors()),
-    
+    processForm: (userForm) => dispatch(signup(userForm)),
+    clearErrors: () => dispatch(clearSessionErrors()),
 };
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
