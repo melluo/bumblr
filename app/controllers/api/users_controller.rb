@@ -1,4 +1,5 @@
-class UserController < ApplicationController
+class Api::UsersController < ApplicationController
+    before_action :require_logged_in!, only: [:index, :show]
     def create
         @user = User.new(user_params)
         if @user.save 
@@ -18,11 +19,13 @@ class UserController < ApplicationController
         @user = User.find(params[:id])
         render :show
     end
+
     def destroy
     end
+
     private
 
     def user_params
-        params.require(:user).permit(:username, :password, :email)
+        params.require(:user).permit(:email, :password, :username)
     end
 end
