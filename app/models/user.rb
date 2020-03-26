@@ -6,47 +6,45 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many :likes,
-        class_name: "User",
-        primary_key: :id,
-        foreign_key: :user_id
+    # has_many :likes,
+    #     class_name: "User",
+    #     primary_key: :id,
+    #     foreign_key: :user_id
 
-    has_many :posts,
-        class_name: "Post",
-        primary_key: :id,
-        foriegn_key: :post_id
+    # has_many :posts,
+    #     class_name: "Post",
+    #     primary_key: :id,
+    #     foriegn_key: :post_id
     
-    def self.find_by_credentials(username, password)
-        user = User.find_by(username: username)
-        return nil unless user
-        
+    attr_reader :password
+
+    def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
+        return nil if user.nil?
+        user.is_password?(password) ? user : nil
+    end
+
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
     end
     
     def password=(password)
         @password = password
         self.password_digest = BCrypt::Password.create(password)
     end
-
-    def generate_session_token
-        self.session_token ||= SecureRandom.base64
-    end
-
-    def is_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
-    end
-
-    def reset_session_token
-        self.session_token = SecureRandom.base64
+    
+    def reset_session_token!
+        self.session_token = SecureRandom.urlsafe_base64(16)
         self.save!
-        self.session_token 
+        self.session_token
     end
-    private
-    
-    def ensure_session_token
-        generate_session_token unless self.session_token
-    end
-    
 
+ private
+
+    def ensure_session_token
+        self.session_token ||= SecureRandom.urlsafe_base64(16)
+    end
 end
+
 
 #FIGVAPER

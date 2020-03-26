@@ -1,5 +1,3 @@
-
-
 export const fetchUsers = () => (
     $.ajax({
         url: `/api/users`,
@@ -30,9 +28,4 @@ export const updateUser = (user) => (
     })
 );
 
-export const deleteUser = (userId) => (
-    $.ajax({
-        url: `/api/users/${userId}`,
-        method: 'DELETE'
-    })
-);
+
