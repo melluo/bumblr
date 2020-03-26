@@ -25,10 +25,10 @@ class SignUpForm extends React.Component {
         };
     }
     handleSubmit(e){
-        e.preventDefault();
-        this.props.processForm(this.state)
-            .then(() => this.props.history.push("/dashboard"));
-    }
+        e.preventDefault(); //default is send an http request
+        this.props.processForm(this.state)  //userForm aka the username/password/email
+            .then(() => this.props.history.push("/dashboard")); //async promise
+    }   //forwards us to /dashboard once user is created
     renderErrors(){
         return(
             <ul className='form-errors'>

@@ -24,7 +24,7 @@ module.exports = {
             }
         ]
     },
-    devtool: 'source-map',
+    devtool: 'eval-source-map', //tells us what line of code it comes from instead of bundle file
     resolve: {
         extensions: ['.js', '.jsx', '*'],
         modules: [

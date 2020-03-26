@@ -5,9 +5,12 @@ import SignupFormContainer from "./session/signup_container";
 // import FrontPageContainer from "./frontpage/frontpage_container";
 
 const App = () => (
+    <>
+    <p>React Works</p>
     <Switch>
         <AuthRoute path = "/login" component = {SignupFormContainer}/>
     </Switch>
+    </>
 )
 
 // <Route exact path = "/" component={FrontPageContainer}/>

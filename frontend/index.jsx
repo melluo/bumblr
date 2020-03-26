@@ -23,4 +23,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store}/>,root);
+    //replace the root id with the react root component
 })
