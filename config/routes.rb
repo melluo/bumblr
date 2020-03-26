@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :session
   end
   #nesting users under api tag
-  root "staticpages#root"
+  root to: "static_pages#root"
 end

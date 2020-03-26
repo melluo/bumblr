@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /mnt/c/Users/luome/Desktop/bumblr/frontend/actions/session_actions.js: Unexpected token, expected \",\" (19:8)\n\n\u001b[0m \u001b[90m 17 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39m\u001b[36mconst\u001b[39m clearSessionErrors \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 | \u001b[39m    type\u001b[33m:\u001b[39m \u001b[33mCLEAR_SESSION_ERRORS\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m login \u001b[33m=\u001b[39m (userForm) \u001b[33m=>\u001b[39m dispatch \u001b[33m=>\u001b[39m {\u001b[0m\n    at Object._raise (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.raise (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:729:17)\n    at Object.unexpected (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:8752:16)\n    at Object.expect (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:8738:28)\n    at Object.parseParenAndDistinguishExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10172:14)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9942:21)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9597:23)\n    at Object.parseMaybeUnary (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9577:21)\n    at Object.parseExprOps (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9447:23)\n    at Object.parseMaybeConditional (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9420:23)\n    at Object.parseMaybeAssign (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9375:21)\n    at Object.parseFunctionBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10622:24)\n    at Object.parseArrowExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10598:10)\n    at Object.parseParenAndDistinguishExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10216:12)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9942:21)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9597:23)\n    at Object.parseMaybeUnary (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9577:21)\n    at Object.parseExprOps (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9447:23)\n    at Object.parseMaybeConditional (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9420:23)\n    at Object.parseMaybeAssign (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9375:21)\n    at Object.parseVar (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11732:26)\n    at Object.parseVarStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11544:10)\n    at Object.parseStatementContent (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11143:21)\n    at Object.parseStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11076:17)\n    at Object.parseBlockOrModuleBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11650:25)\n    at Object.parseBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11637:10)\n    at Object.parseTopLevel (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11007:10)");
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /mnt/c/Users/luome/Desktop/bumblr/frontend/actions/session_actions.js: Unexpected token, expected \",\" (21:8)\n\n\u001b[0m \u001b[90m 19 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m\u001b[36mconst\u001b[39m clearSessionErrors \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 | \u001b[39m    type\u001b[33m:\u001b[39m \u001b[33mCLEAR_SESSION_ERRORS\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m signup \u001b[33m=\u001b[39m (userForm) \u001b[33m=>\u001b[39m dispatch \u001b[33m=>\u001b[39m {\u001b[0m\n    at Object._raise (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.raise (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:729:17)\n    at Object.unexpected (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:8752:16)\n    at Object.expect (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:8738:28)\n    at Object.parseParenAndDistinguishExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10172:14)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9942:21)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9597:23)\n    at Object.parseMaybeUnary (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9577:21)\n    at Object.parseExprOps (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9447:23)\n    at Object.parseMaybeConditional (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9420:23)\n    at Object.parseMaybeAssign (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9375:21)\n    at Object.parseFunctionBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10622:24)\n    at Object.parseArrowExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10598:10)\n    at Object.parseParenAndDistinguishExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10216:12)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9942:21)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9597:23)\n    at Object.parseMaybeUnary (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9577:21)\n    at Object.parseExprOps (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9447:23)\n    at Object.parseMaybeConditional (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9420:23)\n    at Object.parseMaybeAssign (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9375:21)\n    at Object.parseVar (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11732:26)\n    at Object.parseVarStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11544:10)\n    at Object.parseStatementContent (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11143:21)\n    at Object.parseStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11076:17)\n    at Object.parseBlockOrModuleBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11650:25)\n    at Object.parseBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11637:10)\n    at Object.parseTopLevel (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11007:10)");
 
 /***/ }),
 
@@ -151,10 +151,33 @@ document.addEventListener("DOMContentLoaded", function () {
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
+/* harmony import */ var _session_signup_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session/signup_container */ "./frontend/components/session/signup_container.jsx");
+/* harmony import */ var _session_signup_container__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_session_signup_container__WEBPACK_IMPORTED_MODULE_3__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module './frontpage/frontpage_container'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/login",
+    component: _session_signup_container__WEBPACK_IMPORTED_MODULE_3___default.a
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/",
+    component: !(function webpackMissingModule() { var e = new Error("Cannot find module './frontpage/frontpage_container'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+  }));
+});
 
 /***/ }),
 
@@ -172,7 +195,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app */ "./frontend/components/app.jsx");
-/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_app__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -182,10 +204,21 @@ var Root = function Root(_ref) {
   var store = _ref.store;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_1__["Provider"], {
     store: store
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_app__WEBPACK_IMPORTED_MODULE_3___default.a, null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["HashRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_app__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Root);
+
+/***/ }),
+
+/***/ "./frontend/components/session/signup_container.jsx":
+/*!**********************************************************!*\
+  !*** ./frontend/components/session/signup_container.jsx ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /mnt/c/Users/luome/Desktop/bumblr/frontend/components/session/signup_container.jsx: Unexpected token, expected \";\" (12:15)\n\n\u001b[0m \u001b[90m 10 | \u001b[39mmapDispatchToProps \u001b[33m=\u001b[39m (dispatch) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m    processForm\u001b[33m:\u001b[39m (userForm) \u001b[33m=>\u001b[39m dispatch(signup(userForm))\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 | \u001b[39m    clearErrors\u001b[33m:\u001b[39m () \u001b[33m=>\u001b[39m dispatch(clearSessionErrors())\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m}\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m connect(mapStateToProps\u001b[33m,\u001b[39m mapDispatchToProps)(\u001b[33mSignUp\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    at Object._raise (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:742:17)\n    at Object.raiseWithData (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.raise (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:729:17)\n    at Object.unexpected (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:8752:16)\n    at Object.semicolon (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:8734:40)\n    at Object.parseExpressionStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11609:10)\n    at Object.parseStatementContent (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11210:19)\n    at Object.parseStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11076:17)\n    at Object.parseLabeledStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11601:22)\n    at Object.parseStatementContent (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11208:19)\n    at Object.parseStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11076:17)\n    at Object.parseBlockOrModuleBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11650:25)\n    at Object.parseBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11637:10)\n    at Object.parseBlock (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11621:10)\n    at Object.parseFunctionBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10629:24)\n    at Object.parseArrowExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10598:10)\n    at Object.parseParenAndDistinguishExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:10216:12)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9942:21)\n    at Object.parseExprAtom (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:4614:20)\n    at Object.parseExprSubscripts (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9597:23)\n    at Object.parseMaybeUnary (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9577:21)\n    at Object.parseExprOps (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9447:23)\n    at Object.parseMaybeConditional (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9420:23)\n    at Object.parseMaybeAssign (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9375:21)\n    at Object.parseMaybeAssign (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9407:25)\n    at Object.parseExpression (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:9327:23)\n    at Object.parseStatementContent (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11205:23)\n    at Object.parseStatement (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11076:17)\n    at Object.parseBlockOrModuleBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11650:25)\n    at Object.parseBlockBody (/mnt/c/Users/luome/Desktop/bumblr/node_modules/@babel/parser/lib/index.js:11637:10)");
 
 /***/ }),
 
@@ -201,14 +234,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
 /* harmony import */ var _session_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./session_reducer */ "./frontend/reducers/session_reducer.js");
+/* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
+
 
 
 
 var RootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
-  session: _session_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
+  session: _session_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
+  errors: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (RootReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/session_errors_reducer.js":
+/*!*****************************************************!*\
+  !*** ./frontend/reducers/session_errors_reducer.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_session_actions__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
+      return Object.assign({}, action.errors);
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["CLEAR_SESSION_ERRORS"]:
+      return [];
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
@@ -227,20 +294,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
-var _nullUser = Object.freeze({
-  id: null
-});
-
+var _nullUser = {
+  currentUser: null
+};
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _nullUser;
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state); //not accidently mutate state
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return {
-        id: action.currentUser.id
-      };
+      return Object.assign({}, {
+        currentUser: action.currentUser
+      });
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["LOGOUT_CURRENT_USER"]:
       return _nullUser;
@@ -310,6 +376,68 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/route_util.js":
+/*!*************************************!*\
+  !*** ./frontend/util/route_util.js ***!
+  \*************************************/
+/*! exports provided: AuthRoute, ProtectedRoute */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthRoute", function() { return AuthRoute; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProtectedRoute", function() { return ProtectedRoute; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+
+
+
+var Auth = function Auth(_ref) {
+  var Component = _ref.component,
+      path = _ref.path,
+      loggedIn = _ref.loggedIn,
+      exact = _ref.exact;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+        to: "/dashboard"
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props);
+    }
+  });
+};
+
+var Protected = function Protected(_ref2) {
+  var Component = _ref2.component,
+      path = _ref2.path,
+      loggedIn = _ref2.loggedIn,
+      exact = _ref2.exact;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: path,
+    exact: exact,
+    render: function render(props) {
+      return loggedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+        to: "/"
+      });
+    }
+  });
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    loggedIn: Boolean(state.session.id)
+  };
+};
+
+var AuthRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(Auth));
+var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, null)(Protected));
 
 /***/ }),
 
