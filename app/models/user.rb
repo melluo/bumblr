@@ -6,16 +6,17 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    # has_many :likes,
-    #     class_name: "User",
-    #     primary_key: :id,
-    #     foreign_key: :user_id
+    has_many :likes,
+        class_name: "User",
+        primary_key: :id,
+        foreign_key: :user_id
 
-    # has_many :posts,
-    #     class_name: "Post",
-    #     primary_key: :id,
-    #     foriegn_key: :post_id
+    has_many :posts,
+        class_name: "Post",
+        primary_key: :id,
+        foreign_key: :post_id
 
+    has_one_attached :avatar #each user has an avatar
     attr_reader :password
 
     def self.find_by_credentials(email, password)

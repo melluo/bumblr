@@ -1,6 +1,6 @@
 class Likes < ApplicationRecord
     belongs_to :user,
-        class_name: "Like",
+        class_name: "Likes",
         primary_key: :id,
-        foriegn_key: :user_id
+        foreign_key: :user_id
 end

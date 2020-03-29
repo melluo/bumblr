@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :create]
     resources :session
+    resources :posts
   end
   #nesting users under api tag
   root to: "static_pages#root"
