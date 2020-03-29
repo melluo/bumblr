@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
     }
     handleInput(type){  //updating user field, type will be user
         return (e) => {
-            this.setState({[type]: e.target.value });
+            this.setState({[type]: e.currentTarget.value });
         };
     }
     handleSubmit(e){
@@ -40,12 +40,13 @@ class SignUpForm extends React.Component {
     render() {
         return (
             <div className="session-form">
-                <h2> Sign Up! </h2>
+                <h2 className="logo"> Bumblr </h2>
                 <form onSubmit = {this.handleSubmit}>
                 <label> Email:
                 <input 
                     type = "text"
                     value = {this.state.email}
+                    id = "email"
                     placeholder = "Email"
                     onChange = {this.handleInput("email")} 
                     />
@@ -54,8 +55,9 @@ class SignUpForm extends React.Component {
                 <input 
                     type = "password"
                     value = {this.state.password}
+                    id = "password"
                     placeholder = "Password"
-                    onChange = {this.handleInput("email")} 
+                    onChange = {this.handleInput("password")} 
                     />
                 </label>
             
@@ -63,8 +65,9 @@ class SignUpForm extends React.Component {
                 <input 
                     type = "text"
                     value = {this.state.username}
+                    id = "username"
                     placeholder = "Username"
-                    onChange = {this.handleInput("text")} 
+                    onChange = {this.handleInput("username")} 
                     />
                     <button type = "submit"> Sign Up! </button>
                 </label>

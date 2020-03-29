@@ -15,6 +15,7 @@ export const logoutCurrentUser = () => ({
 })
 
 export const receiveSessionErrors = (errors) => {
+    // debugger;
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors
@@ -26,8 +27,8 @@ export const clearSessionErrors = () => ({
 });
 
 export const createUser = (userForm) => dispatch => {
-    return SessionApiUtils.signup(userForm).then( (user) => {
-        return dispatch(receiveCurrentUser(user));
+    return SessionApiUtils.signup(userForm).then( (user) => { //info spits out jbuilder
+       return dispatch(receiveCurrentUser(user));
     }, (errors) => {
         return dispatch(receiveSessionErrors(errors.responseJSON));
         //comes in as an array, when you create a user also recieve its errors

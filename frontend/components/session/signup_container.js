@@ -3,13 +3,12 @@ import SignUpForm from "./signup_form";
 import { createUser, clearSessionErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
-    debugger;
     return{
     errors: state.errors  //this pulls in whats in my root reducer (becomes the top level keys of redux store) key of errors
 }}
+ 
 //store is single source of truth, in charge of application state, gets the changes from our backends, listens to reducers to change the state
 const mapDispatchToProps = (dispatch) => {
-    debugger;
     return{
     processForm: (userForm) => dispatch(createUser(userForm)),
     clearErrors: () => dispatch(clearSessionErrors()),
