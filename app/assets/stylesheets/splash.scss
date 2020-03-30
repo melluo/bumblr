@@ -1,0 +1,80 @@
+body, html {
+    position: relative;
+    background-color: #34526f;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+@font-face {
+    font-family: 'bookos';
+    src: url('/fonts/Bookos.ttf');
+}
+
+
+.splash-logo{
+    font-family: 'Nunito', sans-serif;
+    font-size: 55px;
+    align-text: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.description{
+    font-family: 'Nunito', sans-serif;
+    width: 517px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.signup-link{
+    width: 250px;
+    display: block;
+    margin: auto;
+}
+.signup{
+    height: 30px;
+    width: 250px;
+    padding: 4px 7px 5px 7px;
+    border: 1px solid #00B8FF;
+    text-align: center;
+    color: white;
+    background-color:#00B8FF; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: auto;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.signup:hover {
+    cursor: pointer;
+}
+.login-link{
+    width: 250px;
+    display: block;
+    margin: auto;
+}
+.login{
+    height: 30px;
+    width: 250px;
+    padding: 4px 7px 5px 7px;
+    border: 1px solid #444444;
+    text-align: center;
+    color: #444444;
+    background-color:#FFFFFF; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: auto;
+    margin-top: 12px;
+    border-radius: 3px;
+  
+}
+.login:hover {
+    cursor: pointer;
+}

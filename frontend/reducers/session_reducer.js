@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from '../actions/session_ac
 import { merge } from 'lodash';
 
 const  _nullUser = {
-    currentUser: null,
+    id: null,
 };
 const sessionReducer = (state = _nullUser, action) => {
     Object.freeze(state); //not accidently mutate state
@@ -10,7 +10,7 @@ const sessionReducer = (state = _nullUser, action) => {
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             // debugger;
-            return Object.assign({}, state, { currentUser: action.currentUser });
+            return Object.assign({}, state, { id: action.currentUser.id });
         case LOGOUT_CURRENT_USER:
             return _nullUser;
         default:
