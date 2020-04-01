@@ -14,4 +14,3 @@ const Root = ({ store }) => (
 
 export default Root;
 
-//withRouter in container
