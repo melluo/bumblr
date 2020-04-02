@@ -6,16 +6,16 @@ const Splash = () => {
         <>
         <NavBar />
         <div className = "splash-container">
-            <div className = "header-container">
-                <div className = "splash-logo">bumblr</div>
-        <div className = "description"> See what all the buzz is about</div>
-        </div>
-        <Link to = "/signup" className = "signup-link">
-            <button className = "signup">Get Started</button>
-        </Link>
-        <Link to = "/login" className = "login-link">
-            <button className = "login">Log In</button>
-        </Link>
+                <div className = "header-container">
+                    <div className = "splash-logo">bumblr</div>
+            <div className = "description"> See what all the buzz is about</div>
+                 </div>
+            <Link to = "/signup" className = "signup-link">
+                <button className = "signup">Get Started</button>
+            </Link>
+            <Link to = "/login" className = "login-link">
+                <button className = "login">Log In</button>
+            </Link>
         </div>
         </>
     )

@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state) => {
     // debugger;
     return{
-        errors: state.errors
+        errors: state.errors.session,
+        formType: "Log In"
     }
 }
 

@@ -9,6 +9,7 @@
 #  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  post_type  :string
 #
 class Post < ApplicationRecord
     validates :user_id, :post_type, presence: true

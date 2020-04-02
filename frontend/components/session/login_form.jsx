@@ -14,13 +14,14 @@ class LoginForm extends React.Component {
         e.preventDefault();
         this.props.processLogin({
             email: "demouser@demo.com",
-            password: "hunter12",
-            username: "demouser"
-        })
+            password: "hunter12"
+        });
     }
     handleInput(type){ 
         return (e) => {
-            this.setState({[type]: e.target.value });
+            this.setState({
+                [type]: e.target.value 
+            });
         };
     }
     handleSubmit(e){
@@ -33,17 +34,21 @@ class LoginForm extends React.Component {
     renderErrors(){
         return(
             <ul className='form-errors'>
-            
                 {this.props.errors.map((error) => (
                     <li key={error}> {error} </li>))} 
             </ul>
         )
     }
+    renderBackground(){
+        //map through the posts
+    }
     render(){
+       
         return (
             <div className="login-form">
-                <form className="content">
-                    <h2 className='logo'> Bumblr </h2>
+                <h2 className='logo'> Bumblr </h2>
+                {this.renderErrors()}
+                <form className="content" onSubmit={this.handleSubmit}>
                     <input
                         type = "text"
                         id = "email"
@@ -58,9 +63,12 @@ class LoginForm extends React.Component {
                         onChange = {this.handleInput('password')}
                         placeholder = "Password"
                     />
-                    {this.renderErrors()}
-                    <button className="signup" onClick={this.handleSubmit}>Login</button>
-                    <button className="login" onClick={this.handleDemo}>Demo-User</button>
+                    <input
+                        type = "submit"
+                        id = "submit-form"
+                        value = {this.props.formType}
+                    />
+                    <button className="demo-login" onClick={this.handleDemo}>Demo Login</button>
                 </form>
             </div>
         )
