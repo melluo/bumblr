@@ -14,14 +14,24 @@ const NavBar = ({currentUser, logout}) => {
     const rightNav = (
     <ul className = "nav-right">
         <li>
-        <Link to = "/dashboard" className = "home-button"><i className="fas fa-home"></i></Link></li>
-        <li>
-        <i className = "fas fa-user"></i>
-        <ul className = "account-dropdown">
-            <li>
-                <div><span>Account</span><span className="logout-button" onClick={()=>logout()}>Logout</span></div>
-            </li>
+            <Link to = "/dashboard" className = "home-button"><i className="fas fa-home"></i></Link>
+        </li>
+        <ul className = "dropdown-menu">
+            <i className = "fas fa-user"></i>
+            <div className = "dropdown-content">
+                    <li><span>Account</span><span className="logout-button" onClick={()=>logout()}>Logout</span></li>
+                    <li>Likes</li>
+                    <li>Following</li>
+            </div>
         </ul>
+        <li>
+        <a href="/"><i className="fab fa-github"></i></a>
+        </li>
+        <li>
+        <a href="/"><i className="fab fa-angellist"></i></a>
+        </li>
+        <li>
+        <a href="/"><i className="fab fa-linkedin"></i></a>
         </li>
     </ul> 
     )

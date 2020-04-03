@@ -1,19 +1,117 @@
 .navbar{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    top: 0;
-}
-.search-bar {
-    padding: 10px 30px;
-    border: 0px transparent;
-    border-radius: 3px;
-    width: 360px;
-    background-color: black;
-    opacity: 0.2;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    margin: 3px 5px;
+    display: grid;
+    position: fixed;
+	grid-template-columns: .25fr .5fr .5fr .5fr .5fr .5fr .25fr;
+    top: 0px;
+    background:  #1a2735;
+    height: 46px;
+    align-items: center;
+    z-index: 2;
 }
 
+.navbar:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+	height: 100%;
+	border-bottom: 1px solid rgba(255, 255, 255, .2);
+	pointer-events: none;
+}
+.nav-left{
+    display: flex;
+	grid-column: 2/3;
+}
+.search-bar {
+    border: none;
+    border-radius: 3px;
+    background: rgba(166, 166, 166, .2);
+    width: 439px;
+    height: 24px;
+    padding: 5px;
+    padding-left: 35px;
+    font-size: 16px;
+    color: white;
+}
+.search-bar:focus{
+    background: rgba(67, 77, 86, .2); 
+    outline: none;
+    
+}
+.fa-search{
+    position: relative;
+    left: 25px;
+    top: 8px;
+    font-size: 17px;
+    opacity: .2;
+}
+
+.b{
+    font-family: 'Nunito', sans-serif;
+    font-size: 40px;
+    position: relative;
+    color: white;
+    line-height: 0em;
+    top: 17px;
+    justify-content: center;
+    font-weight: bolder;   
+}
+.b:hover{
+    opacity: 1;
+    animation-direction: normal;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-name: colours;
+    animation-timing-function: ease;
+}
+@keyframes colours {
+     0% {
+         color: salmon;
+        }
+     25% {
+         color: #8bc5d1;
+        }
+     50% {
+         color: #f8cb4a;
+        }
+     75% {
+         color: #39f;
+        }
+     100% {
+         color: lavender;
+        }
+}
+.nav-right{
+    display: flex;
+    flex-direction: row;
+    grid-column: 6;
+    list-style: none;
+}
+.fa-home, .fa-user, .fa-github, .fa-angellist, .fa-linkedin{
+    color: white;
+    font-size: 30px;
+    margin: 0 10px;
+    opacity: .8;
+
+}
+.fa-home{
+    opacity: 1;
+}
+.dropdown-content{
+    display:none;
+    position: absolute;
+    list-style: none;
+}
+.dropdown-menu:hover .dropdown-content{
+    display: block;
+    border: 1px solid black;
+    width: 190px;
+    left: auto;
+}
+
+.dropdown-content > li{
+    display: flex;
+    justify-content: space-between;
+}
