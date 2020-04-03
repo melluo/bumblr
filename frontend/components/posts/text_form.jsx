@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRo
+
 class TextForm extends React.Component {
     constructor(props){
         super(props);
@@ -7,8 +7,10 @@ class TextForm extends React.Component {
             title: "",
             body: "",
             post_type: "text",
-            author_id: this.props.currentUser.id
+            tags: "",
+            user_id: this.props.currentUser.id
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInput(type){ 
@@ -34,12 +36,17 @@ class TextForm extends React.Component {
                     onChange={this.handleInput("title")} 
                     placeholder="Title" 
                 />
-
                 <input 
                     type="text"
                     value={this.state.body}
                     onChange={this.handleInput("body")}
                     placeholder="Your text here"
+                />
+                <input 
+                    type="text"
+                    value={this.state.tags}
+                    onChange={this.handleInput("tags")}
+                    placeholder="#tags"
                 />
                 <button onClick={this.props.closeModal} className="close-modal">Close</button>
                 <input type="submit" value={this.props.formType}/>
@@ -48,3 +55,4 @@ class TextForm extends React.Component {
         )
     }
 }
+export default TextForm;

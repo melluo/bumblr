@@ -1,0 +1,44 @@
+.post-navbar-container{
+    width: 500px;
+    height: 90px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 80px auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+.post-navbar-container > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.text-post-button{
+    color: black;
+    font-family: 'Arial';
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.fa-camera-retro{
+    color: black;
+    font-size: 35px;
+}
+.fa-quote-left{
+    color: black;
+    font-size: 35px;
+}
+.fa-link{
+    color: black;
+    font-size: 35px;
+}
+.button-text{
+    color: black;
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: center;
+}

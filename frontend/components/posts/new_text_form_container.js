@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import { createPost } from "../../actions/post_actions";
 import TextForm from "./text_form";
+import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state) => {
     return({
-        currentUser: state.entities.users[state.session.id];
-        formType: "Create Post",
+        currentUser: state.entities.users[state.session.id],
+        formType: "Post",
     })
 }
 
