@@ -5,7 +5,7 @@ const NavBar = ({currentUser, logout}) => {
     
     const leftNav =(
     <section className = "nav-left">
-        <Link to = "/" className = "logo">b</Link>
+        <Link to = "/" className = "b">b</Link>
         <i className = "fas fa-search"></i>
         <input className = "search-bar" placeholder = "Search bumblr"></input>
     </section>

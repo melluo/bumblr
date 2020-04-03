@@ -5,17 +5,33 @@ body, html {
     height: 100%;
     width: 100%;
 }
-@font-face {
-    font-family: 'bookos';
-    src: url('/fonts/Bookos.ttf');
-}
 
 .splash-container{
-    margin-top: 200px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    flex-direction: column; 
+    animation: 2s ease 0s normal forwards 1 fade-in, slide-up 1s;
+}
+@keyframes fade-in{
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+    }
 }
 
-.splash-logo{
+@keyframes slide-up{
+	from{
+		transform: translateY(25px)
+	} 
+	to{
+		transform: translateY(0px)
+	}
+}
+.logo{
     font-family: 'Nunito', sans-serif;
     font-size: 55px;
     align-text: center;
@@ -24,61 +40,41 @@ body, html {
     width: 100%;
 }
 
-.description{
-    font-family: 'Nunito', sans-serif;
-    width: 517px;
-    height: 44px;
+.signup{
+    background-color:#00B8FF; 
+    width: 280px;
+    height: 30px;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 3px;
     display: flex;
     justify-content: center;
-    width: 100%;
-}
-
-.signup-link{
-    width: 250px;
-    display: block;
-    margin: auto;
-}
-.signup{
-    height: 30px;
-    width: 250px;
-    padding: 4px 7px 5px 7px;
-    border: 1px solid #00B8FF;
-    text-align: center;
-    color: white;
-    background-color:#00B8FF; 
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: bold;
-    display: block;
-    margin: auto;
-    border-radius: 3px;
-    text-decoration: none;
+    color: white;
 }
 .signup:hover {
     cursor: pointer;
 }
-.login-link{
-    width: 250px;
-    display: block;
-    margin: auto;
-}
 .login{
     height: 30px;
-    width: 250px;
-    padding: 4px 7px 5px 7px;
+    width: 280px;
+    padding: 10px;
     border: 1px solid #444444;
-    text-align: center;
+    align-items: center;
     color: #444444;
     background-color:#FFFFFF; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: bold;
-    display: block;
-    margin: auto;
-    margin-top: 12px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
     border-radius: 3px;
-  
 }
+
 .login:hover {
     cursor: pointer;
 }

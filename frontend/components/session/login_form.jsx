@@ -10,6 +10,9 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
+    componentDidMount(){
+        this.props.clearErrors();
+    }
     handleDemo(e){
         e.preventDefault();
         this.props.processLogin({
@@ -45,10 +48,9 @@ class LoginForm extends React.Component {
     render(){
        
         return (
-            <div className="login-form">
-                <h2 className='logo'> Bumblr </h2>
-                {this.renderErrors()}
-                <form className="content" onSubmit={this.handleSubmit}>
+            <div className="form-container">
+                <h2 className='logo'> bumblr </h2>
+                <form className="session-form" onSubmit={this.handleSubmit}>
                     <input
                         type = "text"
                         id = "email"
@@ -63,11 +65,11 @@ class LoginForm extends React.Component {
                         onChange = {this.handleInput('password')}
                         placeholder = "Password"
                     />
-                    <input
+                    {this.renderErrors()}
+                    <button
                         type = "submit"
                         id = "submit-form"
-                        value = {this.props.formType}
-                    />
+                    > {this.props.formType}</button>
                     <button className="demo-login" onClick={this.handleDemo}>Demo Login</button>
                 </form>
             </div>

@@ -11,6 +11,9 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
+    componentDidMount(){
+        this.props.clearErrors();
+    }
     handleDemo(e){
         e.preventDefault();
         this.props.processLogin({
@@ -41,43 +44,37 @@ class SignUpForm extends React.Component {
     }
     render() {
         return (
-            <div className="session-form">
-                <h2 className="logo"> Bumblr </h2>
-                {this.renderErrors()}
-                <form onSubmit = {this.handleSubmit}>
-                    <label> Email:
-                        <input 
-                            type = "text"
-                            value = {this.state.email}
-                            id = "email"
-                            placeholder = "Email"
-                            onChange = {this.handleInput("email")} 
-                        />
-                    </label>
-                    <label> Password:
-                        <input 
-                            type = "password"
-                            value = {this.state.password}
-                            id = "password"
-                            placeholder = "Password"
-                            onChange = {this.handleInput("password")} 
-                        />
-                    </label>
-                    <label> Username:
-                        <input 
-                            type = "text"
-                            value = {this.state.username}
-                            id = "username"
-                            placeholder = "Username"
-                            onChange = {this.handleInput("username")} 
-                        />
-                    </label>
-                    <input
+            <div className="form-container">
+                <h2 className="logo"> bumblr </h2>
+                
+                <form className="session-form" onSubmit = {this.handleSubmit}>
+                    <input 
+                        type = "text"
+                        value = {this.state.email}
+                        id = "email"
+                        placeholder = "Email"
+                        onChange = {this.handleInput("email")} 
+                    />
+                    <input 
+                    type = "text"
+                    value = {this.state.username}
+                    id = "username"
+                    placeholder = "Username"
+                    onChange = {this.handleInput("username")} 
+                    />
+                    <input 
+                        type = "password"
+                        value = {this.state.password}
+                        id = "password"
+                        placeholder = "Password"
+                        onChange = {this.handleInput("password")} 
+                    />
+                    {this.renderErrors()}
+                    <button
                         type = "submit"
                         id = "submit-form"
-                        value = {this.props.formType}
-                    />
-                    <button onClick = {this.handleDemo}> Demo Login </button>
+                    >{this.props.formType}</button>
+                    <button className="demo-login" onClick = {this.handleDemo}> Demo Login </button>
                 </form>
             </div>
         );

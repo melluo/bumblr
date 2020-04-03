@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.currentUser){
         //a preloaded state of key of users and the id of currentUser is set to the bootstraped current user and sessions nested under entities 
         const preloadedState = {
-            
-            users: { [window.currentUser.id]: window.currentUser },
-            session: { currentUserId: window.currentUser.id }
+            entities: {
+            users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id }
         };
         store = configureStore(preloadedState);
         delete window.currentUser;

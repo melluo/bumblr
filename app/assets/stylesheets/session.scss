@@ -1,0 +1,109 @@
+.session-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-container{
+    position: absolute;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    top: -100px;
+    justify-content: center;
+    flex-direction: column;
+    animation: 2s ease 0s normal forwards 1 fade-in;
+    
+}
+@keyframes fade-in{
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+    }
+}
+
+
+.session-form > input {
+    padding: 12px 10px;
+    width: 280px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+ 
+}
+.demo-login{
+    padding: 10px;
+    width: 300px;
+    height: 50px;
+    border-radius: 3px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #34526f;
+}
+.demo-login:hover {
+    cursor: pointer;
+}
+#submit-form{
+    width: 300px;
+    padding: 10px;
+    border: none;
+    height: 50px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    justify-content: center;
+    background-color:#00B8FF; 
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+#submit-form:hover {
+    cursor: pointer;
+}
+#email, #password, #username{
+    border: none;
+}
+
+form > #email{
+    border-bottom: .5px solid slategray;
+    border-radius: 3px 3px 0 0;
+}
+
+
+form > #password{
+    border-radius: 0 0 3px 3px;
+}
+
+form > #username{
+    border-bottom: .5px solid slategray;
+    
+ 
+}
+
+.form-errors {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 300px;
+    animation: 2.5s ease 0s normal forwards 1 fade-in;
+}
+
+.form-errors > li {
+    background: rgba(0, 0, 0, 0.2); 
+    list-style: none;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.form-errors > li:first-child{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.form-errors > li:last-child{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
