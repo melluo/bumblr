@@ -22,7 +22,7 @@
 }
 .nav-left{
     display: flex;
-	grid-column: 2/3;
+	grid-column: 2;
 }
 .search-bar {
     border: none;
@@ -57,6 +57,7 @@
     top: 17px;
     justify-content: center;
     font-weight: bolder;   
+    opacity: .8;
 }
 .b:hover{
     opacity: 1;
@@ -96,9 +97,7 @@
     opacity: .8;
 
 }
-.fa-home{
-    opacity: 1;
-}
+
 .dropdown-content{
     display:none;
     position: absolute;

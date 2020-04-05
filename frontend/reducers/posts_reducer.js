@@ -11,7 +11,7 @@ const postsReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_POSTS:
             return action.posts;
         case RECEIVE_POST:
-            newState[action.post.id] = action.post
+            newState[action.post.id] = action.post;
             return newState;
         case REMOVE_POST:
             delete newState[action.postId];

@@ -3,10 +3,17 @@ import { createPost } from "../../actions/post_actions";
 import TextForm from "./text_form";
 import { closeModal } from "../../actions/modal_actions";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({entities, session}) => {
+    const currentUserId = session.id;
     return({
-        currentUser: state.entities.users[state.session.id],
-        formType: "Post",
+        post: {
+            title: "",
+            body: "",
+            post_type: "text",
+            user_id: currentUserId
+        },
+        currentUser: entities.users[session.id],
+        formType: "Post"
     })
 }
 

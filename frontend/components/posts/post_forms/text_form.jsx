@@ -3,13 +3,7 @@ import React from 'react';
 class TextForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            title: "",
-            body: "",
-            post_type: "text",
-            tags: "",
-            user_id: this.props.currentUser.id
-        }
+        this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
