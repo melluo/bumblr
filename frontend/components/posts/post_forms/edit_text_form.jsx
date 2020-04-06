@@ -7,14 +7,16 @@ class EditTextForm extends React.Component{
     };
 
     componentDidMount(){
-        this.props.fetchPost(this.props.postId);
-    }
+        this.props.fetchPost(this.props.post.id);
+    };
     render() {
         return (
             <TextForm
                 post = {this.props.post}
                 formType = {this.props.formType}
-                createPost = {this.props.updatePost}
+                currentUser = {this.props.currentUser}
+                processPost = {this.props.processPost}
+                closeModal = {this.props.closeModal}
             />
         )
     }

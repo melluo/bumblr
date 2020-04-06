@@ -4,11 +4,13 @@ import TextForm from "./text_form";
 import { closeModal } from "../../../actions/modal_actions";
 
 const mapStateToProps = ({entities, session}) => {
+    debugger;
     const currentUserId = session.id;
     return({
         post: {
             title: "",
             body: "",
+            tags: "",
             post_type: "text",
             user_id: currentUserId
         },
@@ -19,7 +21,7 @@ const mapStateToProps = ({entities, session}) => {
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        createPost: (post) => dispatch(createPost(post)),
+        processPost: (post) => dispatch(createPost(post)),
         closeModal: () => dispatch(closeModal())       
     });
 }

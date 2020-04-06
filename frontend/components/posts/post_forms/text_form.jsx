@@ -16,7 +16,7 @@ class TextForm extends React.Component {
     }
     handleSubmit(e){
         e.preventDefault();
-        this.props.createPost(this.state)
+        this.props.processPost(this.state)
             .then(() => this.props.closeModal());
     }
     
@@ -28,7 +28,7 @@ class TextForm extends React.Component {
             togglePost = <input type = "submit" className = "submit-post" value = {this.props.formType}/>
 
         }
-
+ 
         return(
             <div className="text-form-container">
                 <section className = "author-username">
@@ -54,7 +54,7 @@ class TextForm extends React.Component {
                         type = "text"
                         value = {this.state.tags}
                         onChange = {this.handleInput("tags")}
-                        placeholder = "#tags"
+                        placeholder = "seperate #tags with spaces"
                     />
                     <section className = "controls-container">
                         <button onClick = {this.props.closeModal} className = "close-modal">Close</button>

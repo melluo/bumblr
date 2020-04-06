@@ -1,20 +1,21 @@
 import { connect } from "react-redux";
-import { fetchPost, updatePost } from "../../actions/post_actions";
+import { fetchPost, updatePost } from "../../../actions/post_actions";
+import { closeModal } from "../../../actions/modal_actions";
 import EditTextForm from "./edit_text_form";
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return({
-        postId: ownProps.match.params.postId,
-        post: state.entities.posts[ownProps.match.params.postId],
-        currentUser: state.entities.users[state.sesssion.id],
-        FormType: "Save"
+        post: state.ui.modal.post,
+        currentUser: state.entities.users[state.session.id],
+        formType: "Save"
     })
 }
 
 const mapDispatchToProps = (dispatch) => {
     return({
         fetchPost: (postId) => dispatch(fetchPost(postId)),
-        updatePost: (post) => dispatch(updatePost(post))
+        processPost: (post) => dispatch(updatePost(post)),
+        closeModal: () => dispatch(closeModal())
     })
 }
 
