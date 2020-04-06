@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
-import { createPost } from "../../actions/post_actions";
+import { createPost } from "../../../actions/post_actions";
 import TextForm from "./text_form";
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal } from "../../../actions/modal_actions";
 
 const mapStateToProps = ({entities, session}) => {
     const currentUserId = session.id;

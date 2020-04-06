@@ -24,6 +24,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   text-decoration: none;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+body, html {
+  position: relative;
+  background-color: #34526f;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
  
 //  html {
 //      height: 100%;

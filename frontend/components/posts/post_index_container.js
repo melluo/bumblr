@@ -1,20 +1,20 @@
 import { connect } from "react-redux";
 import PostIndex from "./post_index";
-import { fetchPosts, deletePost } from "../../actions/post_actions";
+import { fetchAllPosts, deletePost } from "../../actions/post_actions";
 
 
 const mapStateToProps = (state) => {
-    return ({
+    return {
         posts: Object.values(state.entities.posts),
         users: state.entities.users,
-        currentUser: state.entities.users[state.session.id]
-    })
+        currentUser: state.session.currentUser
+    };
 }
 const mapDispatchToProps = (dispatch) => {
-  return({
-    fetchPosts: () => dispatch(fetchPosts()),
+  return {
+    fetchAllPosts: () => dispatch(fetchAllPosts()),
     deletePost: (postId) => dispatch(deletePost(postId))
-  }) 
+  }; 
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostIndex);

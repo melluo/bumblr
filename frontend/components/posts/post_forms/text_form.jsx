@@ -22,29 +22,32 @@ class TextForm extends React.Component {
     
     render(){
         return(
-            <div className="form_container">
-            <form onSubmit={this.handleSubmit}>
-                <input 
-                    type="text" 
-                    value={this.state.title} 
-                    onChange={this.handleInput("title")} 
-                    placeholder="Title" 
-                />
-                <input 
-                    type="text"
-                    value={this.state.body}
-                    onChange={this.handleInput("body")}
-                    placeholder="Your text here"
-                />
-                <input 
-                    type="text"
-                    value={this.state.tags}
-                    onChange={this.handleInput("tags")}
-                    placeholder="#tags"
-                />
-                <button onClick={this.props.closeModal} className="close-modal">Close</button>
-                <input type="submit" value={this.props.formType}/>
-            </form>
+            <div className="form-container">
+                <section className = "username">
+                    {this.props.currentUser.username}
+                </section>
+                <form onSubmit={this.handleSubmit}>
+                    <input 
+                        type="text" 
+                        value={this.state.title} 
+                        onChange={this.handleInput("title")} 
+                        placeholder="Title" 
+                    />
+                    <input 
+                        type="text"
+                        value={this.state.body}
+                        onChange={this.handleInput("body")}
+                        placeholder="Your text here"
+                    />
+                    <input 
+                        type="text"
+                        value={this.state.tags}
+                        onChange={this.handleInput("tags")}
+                        placeholder="#tags"
+                    />
+                    <button onClick={this.props.closeModal} className="close-modal">Close</button>
+                    <input type="submit" value={this.props.formType}/>
+                </form>
         </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import NewTextPost from "../posts/new_text_form_container";
+import NewTextPost from "../posts/post_forms/new_text_form_container";
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {

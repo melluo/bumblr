@@ -1,14 +1,15 @@
 import React from "react";
+import PostItem from "./post_item_container";
 
-class PostIndex extends React.Component{
+class PostIndex extends React.Component {
     constructor(props){
         super(props);
     }
 
     componentDidMount() {
-        this.props.fetchPosts();
+        this.props.fetchAllPosts();
     }
-    
+
     render(){
         let posts = this.props.posts.map(post => {
             return(
