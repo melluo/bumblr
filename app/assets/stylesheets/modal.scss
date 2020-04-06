@@ -5,20 +5,16 @@
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 20;
+    z-index: 502;
 }
- 
+
 .modal-child {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
- 
-.close-x {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+
+.close {
     cursor: pointer;
 }
- 

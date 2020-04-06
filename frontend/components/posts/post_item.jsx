@@ -29,10 +29,10 @@ class PostItem extends React.Component{
                 <div className = "post-options">
                     <ul>
                     <li onClick = {() => this.props.deletePost(this.props.post.id)}>
-                        <i class="fas fa-pencil-alt"></i>
+                        <i class="fas fa-trash-alt"></i>
                     </li>
                     <li onClick = {() => this.props.openModal("Edit Text Post", this.props.post)}>
-                        <i className = "fas fa-edit"></i>
+                        <i class="fas fa-pencil-alt"></i>
                     </li>
                     </ul>
                 </div>

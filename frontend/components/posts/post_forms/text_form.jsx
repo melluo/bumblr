@@ -21,32 +21,45 @@ class TextForm extends React.Component {
     }
     
     render(){
+        let togglePost;
+        if (this.state.title === "" && this.state.body === ""){
+            togglePost = <label className = "submit-post-hidden">{this.props.formType}</label> 
+        } else{
+            togglePost = <input type = "submit" className = "submit-post" value = {this.props.formType}/>
+
+        }
+
         return(
-            <div className="form-container">
-                <section className = "username">
+            <div className="text-form-container">
+                <section className = "author-username">
                     {this.props.currentUser.username}
                 </section>
-                <form onSubmit={this.handleSubmit}>
+                <form className = "text-form" onSubmit={this.handleSubmit}>
                     <input 
-                        type="text" 
-                        value={this.state.title} 
-                        onChange={this.handleInput("title")} 
-                        placeholder="Title" 
+                        className = "title-input"
+                        type = "text" 
+                        value = {this.state.title} 
+                        onChange = {this.handleInput("title")} 
+                        placeholder = "Title" 
                     />
+                    <textarea
+                        className = "body-input"
+                        type = "text"
+                        value = {this.state.body}
+                        onChange = {this.handleInput("body")}
+                        placeholder = "Your text here"
+                    ></textarea>
                     <input 
-                        type="text"
-                        value={this.state.body}
-                        onChange={this.handleInput("body")}
-                        placeholder="Your text here"
+                        className = "tags-input"
+                        type = "text"
+                        value = {this.state.tags}
+                        onChange = {this.handleInput("tags")}
+                        placeholder = "#tags"
                     />
-                    <input 
-                        type="text"
-                        value={this.state.tags}
-                        onChange={this.handleInput("tags")}
-                        placeholder="#tags"
-                    />
-                    <button onClick={this.props.closeModal} className="close-modal">Close</button>
-                    <input type="submit" value={this.props.formType}/>
+                    <section className = "controls-container">
+                        <button onClick = {this.props.closeModal} className = "close-modal">Close</button>
+                        {togglePost}
+                    </section>
                 </form>
         </div>
         )

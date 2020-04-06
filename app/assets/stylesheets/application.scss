@@ -22,7 +22,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
 }
 
 body, html {
@@ -33,7 +33,10 @@ body, html {
   width: 100%;
 }
 
- 
+textarea:focus, input:focus{
+  outline: none;
+}
+
 //  html {
 //      height: 100%;
 //  }
