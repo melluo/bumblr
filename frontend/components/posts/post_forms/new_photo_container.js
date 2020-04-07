@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createPhoto } from "../../../actions/post_actions";
+import { createImage } from "../../../actions/post_actions";
 import PhotoForm from "./photo_form";
 import { closeModal } from "../../../actions/modal_actions";
 
@@ -20,7 +20,7 @@ const mapStateToProps = ({entities, session}) => {
 
 const mapDispatchToProps = (dispatch) => {
     return({
-        processPost: (formData) => dispatch(createPhoto(formData)),
+        processPost: (formData) => dispatch(createImage(formData)),
         closeModal: () => dispatch(closeModal())       
     });
 }

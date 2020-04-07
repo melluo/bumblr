@@ -22,7 +22,7 @@ export const createPost = (post) => (
 
 export const updatePost = (post) => (
     $.ajax({
-        url: "/api/posts/${post.id}",
+        url: `/api/posts/${post.id}`,
         method: "PATCH",
         data: { post }
     })
@@ -30,12 +30,12 @@ export const updatePost = (post) => (
 
 export const deletePost = (postId) => (
     $.ajax({
-        url: "/api/posts/${postId}",
+        url: `/api/posts/${postId}`,
         method: "DELETE"
     })
 );
 
-export const createPhoto = (formData) => (
+export const createImage = (formData) => (
     $.ajax({
         url: "/api/posts",
         method: "POST",

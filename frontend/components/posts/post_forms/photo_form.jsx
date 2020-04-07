@@ -43,14 +43,14 @@ class PhotoForm extends React.Component{
         formData.append("post[tags]", this.state.tags);
         formData.append("post[user_id]", this.state.user_id);
         if (this.state.imageFile) {
-            formData.append("post[photo]", this.state.imageFile);
+            formData.append("post[image]", this.state.imageFile);
         } 
         this.props.processPost(formData).then(this.props.closeModal());
     }
 
     render(){
         return(
-            <div className = "content-container">
+            <div className = "photo-form-container">
                 <form className="photo-form" onSubmit={this.handleSubmit}>
                     <input 
                         type="file"

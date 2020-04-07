@@ -1,6 +1,6 @@
 
 .post-container{
-    max-width: 540px;
+    width: 540px;
     position: relative;
     top: -60px;
     color: black;
@@ -46,7 +46,6 @@
     list-style: none;
     font-size: 14px;
     margin-top: 12px;
-    margin-bottom: 10px;
     color: rgba(0, 0, 0, .65);
 }
 
@@ -68,4 +67,10 @@
     font-size: 21px;
     color: rgba(0, 0, 0, .65);
     cursor: pointer;
+}
+
+// photo posts
+.photo-item{
+    max-width: 540px;
+    min-width: 540px;
 }

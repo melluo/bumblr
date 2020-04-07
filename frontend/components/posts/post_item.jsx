@@ -22,20 +22,26 @@ class PostItem extends React.Component{
             };
         }
 
+        let postBody;
+        if (post.body){
+            postBody = <p className="item-body">{post.body}</p>
+        }
+
+        
         switch(post.post_type){
             case "text":
                 return(
                     <div className = "text-item">
                         <h3 className = "item-title">{post.title}</h3>
-                        <p className="item-body">{post.body}</p>
+                        {postBody}
                         <ul className = "tag-container">{tags}</ul>
                     </div>
                 )
             case "photo":
                 return(
                     <div>
-                        <img className = "photo-item" src = {post.photoUrl}/>
-                        <p className="item-body">{post.body}</p>
+                        <img className = "photo-item" src = {post.imageUrl}/>
+                        {postBody}
                         <ul className = "tag-container">{tags}</ul>
                     </div>
                 )

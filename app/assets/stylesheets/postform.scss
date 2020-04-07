@@ -1,7 +1,7 @@
 // Place all the styles related to the Post controller here.
 // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: http://sass-lang.com/
-.content-container{
+.text-form-container{
     max-width: 540px;
     min-height: 289px;
     box-sizing: border-box;
@@ -16,6 +16,7 @@
     width: 386px;
     padding-bottom: 10px;
     height: 19px;
+    padding-top: 6px;
     color: black;
     font-weight: bold;
 
@@ -42,6 +43,7 @@
     width: 500px;
     border: none;
     margin-top: 5px;
+    padding-top: 5px;
     padding-bottom: 10px;
 }
 
@@ -49,7 +51,8 @@
 .controls-container{
     display: flex;
     justify-content: space-between;
-    padding-top: 15px;  
+    align-items: baseline;
+    padding-top: 20px;  
     font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
 }
 
