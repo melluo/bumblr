@@ -31,6 +31,14 @@ class PostItem extends React.Component{
                         <ul className = "tag-container">{tags}</ul>
                     </div>
                 )
+            case "photo":
+                return(
+                    <div>
+                        <img className = "photo-item" src = {post.photoUrl}/>
+                        <p className="item-body">{post.body}</p>
+                        <ul className = "tag-container">{tags}</ul>
+                    </div>
+                )
         }
     }
     render(){
@@ -49,10 +57,8 @@ class PostItem extends React.Component{
                     <li onClick = {() => this.props.openModal("Edit Text Post", this.props.post)}>
                         <i className = "fas fa-pencil-alt"></i>
                     </li>
-                </ul>
-                
+                </ul>   
             </div>
-
         )
     }
 }

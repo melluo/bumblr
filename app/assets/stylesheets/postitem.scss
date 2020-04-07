@@ -4,7 +4,8 @@
     position: relative;
     top: -60px;
     color: black;
-    padding: 15px 20px 12px 20px;
+    padding-top:15px;
+    padding-bottom: 12px;
     background: white;
     margin-bottom: 20px;
     border-radius: 3px;
@@ -13,33 +14,38 @@
 }
 
 .post-header{
+    padding-left: 20px;
     height: 16px;
     font-size: 14px;
+    margin-bottom: 15px;
     font-weight: bold;
 }
 
 .item-title{
+    padding-left: 20px;
     font-size: 26px;
-    margin-top: 15px;
     margin-bottom: 15px;
 
 }
 .item-body{
+    padding-left: 20px;
     font-size: 16px;
     width: 500px;
     resize: none;
     border: none;
-    min-height:50px;
+    min-height: 24px;
     overflow-wrap: break-word;
     font-weight: 400;
     line-height: 24px;
 }
 
 .tag-container{
+    padding-left: 20px;
     display: flex;
     flex-direction: row;
     list-style: none;
     font-size: 14px;
+    margin-top: 12px;
     margin-bottom: 10px;
     color: rgba(0, 0, 0, .65);
 }
@@ -50,6 +56,7 @@
 
 .post-options{
     display: flex;
+    padding-right: 20px;
     flex-direction: row;
     justify-content: flex-end;
     padding-top: 12px;

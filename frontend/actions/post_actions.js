@@ -44,3 +44,7 @@ export const deletePost = (postId) => (dispatch) =>
         dispatch(removePost(postId))
     );
 
+export const createPhoto = (formData) => (dispatch) => 
+    PostApiUtils.createPhoto(formData).then((post) => 
+        dispatch(receivePost(post))
+    );

@@ -30,7 +30,7 @@ class TextForm extends React.Component {
         }
  
         return(
-            <div className="text-form-container">
+            <div className="content-container">
                 <section className = "author-username">
                     {this.props.currentUser.username}
                 </section>

@@ -4,7 +4,6 @@ import TextForm from "./text_form";
 import { closeModal } from "../../../actions/modal_actions";
 
 const mapStateToProps = ({entities, session}) => {
-    debugger;
     const currentUserId = session.id;
     return({
         post: {

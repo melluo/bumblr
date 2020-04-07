@@ -89,8 +89,9 @@
     flex-direction: row;
     grid-column: 6;
     list-style: none;
+    position:relative;
 }
-.fa-home, .fa-user, .fa-github, .fa-angellist, .fa-linkedin{
+.fa-user, .fa-home, .fa-github, .fa-angellist, .fa-linkedin{
     color: white;
     font-size: 30px;
     margin: 0 10px;
@@ -106,11 +107,28 @@
 .dropdown-menu:hover .dropdown-content{
     display: block;
     border: 1px solid black;
-    width: 190px;
-    left: auto;
+    border-radius: 10px;
+    width: 150px;
+    background: white;
+    color: black;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+
+.logout-button{
+    cursor: pointer;
 }
 
 .dropdown-content > li{
     display: flex;
     justify-content: space-between;
+    padding: 8px;
+    background-color: lightgrey;
+
+}
+
+.dropdown-content > li:first-child{
+    border-bottom: 1px solid black;
 }
