@@ -14,13 +14,13 @@ class TextForm extends React.Component {
             });
         };
     }
-    
+
     handleSubmit(e){
         e.preventDefault();
         this.props.processPost(this.state)
             .then(() => this.props.closeModal());
     }
-    
+
     render(){
         let togglePost;
         if (this.state.title === "" && this.state.body === ""){
@@ -58,7 +58,7 @@ class TextForm extends React.Component {
                         placeholder = "seperate #tags with spaces"
                     />
                     <section className = "controls-container">
-                        <button onClick = {this.props.closeModal} className = "close-modal">Close</button>
+                        <a onClick = {this.props.closeModal} className = "close-modal">Close</a>
                         {togglePost}
                     </section>
                 </form>

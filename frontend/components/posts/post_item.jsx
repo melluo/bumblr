@@ -74,6 +74,12 @@ class PostItem extends React.Component{
                     <i className = "fas fa-pencil-alt"></i>
                 </li>
                 )
+            case "quote":
+                return(
+                <li onClick = {() => this.props.openModal("Edit Quote Post", this.props.post)}>
+                    <i className = "fas fa-pencil-alt"></i>
+                </li>    
+                )
         }
     }
     render(){

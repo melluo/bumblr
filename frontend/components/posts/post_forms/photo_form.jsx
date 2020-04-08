@@ -102,7 +102,7 @@ class PhotoForm extends React.Component{
                         placeholder = "seperate #tags with spaces"
                     />
                 <section className = "controls-container">
-                    <button onClick = {this.props.closeModal} className = "close-modal">Close</button>
+                    <a onClick = {this.props.closeModal} className = "close-modal">Close</a>
                     {togglePost}
                 </section>
                 </form>

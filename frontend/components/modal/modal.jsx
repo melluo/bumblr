@@ -6,6 +6,7 @@ import EditTextPost from "../posts/post_forms/edit_text_container";
 import NewPhotoPost from "../posts/post_forms/new_photo_container";
 import EditPhotoPost from "../posts/post_forms/edit_photo_container";
 import NewQuotePost from "../posts/post_forms/new_quote_container";
+import EditQuotePost from "../posts/post_forms/edit_quote_container";
 
 const Modal = ({modal}) => {
   if (!modal) {
@@ -28,12 +29,16 @@ const Modal = ({modal}) => {
     case "Quote Post":
         component = <NewQuotePost />;
         break;
+    case "Edit Quote Post":
+        component = <EditQuotePost />;
+        break;
     default:
         return null;
   }
+
   return (
-    <div className="modal-background">
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+    <div className = "modal-background">
+      <div className = "modal-child" id = "modal-child" onClick = {e => e.stopPropagation()}>
         { component }
       </div>
     </div>
