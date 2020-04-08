@@ -44,3 +44,13 @@ export const createImage = (formData) => (
         processData: false
     })
 )
+
+export const updateImage = (formData, postId) => (
+    $.ajax({
+        url: `/api/posts/${postId}`,
+        method: "PATCH",
+        data: formData,
+        contentType: false,
+        processData: false
+    })
+)

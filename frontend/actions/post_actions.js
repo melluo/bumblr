@@ -48,3 +48,8 @@ export const createImage = (formData) => (dispatch) =>
     PostApiUtils.createImage(formData).then((post) => 
         dispatch(receivePost(post))
     );
+
+export const updateImage = (formData, postId) => (dispatch) => 
+    PostApiUtils.updateImage(formData, postId).then((post) => 
+        dispatch(receivePost(post))
+    );

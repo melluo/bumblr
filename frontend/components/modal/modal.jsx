@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import NewTextPost from "../posts/post_forms/new_text_form_container";
 import EditTextPost from "../posts/post_forms/edit_text_container";
 import NewPhotoPost from "../posts/post_forms/new_photo_container";
+import EditPhotoPost from "../posts/post_forms/edit_photo_container";
 
 const Modal = ({modal}) => {
   if (!modal) {
@@ -19,6 +20,9 @@ const Modal = ({modal}) => {
         break;
     case "Photo Post":
         component = <NewPhotoPost />;
+        break;
+    case "Edit Photo Post":
+        component = <EditPhotoPost />;
         break;
     default:
         return null;
