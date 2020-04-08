@@ -28,8 +28,8 @@ class PostItem extends React.Component{
         }
 
         let quoteSource;
-        if(post.post_type === "quote"){
-            quoteSource = "—".concat(post.body);
+        if(post.post_type === "quote" && post.body){
+            quoteSource = "— ".concat(post.body);
         }
         switch(post.post_type){
             case "text":
