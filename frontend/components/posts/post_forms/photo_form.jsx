@@ -47,21 +47,50 @@ class PhotoForm extends React.Component{
         } 
         this.props.processPost(formData).then(this.props.closeModal());
     }
-
+    renderPreview(){
+        if(this.state.imageUrl){
+            return(
+                <img className = "image-preview" src = {this.state.imageUrl}/>
+            )
+        } else{
+            return(
+                <div className = "upload-container">
+                <input
+                    className = "upload-image"
+                    type = "file"
+                    id = "file"
+                    onChange = {this.handleFile} 
+                />
+                <label for = "file">
+                    <i className="fas fa-camera"></i>
+                    <div>Upload photo</div>
+                    <i className="far fa-laugh-beam"></i>
+                </label>
+                </div>
+            )
+        }
+    }
     render(){
+        let togglePost;
+        if (!this.state.imageUrl){
+            togglePost = <label className = "submit-post-hidden">{this.props.formType}</label> 
+        } else{
+            togglePost = <input type = "submit" className = "submit-post" value = {this.props.formType}/>
+
+        }
         return(
-            <div className = "photo-form-container">
-                <form className="photo-form" onSubmit={this.handleSubmit}>
-                    <input 
-                        type="file"
-                        onChange={this.handleFile} 
-                    />
+            <div className = "content-container">
+            <section className = "author-username">
+                {this.props.currentUser.username}
+            </section>
+                <form className = "photo-form" onSubmit = {this.handleSubmit}>
+                    {this.renderPreview()}
                     <textarea 
-                        className="body-input"
-                        type="text"
-                        value={this.state.body}
-                        onChange={this.handleInput("body")}
-                        placeholder="Your text here"
+                        className = "body-input"
+                        type = "text"
+                        value = {this.state.body}
+                        onChange = {this.handleInput("body")}
+                        placeholder = "Add a caption, if you like"
                     />
                     <input 
                         className = "tags-input"
@@ -71,8 +100,8 @@ class PhotoForm extends React.Component{
                         placeholder = "seperate #tags with spaces"
                     />
                 <section className = "controls-container">
-                    <button onClick={this.props.closeModal} className="close-modal">Close</button>
-                    <input className="submit-post" type="submit" value={this.props.formType} />
+                    <button onClick = {this.props.closeModal} className = "close-modal">Close</button>
+                    {togglePost}
                 </section>
                 </form>
             </div>

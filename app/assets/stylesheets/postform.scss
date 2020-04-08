@@ -1,22 +1,23 @@
 // Place all the styles related to the Post controller here.
 // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: http://sass-lang.com/
-.text-form-container{
+.content-container{
     max-width: 540px;
     min-height: 289px;
     box-sizing: border-box;
     display: block;
-    padding: 10px 20px 15px 20px;
     background-color: white;
     border-radius: 5px;
 }
-
+.author-username, .title-input, .body-input, .tags-input, .controls-container{
+    padding-left: 20px;
+    padding-right: 20px;
+}
 .author-username{
     font-size: 13px;
-    width: 386px;
     padding-bottom: 10px;
+    padding-top: 16px;
     height: 19px;
-    padding-top: 6px;
     color: black;
     font-weight: bold;
 
@@ -53,6 +54,7 @@
     justify-content: space-between;
     align-items: baseline;
     padding-top: 20px;  
+    padding-bottom: 16px;
     font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
 }
 
@@ -108,8 +110,38 @@
     line-height: 1.4;
     cursor: not-allowed;
 }
+/* photo */
+.image-preview{
+    width: 540px;
+    max-height: 400px;
+    display: block;
+}
 
-// photo posts
-.photo-item{
-    max-width: 540px;
+.upload-container{
+    color: rgb(152, 152, 152);
+    padding-left: 20px;
+    height: 196px;
+    background: #f2f2f2;
+    display: flex;
+    text-align: center;
+    border-top: 2px dashed #cfcfcf;
+    border-bottom: 2px dashed #cfcfcf;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom:10px;
+}
+.upload-image{
+    overflow: hidden;
+    display: none;
+}
+
+.fa-camera{
+    font-size: 60px;
+    margin-top: 45px;
+    margin-bottom: 5px;
+}
+
+.fa-laugh-beam{
+    font-size: 24px;
+    margin-top: 18px;
 }

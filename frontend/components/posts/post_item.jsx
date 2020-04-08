@@ -12,9 +12,9 @@ class PostItem extends React.Component{
         let appendHash;
         if( post.tags ){
             if( post.tags.includes(" ") ){
-                tags = post.tags.trim().split(" ").map((tag) => {
+                tags = post.tags.trim().split(" ").map((tag,idx) => {
                     appendHash = "#".concat(tag);
-                    return(<li key = {tag}>{appendHash}</li>)
+                    return(<li key = {idx}>{appendHash}</li>)
                 });
             } else{
                 appendHash = "#".concat(tags);
@@ -26,7 +26,6 @@ class PostItem extends React.Component{
         if (post.body){
             postBody = <p className="item-body">{post.body}</p>
         }
-
         
         switch(post.post_type){
             case "text":
@@ -47,6 +46,7 @@ class PostItem extends React.Component{
                 )
         }
     }
+    
     render(){
         return(
             <div className = "post-container">
