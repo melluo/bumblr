@@ -17,10 +17,12 @@ class PhotoForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInput(field) {
-        return e => this.setState({
-            [field]: e.target.value
-        });
+    handleInput(type){ 
+        return (e) => {
+            this.setState({
+                [type]: e.target.value 
+            });
+        };
     }
 
     handleFile(e){
@@ -63,7 +65,7 @@ class PhotoForm extends React.Component{
                     id = "file"
                     onChange = {this.handleFile} 
                 />
-                <label for = "file">
+                <label htmlFor = "file">
                     <i className="fas fa-camera"></i>
                     <div>Upload photo</div>
                     <i className="far fa-laugh-beam"></i>
