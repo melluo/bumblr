@@ -26,7 +26,11 @@ class PostItem extends React.Component{
         if (post.body){
             postBody = <p className="item-body">{post.body}</p>
         }
-        
+
+        let quoteSource;
+        if(post.post_type === "quote"){
+            quoteSource = "—".concat(post.body);
+        }
         switch(post.post_type){
             case "text":
                 return(
@@ -41,6 +45,14 @@ class PostItem extends React.Component{
                     <div>
                         <img className = "photo-item" src = {post.imageUrl}/>
                         {postBody}
+                        <ul className = "tag-container">{tags}</ul>
+                    </div>
+                )
+            case "quote":
+                return(
+                    <div>
+                        <h3 className = "quote">&ldquo;{post.title}&rdquo;</h3>
+                        <p className = "quote-source">{quoteSource}</p>
                         <ul className = "tag-container">{tags}</ul>
                     </div>
                 )

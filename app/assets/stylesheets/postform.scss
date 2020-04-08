@@ -28,7 +28,6 @@
     width: 500px;
     border: none;
     height: 47px;
-    
 }
 
 .body-input{
@@ -39,10 +38,15 @@
     resize: none;
 }
 
+.body-input::-webkit-scrollbar{ 
+    width: 0 !important 
+}
+
 .tags-input{
     font-size: 13px;
     width: 500px;
     border: none;
+    padding-right: 20px;
     margin-top: 5px;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -143,4 +147,28 @@
 .fa-laugh-beam{
     font-size: 24px;
     margin-top: 18px;
+}
+
+/* quote */
+
+.quote-input{
+    border: none;
+    font-family: Georgia, serif;
+    padding: 2px 20px;
+    width: 500px;
+    word-wrap: break-word;
+    font-size: 46px;
+    
+}
+
+.quote-input::-webkit-scrollbar{ 
+    width: 0 !important 
+}
+
+.source-input{
+    width: 500px;
+    padding: 0 20px;
+    font-size: 14px;
+    min-height: 20px;
+    border: none;
 }

@@ -36,19 +36,19 @@ class QuoteForm extends React.Component{
                     {this.props.currentUser.username}
                 </section>
                 <form className = "quote-form" onSubmit={this.handleSubmit}>
-                    <input 
+                <textarea
                         className = "quote-input"
                         type = "text" 
                         value = {this.state.title} 
                         onChange = {this.handleInput("title")} 
-                        placeholder = "Quote" 
-                    />
+                        placeholder = "&ldquo;Quote&rdquo;"
+                    ></textarea>
                     <input
                         className = "source-input"
                         type = "text"
                         value = {this.state.body}
                         onChange = {this.handleInput("body")}
-                        placeholder = "Source"
+                        placeholder = "— Source"
                     ></input>
                     <input 
                         className = "tags-input"
