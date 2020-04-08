@@ -67,8 +67,14 @@
     cursor: pointer;
 }
 
-// photo posts
+/* photo */
 .photo-item{
     max-width: 540px;
     min-width: 540px;
+}
+
+/* quote */
+.quote-content{
+    padding: 0 20px;
+    font-size: 34px;
 }

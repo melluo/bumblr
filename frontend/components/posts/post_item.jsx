@@ -17,8 +17,8 @@ class PostItem extends React.Component{
                     return(<li key = {idx}>{appendHash}</li>)
                 });
             } else{
-                appendHash = "#".concat(tags);
-                return(<li key = {post.tags}>{appendHash}</li>)
+                appendHash = "#".concat(post.tags);
+                tags = <div>{appendHash}</div>
             };
         }
 
@@ -51,7 +51,7 @@ class PostItem extends React.Component{
             case "quote":
                 return(
                     <div>
-                        <h3 className = "quote">&ldquo;{post.title}&rdquo;</h3>
+                        <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
                         <p className = "quote-source">{quoteSource}</p>
                         <ul className = "tag-container">{tags}</ul>
                     </div>
