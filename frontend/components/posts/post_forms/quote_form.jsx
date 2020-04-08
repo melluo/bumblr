@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-class TextForm extends React.Component {
+class QuoteForm extends React.Component{
     constructor(props){
         super(props);
         this.state = this.props.post;
@@ -23,7 +23,7 @@ class TextForm extends React.Component {
     
     render(){
         let togglePost;
-        if (this.state.title === "" && this.state.body === ""){
+        if (this.state.title === ""){
             togglePost = <label className = "submit-post-hidden">{this.props.formType}</label> 
         } else{
             togglePost = <input type = "submit" className = "submit-post" value = {this.props.formType}/>
@@ -35,21 +35,21 @@ class TextForm extends React.Component {
                 <section className = "author-username">
                     {this.props.currentUser.username}
                 </section>
-                <form className = "text-form" onSubmit={this.handleSubmit}>
+                <form className = "quote-form" onSubmit={this.handleSubmit}>
                     <input 
-                        className = "title-input"
+                        className = "quote-input"
                         type = "text" 
                         value = {this.state.title} 
                         onChange = {this.handleInput("title")} 
-                        placeholder = "Title" 
+                        placeholder = "Quote" 
                     />
-                    <textarea
-                        className = "body-input"
+                    <input
+                        className = "source-input"
                         type = "text"
                         value = {this.state.body}
                         onChange = {this.handleInput("body")}
-                        placeholder = "Your text here"
-                    ></textarea>
+                        placeholder = "Source"
+                    ></input>
                     <input 
                         className = "tags-input"
                         type = "text"
@@ -66,4 +66,5 @@ class TextForm extends React.Component {
         )
     }
 }
-export default TextForm;
+
+export default QuoteForm;

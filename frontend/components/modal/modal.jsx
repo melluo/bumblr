@@ -1,10 +1,11 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import NewTextPost from "../posts/post_forms/new_text_form_container";
+import NewTextPost from "../posts/post_forms/new_text_container";
 import EditTextPost from "../posts/post_forms/edit_text_container";
 import NewPhotoPost from "../posts/post_forms/new_photo_container";
 import EditPhotoPost from "../posts/post_forms/edit_photo_container";
+import NewQuotePost from "../posts/post_forms/new_quote_container";
 
 const Modal = ({modal}) => {
   if (!modal) {
@@ -23,6 +24,9 @@ const Modal = ({modal}) => {
         break;
     case "Edit Photo Post":
         component = <EditPhotoPost />;
+        break;
+    case "Quote Post":
+        component = <NewQuotePost />;
         break;
     default:
         return null;
