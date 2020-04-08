@@ -10,7 +10,7 @@ class PhotoForm extends React.Component{
             post_type: "photo",
             user_id: this.props.post.user_id,
             id: this.props.post.id,
-            imageUrl: null,
+            imageUrl: (this.props.post.imageUrl) ? this.props.post.imageUrl : null,
             imageFile: null
         }
         this.handleFile = this.handleFile.bind(this);
