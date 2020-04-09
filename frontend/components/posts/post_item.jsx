@@ -18,19 +18,39 @@ class PostItem extends React.Component{
                 });
             } else{
                 appendHash = "#".concat(post.tags);
-                tags = <div>{appendHash}</div>
+                tags = <li key = {post.tags}>{appendHash}</li>
             };
         }
 
         let postBody;
-        if (post.body){
+        if ( post.body ){
             postBody = <p className="item-body">{post.body}</p>
         }
 
         let quoteSource;
-        if(post.post_type === "quote" && post.body){
+        if( post.post_type === "quote" && post.body ){
             quoteSource = "— ".concat(post.body);
         }
+
+        let link;
+        if(post.title){
+            if( post.title.includes("https://") ){
+                link = post.title;
+            } else{
+                link = "https://".concat(post.title);
+            }
+        }
+
+        let cropLinkTitle;
+        if ( post.title ){
+            if ( post.title.includes(".") ){
+                let dotIndex = post.title.indexOf(".");
+                cropLinkTitle = post.title.slice(0, dotIndex);
+            } else{
+                cropLinkTitle = post.title;
+            }
+        }
+
         switch(post.post_type){
             case "text":
                 return(
@@ -56,6 +76,16 @@ class PostItem extends React.Component{
                         <ul className = "tag-container">{tags}</ul>
                     </div>
                 )
+            case "link":
+                return(
+                    <div>
+                        <a href = {link} className = "link-container">
+                            <h3 className = "link-title">{cropLinkTitle}</h3>
+                            <p className = "link-body">{post.body}</p>
+                        </a>
+                        <ul className = "tag-container">{tags}</ul>
+                    </div>
+                )
         }
     }
     renderEdit(){
@@ -77,6 +107,12 @@ class PostItem extends React.Component{
             case "quote":
                 return(
                 <li onClick = {() => this.props.openModal("Edit Quote Post", this.props.post)}>
+                    <i className = "fas fa-pencil-alt"></i>
+                </li>    
+                )
+            case "link":
+                return(
+                <li onClick = {() => this.props.openModal("Edit Link Post", this.props.post)}>
                     <i className = "fas fa-pencil-alt"></i>
                 </li>    
                 )

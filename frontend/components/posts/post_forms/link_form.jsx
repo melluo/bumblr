@@ -3,14 +3,7 @@ import React from "react";
 class QuoteForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            title: this.props.post.title,
-            body: this.props.post.body,
-            tags: this.props.post.tags,
-            post_type: "link",
-            user_id: this.props.post.user_id,
-            linkUrl: (this.props.post.linkUrl) ? this.props.post.linkUrl : ""
-        }
+        this.state = this.props.post;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -30,7 +23,7 @@ class QuoteForm extends React.Component{
     
     render(){
         let togglePost;
-        if (this.state.linkUrl === ""){
+        if (this.state.link === ""){
             togglePost = <label className = "submit-post-hidden">{this.props.formType}</label> 
         } else{
             togglePost = <input type = "submit" className = "submit-post" value = {this.props.formType}/>
@@ -46,16 +39,9 @@ class QuoteForm extends React.Component{
                     <input
                         className = "link-input"
                         type = "text" 
-                        value = {this.state.linkUrl} 
-                        onChange = {this.handleInput("linkUrl")} 
-                        placeholder = "Type or Paste a URL"
-                    />
-                    <input
-                        className = "link-title-input"
-                        type = "text" 
                         value = {this.state.title} 
                         onChange = {this.handleInput("title")} 
-                        placeholder = "Enter a title"
+                        placeholder = "Type or Paste a URL"
                     />
                     <textarea
                         className = "body-input"

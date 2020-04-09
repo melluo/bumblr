@@ -24,4 +24,5 @@ class Post < ApplicationRecord
         foreign_key: :like_id
 
     has_one_attached :image
+    
 end

@@ -8,6 +8,7 @@ import EditPhotoPost from "../posts/post_forms/edit_photo_container";
 import NewQuotePost from "../posts/post_forms/new_quote_container";
 import EditQuotePost from "../posts/post_forms/edit_quote_container";
 import NewLinkPost from "../posts/post_forms/new_link_container";
+import EditLinkPost from "../posts/post_forms/edit_link_container";
 
 const Modal = ({modal}) => {
   if (!modal) {
@@ -35,6 +36,9 @@ const Modal = ({modal}) => {
         break;
     case "Link Post":
         component = <NewLinkPost />;
+        break;
+    case "Edit Link Post":
+        component = <EditLinkPost />;
         break;
     default:
         return null;
