@@ -69,19 +69,19 @@
 }
 @keyframes colours {
      0% {
-         color: salmon;
+         color: #1560BD;
         }
      25% {
-         color: #8bc5d1;
-        }
-     50% {
          color: #f8cb4a;
         }
+     50% {
+         color: #ff492f;
+        }
      75% {
-         color: #39f;
+         color: rgb(0, 207, 53);
         }
      100% {
-         color: lavender;
+         color: rgb(255, 138, 0);
         }
 }
 .nav-right{

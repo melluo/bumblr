@@ -18,6 +18,16 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :following,
+        class_name: "Follow",
+        primary_key: :id,
+        foreign_key: :followee_id
+        
+    has_many :followers
+        class_name: "Follow",
+        primary_key: :id,
+        foreign_key: :follower_id
+
     has_many :likes,
         class_name: "User",
         primary_key: :id,

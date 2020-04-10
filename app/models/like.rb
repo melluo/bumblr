@@ -1,4 +1,4 @@
-class Likes < ApplicationRecord
+class Like < ApplicationRecord
     belongs_to :user,
         class_name: "Likes",
         primary_key: :id,
