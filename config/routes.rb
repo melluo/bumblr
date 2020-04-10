@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :create]
     resource :session
     resources :posts, only: [:index, :create, :update, :show, :destroy]
+    resources :follows, only: [:index, :create, :show, :destroy]
   end
   #nesting users under api tag
   root to: "static_pages#root"
