@@ -21,8 +21,6 @@ const usersReducer = (oldState = {}, action) => {
             newState[followeeId].followers.push(currentUserId);
             return newState;
         case REMOVE_FOLLOW:
-            const currentUserId = action.follow.follower_id;
-            const followeeId = action.follow.followee_id;
             const index = newState[currentUserId].following.indexOf(followeeId);
             newState[currentUserId].following.splice(index, 1);
             const index2= newState[followeeId].followers.indexOf(currentUserId);

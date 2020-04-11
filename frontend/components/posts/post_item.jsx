@@ -119,10 +119,13 @@ class PostItem extends React.Component{
         }
     }
     render(){
+       
+
         return(
             <div className = "post-container">
                 <div className = "post-header">
                     {this.props.author.username}
+                   
                 </div>
                 <div className = "post-content">
                     {this.renderPost()}

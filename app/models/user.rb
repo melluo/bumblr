@@ -36,7 +36,7 @@ class User < ApplicationRecord
     has_many :posts,
         class_name: "Post",
         primary_key: :id,
-        foreign_key: :user_id
+        foreign_key: :author_id
 
     has_one_attached :avatar #each user has an avatar
     attr_reader :password

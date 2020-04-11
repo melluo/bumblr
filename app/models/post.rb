@@ -4,9 +4,9 @@
 #
 #  id         :bigint           not null, primary key
 #  title      :string
-#  body       :text             not null
+#  body       :string
 #  tags       :text
-#  user_id    :integer          not null
+#  author_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  post_type  :string
@@ -16,10 +16,10 @@ class Post < ApplicationRecord
     belongs_to :author,
         class_name: "User",
         primary_key: :id,
-        foreign_key: :user_id
+        foreign_key: :author_id
 
     has_many :likes,
-        class_name: :Likes,
+        class_name: "Like",
         primary_key: :id,
         foreign_key: :like_id
 
