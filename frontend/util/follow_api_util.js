@@ -5,17 +5,17 @@ export const fetchFollowers = () => (
     })
 )
 
-export const follow = (followerId) => (
+export const follow = (followee_id) => (
     $.ajax({
         url: "/api/follows",
         method: "POST",
-        data: { followerId }
+        data: { followee_id }
     })
 )
 
-export const unfollow = (followeeId) => (
+export const unfollow = (follower_id) => (
     $.ajax({
-        url: `/api/follows/${followeeId}`,
+        url: `/api/follows/${follower_id}`,
         method: "DELETE"
     })
 )

@@ -1,7 +1,8 @@
 class Api::FollowsController < ApplicationController
     def index
-        @follows = Follow.find_by(follower_id: current_user.id)
-    end
+        @user = User.includes(:following, :followers).find_by(id: params[:user_id])
+        render :index 
+      end
     def create
         @follow = Follow.new
         @follow.follower_id = current_user.id

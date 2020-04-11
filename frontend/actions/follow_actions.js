@@ -30,13 +30,13 @@ export const fetchFollowers = () => dispatch =>
         dispatch(recieveFollowers(followers))
     );
 
-export const follow = (followerId) => dispatch => 
-    FollowApiUtil.follow(followerId).then((follow) =>
+export const follow = (followee_id) => dispatch => 
+    FollowApiUtil.follow(followee_id).then((follow) =>
         dispatch(recieveFollow(follow))
     );
 
-export const unfollow = (followeeId) => dispatch => 
-    FollowApiUtil.unfollow(followeeId).then((follow) => 
+export const unfollow = (follower_id) => dispatch => 
+    FollowApiUtil.unfollow(follower_id).then((follow) => 
         dispatch(removeFollow(follow))
     );
 
