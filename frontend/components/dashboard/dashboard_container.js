@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import Dashboard from "./dashboard";
 import { fetchAllPosts } from "../../actions/post_actions";
+import { fetchAllUsers } from "../../actions/user_actions";
+
 const mapStateToProps = (state) => {
     return{
         posts: Object.values(state.entities.posts),
@@ -9,6 +11,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchAllPosts: () => dispatch(fetchAllPosts()),
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    fetchAllPosts: () => dispatch(fetchAllPosts())
 })
 export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

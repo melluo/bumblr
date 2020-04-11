@@ -8,7 +8,7 @@ class PhotoForm extends React.Component{
             body: this.props.post.body,
             tags: this.props.post.tags,
             post_type: "photo",
-            user_id: this.props.post.user_id,
+            author_id: this.props.post.author_id,
             id: this.props.post.id,
             imageUrl: (this.props.post.imageUrl) ? this.props.post.imageUrl : null,
             imageFile: null
@@ -44,7 +44,7 @@ class PhotoForm extends React.Component{
         formData.append("post[body]", this.state.body);
         formData.append("post[post_type]", this.state.post_type);
         formData.append("post[tags]", this.state.tags);
-        formData.append("post[user_id]", this.state.user_id);
+        formData.append("post[author_id]", this.state.author_id);
         formData.append("post[id]", this.state.id);
         if (this.state.imageFile) {
             formData.append("post[image]", this.state.imageFile);

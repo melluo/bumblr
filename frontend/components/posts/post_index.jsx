@@ -7,6 +7,7 @@ class PostIndex extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchAllUsers();
         this.props.fetchAllPosts();
     }
 
@@ -16,7 +17,8 @@ class PostIndex extends React.Component {
                 <PostItem
                     key = {post.id}
                     post = {post}
-                    authoringUser = {this.props.users[post.user_id]}
+                    users = {this.props.users}
+                    authoringUser = {post.author}
                     deletePost = {this.props.deletePost}
                 />
             )

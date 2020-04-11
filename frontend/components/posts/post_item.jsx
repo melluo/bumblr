@@ -4,7 +4,11 @@ import React from "react";
 class PostItem extends React.Component{
     constructor(props) {
         super(props);
+        this.state = {
+            following: this.props.following
+        }
     }
+   
     renderPost(){
         const post = this.props.post;
 
@@ -118,14 +122,34 @@ class PostItem extends React.Component{
                 )
         }
     }
+    toggleFollow(){
+        if(!this.state.following){
+            this.setState({
+                following: true
+            })
+        } else{
+            this.setState({
+                following: false
+            })
+        }
+    }
+    renderFollow(){
+        if(this.props.author.username !== this.props.currentUser.username && !this.state.following){
+            return( 
+                <button onClick = { () => this.props.follow(this.props.author.id).then(this.toggleFollow()) }>Follow</button>
+            )
+        } else if (this.props.author.username !== this.props.currentUser.username && this.state.following) {
+            return(
+                <button onClick = { () => this.props.unfollow(this.props.author.id).then(this.toggleFollow()) }>Unfollow</button>
+            )
+        } 
+    }
     render(){
-       
-
         return(
             <div className = "post-container">
                 <div className = "post-header">
                     {this.props.author.username}
-                   
+                    {this.renderFollow()}
                 </div>
                 <div className = "post-content">
                     {this.renderPost()}

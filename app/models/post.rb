@@ -12,7 +12,7 @@
 #  post_type  :string
 #
 class Post < ApplicationRecord
-    validates :user_id, :post_type, presence: true
+    validates :author_id, :post_type, presence: true
     belongs_to :author,
         class_name: "User",
         primary_key: :id,

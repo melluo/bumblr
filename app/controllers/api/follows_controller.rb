@@ -24,5 +24,6 @@ class Api::FollowsController < ApplicationController
     def destroy
         @follow = Follow.find_by(follower_id: current_user.id, followee_id: params[:id])
         @follow.destroy
+        render :show  #this line is necessary for line 22 of follow actions to find the follow
     end
 end

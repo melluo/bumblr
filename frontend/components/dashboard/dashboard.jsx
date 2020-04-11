@@ -7,6 +7,10 @@ class Dashboard extends React.Component{
     constructor(props){
         super(props);
     }
+    UNSAFE_componentWillMount(){
+        this.props.fetchAllUsers();
+        this.props.fetchAllPosts();
+    }
 
     render() {
         return(
