@@ -136,11 +136,11 @@ class PostItem extends React.Component{
     renderFollow(){
         if(this.props.author.username !== this.props.currentUser.username && !this.state.following){
             return( 
-                <button onClick = { () => this.props.follow(this.props.author.id).then(this.toggleFollow()) }>Follow</button>
+                <button className = "follow-button" onClick = { () => this.props.follow(this.props.author.id).then(this.toggleFollow()) }>Follow</button>
             )
         } else if (this.props.author.username !== this.props.currentUser.username && this.state.following) {
             return(
-                <button onClick = { () => this.props.unfollow(this.props.author.id).then(this.toggleFollow()) }>Unfollow</button>
+                <button className = "unfollow-button" onClick = { () => this.props.unfollow(this.props.author.id).then(this.toggleFollow()) }>Unfollow</button>
             )
         } 
     }
