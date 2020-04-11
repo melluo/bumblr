@@ -6,11 +6,6 @@ class PostIndex extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.props.fetchAllUsers();
-        this.props.fetchAllPosts();
-    }
-
     render(){
         let posts = this.props.posts.map(post => {
             return(
