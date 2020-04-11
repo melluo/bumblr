@@ -4,9 +4,6 @@ import React from "react";
 class PostItem extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {
-            following: this.props.following
-        }
     }
    
     renderPost(){
@@ -122,25 +119,14 @@ class PostItem extends React.Component{
                 )
         }
     }
-    toggleFollow(){
-        if(!this.state.following){
-            this.setState({
-                following: true
-            })
-        } else{
-            this.setState({
-                following: false
-            })
-        }
-    }
     renderFollow(){
-        if(this.props.author.username !== this.props.currentUser.username && !this.state.following){
+        if(this.props.author.username !== this.props.currentUser.username && !this.props.following){
             return( 
-                <button className = "follow-button" onClick = { () => this.props.follow(this.props.author.id).then(this.toggleFollow()) }>Follow</button>
+                <button className = "follow-button" onClick = { () => this.props.follow(this.props.author.id) }>Follow</button>
             )
-        } else if (this.props.author.username !== this.props.currentUser.username && this.state.following) {
+        } else if (this.props.author.username !== this.props.currentUser.username && this.props.following) {
             return(
-                <button className = "unfollow-button" onClick = { () => this.props.unfollow(this.props.author.id).then(this.toggleFollow()) }>Unfollow</button>
+                <button className = "unfollow-button" onClick = { () => this.props.unfollow(this.props.author.id) }>Unfollow</button>
             )
         } 
     }

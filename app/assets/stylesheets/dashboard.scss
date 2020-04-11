@@ -1,6 +1,20 @@
+.dashboard-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(225px, 1fr));
+    margin: 0 auto;
+}
+.dashboard-left{
+    grid-column: 3;
+}
 .post-navbar, .dashboard-post-index{
-    display: flex;
-    margin: 80px auto;
-    position: relative;
-    width: 600px;
+    margin: 90px auto;
+}
+
+.dashboard-right{
+   grid-column: 6;
+   width: 320px;
+   margin: 90px auto;
+}
+.rec-blogs-title{
+    
 }
