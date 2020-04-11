@@ -1,6 +1,6 @@
-export const fetchFollowers = () => (
+export const fetchFollowers = (user_id) => (
     $.ajax({
-        url: `/api/follows`,
+        url: `/api/users/${user_id}/follows`,
         method: "GET"
     })
 )
@@ -13,9 +13,9 @@ export const follow = (followee_id) => (
     })
 )
 
-export const unfollow = (follower_id) => (
+export const unfollow = (followee_id) => (
     $.ajax({
-        url: `/api/follows/${follower_id}`,
+        url: `/api/follows/${followee_id}`,
         method: "DELETE"
     })
 )

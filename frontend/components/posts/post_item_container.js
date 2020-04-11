@@ -4,6 +4,7 @@ import { openModal } from "../../actions/modal_actions";
 
 
 const mapStateToProps = (state, ownProps) => {
+    debugger;
     return({
         post: ownProps.post,
         author: ownProps.authoringUser,

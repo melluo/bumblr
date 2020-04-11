@@ -5,8 +5,7 @@ import followsReducer from './follows_reducer';
 
 const EntitiesReducer = combineReducers({
     users: usersReducer,
-    posts: postsReducer,
-    follows: followsReducer
+    posts: postsReducer
 });
 
 export default EntitiesReducer;

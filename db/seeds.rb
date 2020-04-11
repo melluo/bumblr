@@ -11,6 +11,7 @@ user2 = User.create(email: "dogsarec@gmail.com", username: "doggydoggynow", pass
 user3 = User.create(email: "dogsare@gmail.com", username: "doggydoggywhat", password: "hunter12")
 demo = User.create(email: "demouser@demo.com", username: "demouser", password: "hunter12") 
 
+#followee, person being followed
 Follow.create(follower_id: demo.id, followee_id: user1.id) #demo follows user1
 Follow.create(follower_id: user1.id, followee_id: user3.id) #user1 follows user3
 Follow.create(follower_id: user1.id, followee_id: user2.id) #user1 follows user2
