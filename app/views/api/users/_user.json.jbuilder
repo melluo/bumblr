@@ -11,8 +11,3 @@ end
 json.following do
     json.array! user.following.pluck(:followee_id)
 end
-
-
-
-
-

@@ -22,14 +22,23 @@ class Dashboard extends React.Component{
            }
         })
         
-        const usersList = unfollowedUsers.map((user) => 
+        const usersList = unfollowedUsers.map((user) => {
+            let avatarUrl;
+            if(!user.avatarUrl){
+                avatarUrl = window.defaultAvatar;
+            } else{
+                avatarUrl = user.avatarUrl;
+            }
+            return(
             <li key = {user.id}>
                 <Avatar 
-                    avatarUrl = {user.avatarUrl}
+                    avatarUrl = {avatarUrl}
                 />
                 {user.username}
                 <button className = "follow-button" onClick = { () => this.props.follow(user.id) }>Follow</button>
-            </li>);
+            </li>
+            )
+        });
 
         return(
             <ul className = "recommended-blogs">

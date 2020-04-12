@@ -24,20 +24,20 @@ class PostNavBar extends React.Component {
             {this.renderAvatar()}
             <div className="post-navbar-container">
                 <section onClick={() => this.props.openModal("Text Post")}>
-                    <div className="text-post-button">Aa</div>
+                    <div className="text-post-button post-button">Aa</div>
                         <span className="button-text">Text</span>
                 </section>
                 <section onClick={() => this.props.openModal("Photo Post")}>
-                    <i className="fas fa-camera-retro"></i>
+                    <i className="fas fa-camera-retro post-button"></i>
                         <span className="button-text">Photo</span>
                 </section>
                 <section onClick={() => this.props.openModal("Quote Post")}>
-                    <i className="fas fa-quote-left"></i>
+                    <i className="fas fa-quote-left post-button"></i>
                         <span className="button-text">Quote</span>
                 </section>
                 <section onClick={() => this.props.openModal("Link Post")}>
-                    <i className="fas fa-link"></i>
-                    <span className="button-text">Link</span>
+                    <i className="fas fa-link post-button"></i>
+                        <span className="button-text">Link</span>
                 </section>
             </div>
             </div>

@@ -8,6 +8,7 @@ class PostIndex extends React.Component {
 
     render(){
         let posts = this.props.posts.map(post => {
+            if(post.author_id === this.props.currentUser.id || this.props.currentUser.following.includes(post.author_id)){
             return(
                 <PostItem
                     key = {post.id}
@@ -17,7 +18,8 @@ class PostIndex extends React.Component {
                     deletePost = {this.props.deletePost}
                 />
             )
-        })
+            }
+        }) 
         let sortedPosts = posts.reverse();
         return(
             <ul className = "post-index">
