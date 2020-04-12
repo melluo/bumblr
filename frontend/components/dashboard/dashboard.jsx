@@ -2,6 +2,7 @@ import React from "react";
 import PostNavBar from "../posts_navbar/posts_navbar_container";
 import NavBar from "../navbar/navbar_container";
 import PostIndex from "../posts/post_index_container";
+import Avatar from "../avatar/avatar";
 
 class Dashboard extends React.Component{
     constructor(props){
@@ -20,12 +21,19 @@ class Dashboard extends React.Component{
                unfollowedUsers.push(user);
            }
         })
+        
         const usersList = unfollowedUsers.map((user) => 
-            <li key = {user.id}>{user.username} <button className = "follow-button" onClick = { () => this.props.follow(user.id) }>Follow</button></li>);
+            <li key = {user.id}>
+                <Avatar 
+                    avatarUrl = {user.avatarUrl}
+                />
+                {user.username}
+                <button className = "follow-button" onClick = { () => this.props.follow(user.id) }>Follow</button>
+            </li>);
 
         return(
             <ul className = "recommended-blogs">
-                <h3 className = "rec-blogs-title">Recommended Blogs</h3>
+                <h1 className = "rec-blogs-title">Recommended Blogs</h1>
                 {usersList}
             </ul>
         )

@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-    before_action :require_logged_in!, only: [:index, :show]
+    # before_action :require_logged_in!, only: [:index, :show]
     def create
         @user = User.new(user_params)
         if @user.save 
@@ -23,6 +23,6 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :username)
+        params.require(:user).permit(:email, :password, :username, :avatar)
     end
 end

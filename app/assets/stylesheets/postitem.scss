@@ -1,7 +1,12 @@
+.posts{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    width: 690px;
+}
 .post-container{
     width: 540px;
     position: relative;
-    top: -60px;
     color: black;
     padding-top:15px;
     padding-bottom: 12px;
@@ -122,3 +127,6 @@
     background: transparent;
     font-weight: 600;
 }
+
+
+

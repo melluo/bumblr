@@ -4,17 +4,54 @@
     margin: 0 auto;
 }
 .dashboard-left{
+    margin: 90px auto;
     grid-column: 3;
 }
-.post-navbar, .dashboard-post-index{
-    margin: 90px auto;
-}
 
+.dashboard-post-index{
+    margin: 20px auto;
+    position: relative;
+    grid-column: 3;
+}
 .dashboard-right{
    grid-column: 6;
-   width: 320px;
+   width: 300px;
    margin: 90px auto;
 }
+
 .rec-blogs-title{
-    
+    text-align: left;
+    width: 300px;
+    border-bottom: 2px solid rgba(255,255,255,.13);
+    font-size: 21px;
+    font-weight: 700px;
+    color: white;
+    line-height: 1.2;
+    padding-bottom: 10px;
+}
+.recommended-blogs > li {
+    list-style: none;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    font-weight: bold;
+}
+.recommended-blogs > li:hover{
+    background-color: rgba(255,255,255,.07);
+    outline: none;
+}
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+.recommended-blogs > li > .avatar-container > .user-avatar{
+    width: 37px;
+    height: 37px;
+}
+.recommended-blogs > li > .avatar-container{
+    height: 37px;
 }

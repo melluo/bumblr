@@ -5,8 +5,7 @@ class NavBar extends React.Component {
     constructor(props){
         super(props);
     }
-
- 
+    
     renderLeftNav(){
         return(
         <section className = "nav-left">

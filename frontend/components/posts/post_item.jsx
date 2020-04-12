@@ -1,5 +1,5 @@
 import React from "react";
-
+import Avatar from "../avatar/avatar";
 
 class PostItem extends React.Component{
     constructor(props) {
@@ -130,8 +130,23 @@ class PostItem extends React.Component{
             )
         } 
     }
+    renderAvatar(){
+        let avatarUrl;
+        if (!this.props.author.avatarUrl){
+            avatarUrl = window.defaultAvatar;
+        } else{
+            avatarUrl = this.props.author.avatarUrl;
+        }
+        return(
+            <Avatar
+                avatarUrl = {avatarUrl}
+            />
+        )
+    }
     render(){
         return(
+            <div className = "posts">
+            {this.renderAvatar()}
             <div className = "post-container">
                 <div className = "post-header">
                     {this.props.author.username}
@@ -146,6 +161,7 @@ class PostItem extends React.Component{
                     </li>
                     {this.renderEdit()}
                 </ul>   
+            </div>
             </div>
         )
     }
