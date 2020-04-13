@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
+#delete everything first
+User.all.each do |user|
+    user.avatar.purge if user.avatar
+    user.destroy
+end
+User.destroy_all
+
 user1 = User.create(email: "shiba@gmail.com", username: "shiba-inosuke", password: "hunter12")
 user2 = User.create(email: "flowerboy@gmail.com", username: "flowerboy", password: "hunter12")
 user3 = User.create(email: "samoyed@gmail.com", username: "samoyed", password: "hunter12")

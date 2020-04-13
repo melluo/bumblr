@@ -31,8 +31,8 @@ export const createUser = (userForm) => dispatch => {
        return dispatch(receiveCurrentUser(user));
     }, (errors) => {
         return dispatch(receiveSessionErrors(errors.responseJSON));
-        //comes in as an array, when you create a user also recieve its errors
-    }); //after signup promise is fullfilled, dispatch to change state with recieve current user and errors (errors.responseJSON)
+        //comes in as an array, when you create a user also receive its errors
+    }); //after signup promise is fullfilled, dispatch to change state with receive current user and errors (errors.responseJSON)
 };
 export const login = (userForm) => dispatch => {
     return SessionApiUtils.login(userForm).then( (user) => {
