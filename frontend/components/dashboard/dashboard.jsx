@@ -12,6 +12,7 @@ class Dashboard extends React.Component{
     componentDidMount() {
         this.props.fetchAllUsers();
         this.props.fetchAllPosts();
+        // this.props.fetchUserLikes(this.props.currentUser.id);
     }
     
     renderRecommendedBlogs(){
@@ -30,7 +31,7 @@ class Dashboard extends React.Component{
                 avatarUrl = user.avatarUrl;
             }
             return(
-            <li key = {user.id}>
+            <li className = "rec-users" key = {user.id}>
                 <Avatar 
                     avatarUrl = {avatarUrl}
                 />
@@ -51,14 +52,15 @@ class Dashboard extends React.Component{
         return(
             <div className = "dashboard-container">
                 <NavBar />
-                <div className = "dashboard-left">
+                <section className = "empty-width"></section>
+                <section className = "dashboard-left">
                     <section className = "post-navbar">
                         <PostNavBar />
                     </section>
                     <section className = "dashboard-post-index">
                         <PostIndex />
                     </section>
-                </div>
+                </section>
                 <section className = "dashboard-right">
                     {this.renderRecommendedBlogs()}
                 </section>

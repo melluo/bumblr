@@ -1,20 +1,24 @@
+
 .dashboard-container{
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(225px, 1fr));
+    grid-auto-columns: max-content;
     margin: 0 auto;
+    width: 100vw;
+}
+.empty-width{
+    min-width: 23vw;
 }
 .dashboard-left{
     margin: 90px auto;
-    grid-column: 3;
 }
 
 .dashboard-post-index{
     margin: 20px auto;
     position: relative;
-    grid-column: 3;
 }
+
 .dashboard-right{
-   grid-column: 6;
+   grid-column: 700;
    width: 300px;
    margin: 90px auto;
 }

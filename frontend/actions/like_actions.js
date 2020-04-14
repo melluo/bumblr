@@ -30,8 +30,8 @@ export const fetchUserLikes = (user_id) => dispatch =>
     dispatch(receiveUserLikes(likes))
     );
 
-export const like = (post_id) => dispatch => 
-    LikeApiUtil.like(post_id).then((like) =>
+export const like = (post_id, user_id) => dispatch => 
+    LikeApiUtil.like(post_id, user_id).then((like) =>
     dispatch(receiveLike(like))
     );
 

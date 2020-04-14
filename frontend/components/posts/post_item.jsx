@@ -91,33 +91,55 @@ class PostItem extends React.Component{
     }
     renderEdit(){
         const post = this.props.post;
-
-        switch(post.post_type){
-            case "text":
-                return(
-                <li onClick = {() => this.props.openModal("Edit Text Post", this.props.post)}>
-                    <i className = "fas fa-pencil-alt"></i>
-                </li>
-                )
-            case "photo":
-                return(
-                <li onClick = {() => this.props.openModal("Edit Photo Post", this.props.post)}>
-                    <i className = "fas fa-pencil-alt"></i>
-                </li>
-                )
-            case "quote":
-                return(
-                <li onClick = {() => this.props.openModal("Edit Quote Post", this.props.post)}>
-                    <i className = "fas fa-pencil-alt"></i>
-                </li>    
-                )
-            case "link":
-                return(
-                <li onClick = {() => this.props.openModal("Edit Link Post", this.props.post)}>
-                    <i className = "fas fa-pencil-alt"></i>
-                </li>    
-                )
+        if(post.author.id === this.props.currentUser.id){
+            switch(post.post_type){
+                case "text":
+                    return(
+                    <li onClick = {() => this.props.openModal("Edit Text Post", this.props.post)}>
+                        <i className = "fas fa-pencil-alt"></i>
+                    </li>
+                    )
+                case "photo":
+                    return(
+                    <li onClick = {() => this.props.openModal("Edit Photo Post", this.props.post)}>
+                        <i className = "fas fa-pencil-alt"></i>
+                    </li>
+                    )
+                case "quote":
+                    return(
+                    <li onClick = {() => this.props.openModal("Edit Quote Post", this.props.post)}>
+                        <i className = "fas fa-pencil-alt"></i>
+                    </li>    
+                    )
+                case "link":
+                    return(
+                    <li onClick = {() => this.props.openModal("Edit Link Post", this.props.post)}>
+                        <i className = "fas fa-pencil-alt"></i>
+                    </li>    
+                    )
+            }
         }
+    }
+    renderDelete(){
+        if(this.props.post.author.id === this.props.currentUser.id){
+            return(
+                <li onClick = {() => this.props.deletePost(this.props.post.id)}>
+                        <i className = "fas fa-trash-alt"></i>
+                </li>
+            )
+        }
+    }
+    renderLike(){
+        if(this.props.liked){
+            return(
+                <li onClick = {() => this.props.unlike(this.props.post.id)}><i className = "fas fa-heart"></i></li>
+            )
+        } else {
+            return(
+                <li onClick = {() => this.props.like(this.props.post.id, this.props.currentUser.id)}><i className = "far fa-heart"></i></li>
+            )
+        }
+
     }
     renderFollow(){
         if(this.props.author.username !== this.props.currentUser.username && !this.props.following){
@@ -156,9 +178,8 @@ class PostItem extends React.Component{
                     {this.renderPost()}
                 </div>
                 <ul className = "post-options">
-                    <li onClick = {() => this.props.deletePost(this.props.post.id)}>
-                        <i className = "fas fa-trash-alt"></i>
-                    </li>
+                    {this.renderLike()}
+                    {this.renderDelete()}
                     {this.renderEdit()}
                 </ul>   
             </div>

@@ -5,7 +5,7 @@ class PostIndex extends React.Component {
     constructor(props){
         super(props);
     }
-
+   
     render(){
         let posts = this.props.posts.map(post => {
             if(post.author_id === this.props.currentUser.id || this.props.currentUser.following.includes(post.author_id)){

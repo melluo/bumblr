@@ -14,8 +14,8 @@ class Api::LikesController < ApplicationController
         end
     end
     def destroy
-        @like = Like.find(params[:id])
+        @like = Like.find_by(user_id: current_user.id, post_id: params[:id])
         @like.destroy
-        render :show  #this line is necessary for line 22 of like actions to find the like
+        render :show 
     end
-end
+end 

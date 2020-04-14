@@ -11,3 +11,7 @@ end
 json.following do
     json.array! user.following.pluck(:followee_id)
 end
+
+json.likes do
+    json.array! user.likes.pluck(:post_id)
+end
