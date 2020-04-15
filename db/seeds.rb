@@ -41,6 +41,7 @@ demo_avatar = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/tumblr_ovpqz2N
 demo.avatar.attach(io: demo_avatar, filename: "cutiepie.jpg")
 # #followee, person being followed
 Follow.create(follower_id: demo.id, followee_id: user2.id) #demo follows user2
+Follow.create(follower_id: demo.id, followee_id: user1.id) #demo follows user1
 Follow.create(follower_id: user1.id, followee_id: user3.id) #user1 follows user3
 Follow.create(follower_id: user1.id, followee_id: user2.id) #user1 follows user2
 
@@ -54,7 +55,7 @@ background2 = Post.create(post_type: "photo", author_id: user2.id)
 background2.image.attach(io: background2_image, filename: "background2.jfif")
 
 background3_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-gs4HZsOnjx4-unsplash.jpg")
-background3 = Post.create(post_type: "photo", author_id: demo.id)
+background3 = Post.create(post_type: "photo", author_id: user1.id)
 background3.image.attach(io: background3_image, filename: "background3.jfif")
 
 background4_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-QQGotknRCrw-unsplash.jpg")
