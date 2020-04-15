@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        openModal: modal => dispatch(openModal(modal))
+        openModal: (modal) => dispatch(openModal(modal))
     }
 }
 

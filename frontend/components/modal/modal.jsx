@@ -9,8 +9,9 @@ import NewQuotePost from "../posts/post_forms/new_quote_container";
 import EditQuotePost from "../posts/post_forms/edit_quote_container";
 import NewLinkPost from "../posts/post_forms/new_link_container";
 import EditLinkPost from "../posts/post_forms/edit_link_container";
+import ProfileDropdown from "../navbar/profile_dropdown_container";
 
-const Modal = ({modal}) => {
+const Modal = ({modal, closeModal}) => {
   if (!modal) {
     return null;
   }
@@ -40,16 +41,32 @@ const Modal = ({modal}) => {
     case "Edit Link Post":
         component = <EditLinkPost />;
         break;
+    case "Profile Dropdown":
+        component = <ProfileDropdown />;
+        break;
     default:
         return null;
   }
-
-  return (
+  let toggleModal;
+  if (modal.modal === "Profile Dropdown"){
+    toggleModal =
+    <div className = "dropdown-background" onClick = {closeModal}>
+      <div className = "dropdown-child" onClick = {e => e.stopPropagation()}>
+      { component }
+      </div>
+    </div> 
+  } else {
+    toggleModal = 
     <div className = "modal-background">
       <div className = "modal-child" id = "modal-child" onClick = {e => e.stopPropagation()}>
-        { component }
+      { component }
       </div>
     </div>
+  }
+  return (
+    <>
+      {toggleModal}
+    </>
   );
 }
 

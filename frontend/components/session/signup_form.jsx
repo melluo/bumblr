@@ -48,7 +48,7 @@ class SignUpForm extends React.Component {
             return(
                 <>
                 <img className = "background-img" src = {post.imageUrl}/>
-                <div className = "background-author">Posted by {post.author.username} <img className = "background-author-img" src = {post.author.avatar}/> </div>
+                <div className = "background-author">Posted by <span className = "background-author-name">{post.author.username}</span></div>
                 </>
             )
         })
