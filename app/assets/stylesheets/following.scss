@@ -1,0 +1,70 @@
+.following-container{
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 540px;
+    background: white;
+    border-radius: 13px;
+}
+
+.following-length{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 18px 0;
+}
+
+.following-length:link{
+    color: #444444;
+    cursor: pointer;
+}
+
+.following-length:visited{
+    color: #444444;
+    cursor: pointer;
+}
+
+.following-list > li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2px 30px;
+    height: 50px;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.following-list > li > span > .avatar-container > .user-avatar{
+    width: 40px;
+    height: 40px;
+}
+
+.following-list > li > span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.following-list > li:last-child{
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+.following-user{  
+    padding-bottom: 24px;
+    padding-left: 20px;
+}
+
+.unfollow-but{
+    border: 1px solid rgb(191, 191, 191);
+    border-radius: 3px;
+    width: 85px;
+    height: 28px;
+    color: rgba(0, 0, 0, .6);
+    background: white;
+    font-weight: bold;
+}

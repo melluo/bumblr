@@ -6,6 +6,7 @@ import SignupFormContainer from "./session/signup_container";
 import LogInFormContainer from "./session/login_container";
 import Splash from "./splash/splash_container";
 import DashboardContainer from "./dashboard/dashboard_container";
+import FollowingContainer from "./following_page/following_container";
 // import FrontPageContainer from "./frontpage/frontpage_container";
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
         <AuthRoute path = "/login" component = {LogInFormContainer}/>
         <AuthRoute path = "/signup" component = {SignupFormContainer}/>
         <ProtectedRoute path = "/dashboard" component = {DashboardContainer}/>
+        <ProtectedRoute path = "/following" component = {FollowingContainer}/>
         <AuthRoute exact path = "/" component = {Splash} />
     </Switch>
     </div>

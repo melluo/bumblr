@@ -3,8 +3,8 @@
     display: grid;
     position: fixed;
 	grid-template-columns: .25fr .5fr .5fr .5fr .5fr .5fr .25fr;
-    top: 0px;
-    height: 46px;
+    top: 0;
+    height: 50px;
     align-items: center;
     z-index: 2;
 }
