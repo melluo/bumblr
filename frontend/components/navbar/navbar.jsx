@@ -15,33 +15,14 @@ class NavBar extends React.Component {
         </section>
         )
     }
-
-    renderAccountDropdown(){
-         return(
-            <div className = "dropdown-menu">
-                <i className = "fas fa-user"></i>
-                <ul className = "dropdown-content">
-                    <li>
-                        <span>Account</span>
-                        <span 
-                            className = "logout-button" 
-                            onClick = { () => this.props.logout()}
-                        >Logout
-                        </span>
-                    </li>
-                    <li>Likes</li>
-                    <li>Following</li>
-                </ul> 
-            </div>
-        )
-    }
+    
     renderRightNav(){
         return(
         <ul className = "nav-right">
             <li>
                 <Link to = "/dashboard" className = "home-button"><i className = "fas fa-home"></i></Link>
             </li>
-                {this.renderAccountDropdown()}
+            <i className = "fas fa-user" onClick={() => this.props.openModal("Profile Dropdown")}></i>
             <li>
                 <a href = "/"><i className = "fab fa-github"></i></a>
             </li>
