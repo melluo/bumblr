@@ -4,7 +4,7 @@ import { Route , Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import SignupFormContainer from "./session/signup_container";
 import LogInFormContainer from "./session/login_container";
-import Splash from "./splash/splash";
+import Splash from "./splash/splash_container";
 import DashboardContainer from "./dashboard/dashboard_container";
 // import FrontPageContainer from "./frontpage/frontpage_container";
 

@@ -58,7 +58,7 @@ class NavBar extends React.Component {
     render(){
         if (this.props.currentUser){
             return (
-                <div className = "navbar">
+                <div className = "navbar navbar-user">
                     {this.renderLeftNav()}
                     {this.renderRightNav()}
                 </div>

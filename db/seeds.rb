@@ -13,6 +13,14 @@ User.all.each do |user|
 end
 User.destroy_all
 
+Post.all.each do |post|
+    post.image.purge if post.image
+    post.destroy
+end
+Post.destroy_all
+Follow.destroy_all
+Like.destroy_all
+
 user1 = User.create(email: "shiba@gmail.com", username: "shiba-inosuke", password: "hunter12")
 user2 = User.create(email: "flowerboy@gmail.com", username: "flowerboy", password: "hunter12")
 user3 = User.create(email: "samoyed@gmail.com", username: "samoyed", password: "hunter12")
@@ -32,12 +40,36 @@ user4.avatar.attach(io: user4_avie, filename: "whereami.png")
 demo_avatar = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/tumblr_ovpqz2NcGW1v1u7rro4_500.jpg")
 demo.avatar.attach(io: demo_avatar, filename: "cutiepie.jpg")
 # #followee, person being followed
-Follow.create(follower_id: demo.id, followee_id: user1.id) #demo follows user1
+Follow.create(follower_id: demo.id, followee_id: user2.id) #demo follows user2
 Follow.create(follower_id: user1.id, followee_id: user3.id) #user1 follows user3
 Follow.create(follower_id: user1.id, followee_id: user2.id) #user1 follows user2
 
 #posts
-text1 = Post.create(title: "Hello", body: "World", tags:"my first post", post_type: "text", author_id: demo.id)
+background1_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/tadeusz-lakota-Xh4yVFNT5iw-unsplash.jpg")
+background1 = Post.create(post_type: "photo", author_id: user2.id)
+background1.image.attach(io: background1_image, filename: "background1.jfif")
+
+background2_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/andre-boysen-GWWHCY3K-U0-unsplash.jpg")
+background2 = Post.create(post_type: "photo", author_id: user2.id)
+background2.image.attach(io: background2_image, filename: "background2.jfif")
+
+background3_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-gs4HZsOnjx4-unsplash.jpg")
+background3 = Post.create(post_type: "photo", author_id: demo.id)
+background3.image.attach(io: background3_image, filename: "background3.jfif")
+
+background4_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-QQGotknRCrw-unsplash.jpg")
+background4 = Post.create(post_type: "photo", author_id: user2.id)
+background4.image.attach(io: background4_image, filename: "background4.jfif")
+
+# background5_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-gs4HZsOnjx4-unsplash.jpg")
+# background5 = Post.create(post_type: "photo", author_id: demo.id)
+# background5.image.attach(io: background5_image, filename: "background5.jfif")
+
+# background6_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-gs4HZsOnjx4-unsplash.jpg")
+# background6 = Post.create(post_type: "photo", author_id: demo.id)
+# background6.image.attach(io: background6_image, filename: "background6.jfif")
+
+text1 = Post.create(title: "hello", body: "world", tags:"my first post", post_type: "text", author_id: user4.id)
 text2 = Post.create(title: "Test", body: "Ok", post_type: "text", author_id: user3.id)
 
 #likes

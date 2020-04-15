@@ -13,6 +13,7 @@ class SignUpForm extends React.Component {
     }
     componentDidMount(){
         this.props.clearErrors();
+        this.props.fetchAllPosts();
     }
     handleDemo(e){
         e.preventDefault();
@@ -42,11 +43,23 @@ class SignUpForm extends React.Component {
             </ul>
         )
     }
+    renderBackground(){
+        let backgrounds = this.props.posts.slice(0, 4).map((post) => {
+            return(
+                <>
+                <img className = "background-img" src = {post.imageUrl}/>
+                <div className = "background-author">Posted by {post.author.username} <img className = "background-author-img" src = {post.author.avatar}/> </div>
+                </>
+            )
+        })
+        return backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    }
     render() {
         return (
+            <>
+            {this.renderBackground()}
             <div className="form-container">
                 <h2 className="logo"> bumblr </h2>
-                
                 <form className="session-form" onSubmit = {this.handleSubmit}>
                     <input 
                         type = "text"
@@ -77,6 +90,7 @@ class SignUpForm extends React.Component {
                     <button className="demo-login" onClick = {this.handleDemo}> Demo Login </button>
                 </form>
             </div>
+            </>
         );
     }
 }
