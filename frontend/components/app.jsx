@@ -7,6 +7,7 @@ import LogInFormContainer from "./session/login_container";
 import Splash from "./splash/splash_container";
 import DashboardContainer from "./dashboard/dashboard_container";
 import FollowingContainer from "./following_page/following_container";
+import LikesContainer from "./likes_page/likes_container";
 // import FrontPageContainer from "./frontpage/frontpage_container";
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         <AuthRoute path = "/signup" component = {SignupFormContainer}/>
         <ProtectedRoute path = "/dashboard" component = {DashboardContainer}/>
         <ProtectedRoute path = "/following" component = {FollowingContainer}/>
+        <ProtectedRoute path = "/likes" component = {LikesContainer}/>
         <AuthRoute exact path = "/" component = {Splash} />
     </Switch>
     </div>

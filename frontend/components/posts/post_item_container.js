@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
         author: ownProps.authoringUser,
         currentUser: currentUser,
         following: currentUser.following.includes(ownProps.authoringUser.id),
-        liked: currentUser.likes.includes(ownProps.post.id),
+        liked: currentUser.likes.includes(ownProps.post.id), 
         users: ownProps.users
     })
 }

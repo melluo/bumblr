@@ -44,13 +44,12 @@ const usersReducer = (oldState = {}, action) => {
             let user = action.like.user_id;
             let post = action.like.post_id;
             newState[user].likes.push(post);
-            debugger;
             return newState;
         case REMOVE_LIKE:
             user = action.like.user_id;
             post = action.like.post_id;
             const index3 = newState[user].likes.indexOf(post);
-            newState[user].likes.splice(index3);
+            newState[user].likes.splice(index3, 1);
             return newState;
         default:
             return oldState;
