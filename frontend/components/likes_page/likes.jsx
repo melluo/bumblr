@@ -60,12 +60,21 @@ class Likes extends React.Component{
                 />
                 )
         })
-        return( 
-            <div className="liked-posts-container">
-                <h1 className = "like-length">{likeLength} likes</h1>
-                {posts}
-            </div>
-        )
+        if (likeLength > 0){
+            return( 
+                <div className = "liked-posts-container">
+                    <h1 className = "like-length">{likeLength} likes</h1>
+                    {posts}
+                </div>
+            )
+        } else{
+            return(
+                <div className = "liked-posts-container">
+                    <h1 className = "like-length">{likeLength} likes</h1>
+                    <div className = "no-likes">No posts available.</div>
+                </div>
+            )
+        }
     }
  
     render(){
