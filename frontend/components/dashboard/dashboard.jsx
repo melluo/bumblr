@@ -31,7 +31,7 @@ class Dashboard extends React.Component{
             }
             return(
             <li className = "rec-users" key = {user.id}>
-                <Avatar 
+                <Avatar
                     avatarUrl = {avatarUrl}
                 />
                 {user.username}

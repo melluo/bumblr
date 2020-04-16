@@ -3,7 +3,6 @@ import Dashboard from "./dashboard";
 import { fetchAllPosts } from "../../actions/post_actions";
 import { fetchAllUsers } from "../../actions/user_actions";
 import { follow } from "../../actions/follow_actions";
-import { fetchUserLikes } from "../../actions/like_actions";
 
 const mapStateToProps = (state) => {
     return{

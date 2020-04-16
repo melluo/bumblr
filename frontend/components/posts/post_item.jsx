@@ -21,8 +21,13 @@ class PostItem extends React.Component{
                 appendHash = "#".concat(post.tags);
                 tags = <li key = {post.tags}>{appendHash}</li>
             };
+        } 
+        let tagContainer;
+        if (post.tags){
+            tagContainer = <ul className = "tag-container">{tags}</ul>
+        } else{
+            tagContainer = <span></span>
         }
-
         let postBody;
         if ( post.body ){
             postBody = <p className="item-body">{post.body}</p>
@@ -58,7 +63,7 @@ class PostItem extends React.Component{
                     <div className = "text-item">
                         <h3 className = "item-title">{post.title}</h3>
                         {postBody}
-                        <ul className = "tag-container">{tags}</ul>
+                        {tagContainer}
                     </div>
                 )
             case "photo":
@@ -66,7 +71,7 @@ class PostItem extends React.Component{
                     <div>
                         <img className = "photo-item" src = {post.imageUrl}/>
                         {postBody}
-                        <ul className = "tag-container">{tags}</ul>
+                        {tagContainer}
                     </div>
                 )
             case "quote":
@@ -74,7 +79,7 @@ class PostItem extends React.Component{
                     <div>
                         <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
                         <p className = "quote-source">{quoteSource}</p>
-                        <ul className = "tag-container">{tags}</ul>
+                        {tagContainer}
                     </div>
                 )
             case "link":
@@ -84,7 +89,7 @@ class PostItem extends React.Component{
                             <h3 className = "link-title">{cropLinkTitle}</h3>
                             <p className = "link-body">{post.body}</p>
                         </a>
-                        <ul className = "tag-container">{tags}</ul>
+                        {tagContainer}
                     </div>
                 )
         }
@@ -132,11 +137,15 @@ class PostItem extends React.Component{
     renderLike(){
         if(this.props.liked){
             return(
-                <li onClick = {() => this.props.unlike(this.props.post.id)}><i className = "fas fa-heart"></i></li>
+                <li onClick = {() => this.props.unlike(this.props.post.id)}>
+                    <i className = "fas fa-heart"></i>
+                </li>
             )
         } else {
             return(
-                <li onClick = {() => this.props.like(this.props.post.id, this.props.currentUser.id)}><i className = "far fa-heart"></i></li>
+                <li onClick = {() => this.props.like(this.props.post.id, this.props.currentUser.id)}>
+                    <i className = "far fa-heart"></i>
+                </li>
             )
         }
 
@@ -161,6 +170,8 @@ class PostItem extends React.Component{
         }
         return(
             <Avatar
+                authorId = {this.props.author.id}
+                openModal = {() => this.props.openModal("User Show")}
                 avatarUrl = {avatarUrl}
             />
         )

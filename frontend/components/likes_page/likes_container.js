@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Likes from "./likes";
-import { fetchUserLikes, unlike } from "../../actions/like_actions";
+import { unlike } from "../../actions/like_actions";
 import { fetchAllUsers } from "../../actions/user_actions";
 import { fetchAllPosts } from "../../actions/post_actions"
 import { deletePost } from "../../actions/post_actions";

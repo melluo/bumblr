@@ -1,0 +1,17 @@
+.show-posts > .posts > .avatar-container{
+    display: none;
+}
+
+.user-show-container{
+    background: white;
+    min-height: 100vh;
+}
+.show-posts > .posts > .post-container{
+    border: 1px solid rgba(0, 0, 0, .13);
+}
+
+.avatar-and-username > .avatar-container > .user-avatar{
+    width: 96px;
+    height: 96px;
+    
+}

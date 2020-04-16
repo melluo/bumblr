@@ -10,6 +10,7 @@ import EditQuotePost from "../posts/post_forms/edit_quote_container";
 import NewLinkPost from "../posts/post_forms/new_link_container";
 import EditLinkPost from "../posts/post_forms/edit_link_container";
 import ProfileDropdown from "../navbar/profile_dropdown_container";
+import UserShow from "../user_show/user_show_container";
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -44,6 +45,9 @@ const Modal = ({modal, closeModal}) => {
     case "Profile Dropdown":
         component = <ProfileDropdown />;
         break;
+    case "User Show":
+        component = <UserShow authorId = {event.target.getAttribute("authorid")} />;
+        break;
     default:
         return null;
   }
@@ -52,6 +56,13 @@ const Modal = ({modal, closeModal}) => {
     toggleModal =
     <div className = "dropdown-background" onClick = {closeModal}>
       <div className = "dropdown-child" onClick = {e => e.stopPropagation()}>
+      { component }
+      </div>
+    </div> 
+  } else if (modal.modal === "User Show") {
+    toggleModal =
+    <div className = "show-background" onClick = {closeModal}>
+      <div className = "show-child" onClick = {e => e.stopPropagation()}>
       { component }
       </div>
     </div> 

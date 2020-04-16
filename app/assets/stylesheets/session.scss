@@ -27,10 +27,8 @@
 .session-form > input {
     padding: 12px 10px;
     width: 280px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Trebuchet MS", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
     font-size: 16px;
-
- 
 }
 .demo-login{
     padding: 10px;
@@ -38,8 +36,8 @@
     height: 50px;
     border-radius: 3px;
     border: none;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+    font-family: "Trebuchet MS", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
     font-weight: bold;
     color: #444444;
 }
@@ -56,7 +54,7 @@
     justify-content: center;
     background-color:#00B8FF; 
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Trebuchet MS", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: bold;
     color: white;
@@ -96,7 +94,7 @@ form > #username{
     list-style: none;
     padding: 10px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+
     color: white;
 }
 .form-errors > li:first-child{

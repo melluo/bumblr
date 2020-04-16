@@ -1,9 +1,16 @@
+
 .user-avatar{
     width: 64px;
     height: 64px;
-    border-radius: 3px;    
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 65px;
+    margin-bottom: 20px;
 }
 
 .avatar-container{
- height: 64px;   
+    position: relative;
 }

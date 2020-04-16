@@ -34,8 +34,11 @@
     font-weight: 700;
     justify-content: center;
     width: 100%;
+    text-shadow: 6px 4px 0px rgba(0,0,0,0.2);
 }
-
+.description{
+    text-shadow: 6px 3px 0px rgba(0,0,0,0.2);
+}
 .signup{
     background-color:#00B8FF; 
     width: 280px;

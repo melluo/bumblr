@@ -4,7 +4,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(52, 82, 111, .95);
     z-index: 502;
 }
 
@@ -27,13 +27,30 @@
     display: grid;
     grid-template-columns: .25fr .5fr .5fr .5fr .5fr .5fr .25fr;
 }
+
 .dropdown-child{
     position: absolute;
     top: 46px;
-    
     grid-column: 6;
 }
 
+.show-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(52, 82, 111, .95);
+    z-index: 502;
+}
+.show-child{
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden
+}
 .close {
     cursor: pointer;
 }

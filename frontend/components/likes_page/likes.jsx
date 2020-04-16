@@ -60,11 +60,12 @@ class Likes extends React.Component{
                 />
                 )
         })
+        let sortPosts = posts.reverse();
         if (likeLength > 0){
             return( 
                 <div className = "liked-posts-container">
-                    <h1 className = "like-length">{likeLength} likes</h1>
-                    {posts}
+                    <h1 className = "like-length">{likeLength} {likeLength === 1 ? "like" : "likes"}</h1>
+                    {sortPosts}
                 </div>
             )
         } else{
