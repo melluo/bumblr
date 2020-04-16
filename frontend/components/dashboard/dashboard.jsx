@@ -12,7 +12,6 @@ class Dashboard extends React.Component{
     componentDidMount() {
         this.props.fetchAllUsers();
         this.props.fetchAllPosts();
-        // this.props.fetchUserLikes(this.props.currentUser.id);
     }
     
     renderRecommendedBlogs(){
