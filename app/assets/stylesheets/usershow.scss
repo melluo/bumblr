@@ -3,7 +3,7 @@
 }
 
 .user-show-container{
-    background: white;
+    background: #fafafa;
     min-height: 100vh;
 }
 .show-posts > .posts > .post-container{
@@ -13,5 +13,27 @@
 .avatar-and-username > .avatar-container > .user-avatar{
     width: 96px;
     height: 96px;
-    
+    border-radius: 50%;
+    border: 5px solid #444444;
+    cursor: inherit;
 }
+
+.avatar-and-username > .avatar-container{
+    height: 96px;
+    margin-top: 60px;
+}
+.avatar-and-username{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #444444;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.show-username{
+    margin-top: 8px;
+    margin-bottom: 60px;
+}
+

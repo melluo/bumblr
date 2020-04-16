@@ -14,6 +14,8 @@ class PostNavBar extends React.Component {
         }
         return(
             <Avatar
+                authorId = {this.props.currentUser.id}
+                openModal = {() => this.props.openModal("User Show")}
                 avatarUrl = {avatarUrl}
             />
         )

@@ -19,9 +19,12 @@ class Following extends React.Component{
                 followingLength += 1;
                 return(
                     <li key = {user.id}>
-                    <span><Avatar
-                        avatarUrl = {user.avatarUrl}
-                    />
+                    <span>
+                        <Avatar
+                            authorId = {user.id}
+                            openModal = {() => this.props.openModal("User Show")}
+                            avatarUrl = {user.avatarUrl}
+                        />
                     <span className = "following-user">{user.username}</span></span>
                     <button className = "unfollow-but" onClick = {() => this.props.unfollow(user.id)}>Unfollow</button>
                     </li>

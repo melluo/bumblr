@@ -32,6 +32,8 @@ class Dashboard extends React.Component{
             return(
             <li className = "rec-users" key = {user.id}>
                 <Avatar
+                    authorId = {user.id}
+                    openModal = {() => this.props.openModal("User Show")}
                     avatarUrl = {avatarUrl}
                 />
                 {user.username}

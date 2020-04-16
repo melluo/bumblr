@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
                 </>
             )
         })
-        return backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        return backgrounds[3];
     }
     render(){
        
