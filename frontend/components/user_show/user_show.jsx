@@ -38,11 +38,19 @@ class UserShow extends React.Component{
             }
         })
         let sortPosts = posts.reverse();
-        return(
-            <div className = "show-posts">
-            {sortPosts}
-            </div>
-        )
+        if (posts.every((post) => typeof post === "undefined")){
+            return(
+                <div className = "show-posts">
+                    <div className = "no-show-posts">No posts to display.</div>
+                </div>
+            )
+        } else{
+            return(
+                <div className = "show-posts">
+                {sortPosts}
+                </div>
+            )
+        }
     }
     render(){
         return(
