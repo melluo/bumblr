@@ -30,26 +30,36 @@
 
 .dropdown-child{
     position: absolute;
-    top: 46px;
+    top: 50px;
     grid-column: 6;
 }
 
-.show-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(52, 82, 111, .95);
-    z-index: 502;
-}
 .show-child{
     position: absolute;
     top: 0;
     right: 0;
     max-height: 100vh;
     overflow-y: auto;
-    overflow-x: hidden
+    overflow-x: rgba(44, 81, 116, 0.95)
+}
+
+.search-background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 502;
+    display: grid;
+	grid-template-columns: .25fr .05fr .5fr .5fr .5fr .5fr .5fr .05fr .25fr;
+}
+
+.search-child{
+    grid-column: 3;
+    position: absolute;
+    top: 50px;
+    width: 479px;
+    
 }
 .close {
     cursor: pointer;

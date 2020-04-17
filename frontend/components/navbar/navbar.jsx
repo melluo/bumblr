@@ -1,19 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from "./search/searchbar_container";
 
 class NavBar extends React.Component {
     constructor(props){
         super(props);
     }
     
-    renderLeftNav(){
+    renderLogo(){
         return(
-        <section className = "nav-left">
+        <section className = "nav-logo">
             <Link to = "/" className = "b">b</Link>
-            <i className = "fas fa-search"></i>
-            <input className = "search-bar" placeholder = "Search bumblr"></input>
         </section>
         )
+    }
+    
+    renderSearch(){
+        if(this.props.currentUser){
+            return(
+                <section className = "nav-search">
+                    <SearchBar />
+                </section>
+            )
+        } else{
+            return(
+                <section className = "nav-search">
+                    <i className = "fas fa-search"></i>
+                    <input 
+                        className = "search-bar" 
+                        placeholder = "Search bumblr">
+                    </input>
+                </section>
+            )
+        }
     }
     
     renderRightNav(){
@@ -40,14 +59,16 @@ class NavBar extends React.Component {
         if (this.props.currentUser){
             return (
                 <div className = "navbar navbar-user">
-                    {this.renderLeftNav()}
+                    {this.renderLogo()}
+                    {this.renderSearch()}
                     {this.renderRightNav()}
                 </div>
             )
         } else {
             return (
                 <div className = "navbar">
-                    {this.renderLeftNav()}
+                    {this.renderLogo()}
+                    {this.renderSearch()}
                 </div>
             )
         }
