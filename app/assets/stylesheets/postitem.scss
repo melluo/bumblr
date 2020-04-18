@@ -58,10 +58,8 @@
 
 .post-options{
     display: flex;
-    padding-right: 20px;
     flex-direction: row;
     justify-content: flex-end;
-    padding-top: 12px;
 }
 
 .post-options >  li {
@@ -131,4 +129,20 @@
 .fas.fa-heart{
     color: rgb(255, 73, 47);
 
+}
+
+.post-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px 0 20px;
+}
+
+.note-count{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .65);
+    font-weight: bold;
+    padding-top: 1px;
+    
 }

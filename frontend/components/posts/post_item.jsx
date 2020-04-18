@@ -176,7 +176,15 @@ class PostItem extends React.Component{
             />
         )
     }
-   
+    renderNotes(){
+        let likeLength = this.props.likers.length;
+        let noteCount = likeLength;
+
+        return(
+            <span className = "note-count">{noteCount} {noteCount === 1 ? "note" : "notes"}</span>
+        )
+    }
+
     render(){
         return(
             <div className = "posts">
@@ -189,11 +197,14 @@ class PostItem extends React.Component{
                 <div className = "post-content">
                     {this.renderPost()}
                 </div>
-                <ul className = "post-options">
-                    {this.renderLike()}
-                    {this.renderDelete()}
-                    {this.renderEdit()}
-                </ul>   
+                <div className = "post-footer">
+                {this.renderNotes()}
+                    <ul className = "post-options">
+                        {this.renderLike()}
+                        {this.renderDelete()}
+                        {this.renderEdit()}
+                    </ul>   
+                </div>
             </div>
             </div>
         )
