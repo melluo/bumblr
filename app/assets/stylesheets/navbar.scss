@@ -170,11 +170,12 @@
 
 .search-list{
     list-style: none;
+    position: absolute;
 }
 .search-list > .search-user{
     display: flex;
     justify-content: space-between;
-    width: 479px;
+    width: 429px;
     padding: 8px 10px;
     cursor: pointer;
     background: white;
@@ -217,6 +218,7 @@
     border-radius: 3px;
     display: flex;
     justify-content: center;
+    width: 429px;
     padding: 8px 10px;
 }
 

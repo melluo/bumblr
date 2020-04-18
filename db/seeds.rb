@@ -62,11 +62,11 @@ background4_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-Q
 background4 = Post.create(post_type: "photo", author_id: user2.id)
 background4.image.attach(io: background4_image, filename: "background4.jfif")
 
-# background5_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-gs4HZsOnjx4-unsplash.jpg")
+# background5_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/carolien-van-oijen-SmJH91bGepk-unsplash+(1).jpg")
 # background5 = Post.create(post_type: "photo", author_id: demo.id)
 # background5.image.attach(io: background5_image, filename: "background5.jfif")
 
-# background6_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/jan-vt-gs4HZsOnjx4-unsplash.jpg")
+# background6_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/matthew-t-rader-ohygdzgWbr4-unsplash.jpg")
 # background6 = Post.create(post_type: "photo", author_id: demo.id)
 # background6.image.attach(io: background6_image, filename: "background6.jfif")
 
