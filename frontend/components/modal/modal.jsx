@@ -47,7 +47,6 @@ const Modal = ({modal, closeModal}) => {
         component = <ProfileDropdown />;
         break;
     case "User Show":
-      debugger;
         component = <UserShow authorId = {event.target.getAttribute("authorid")} />;
         break;
     case "Search Result":

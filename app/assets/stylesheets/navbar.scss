@@ -184,10 +184,19 @@
     background: #e5e7ea;
 }
 
+.search-list > .search-user:first-child{
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.search-list > .search-user:last-child{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
 
 .search-list > .search-user > .search-username{
     display: flex;
-    padding-top: 18px;
+    justify-content: center;
+    padding-top: 8.5px;
 }
 .search-list > .search-user > .avatar-container{
     width: 37px;
@@ -198,3 +207,16 @@
     width: 37px;
     height: 36px;
 }
+.search-list > .search-user > .follow-button{
+    z-index: 200;
+    cursor: pointer;
+}
+.no-users{
+    background: white;
+    color: black;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    padding: 8px 10px;
+}
+
