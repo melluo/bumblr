@@ -179,10 +179,16 @@ class PostItem extends React.Component{
     renderNotes(){
         let likeLength = this.props.likers.length;
         let noteCount = likeLength;
-
-        return(
-            <span className = "note-count">{noteCount} {noteCount === 1 ? "note" : "notes"}</span>
-        )
+        
+        if (noteCount > 0){
+            return(
+                <span className = "note-count">{noteCount} {noteCount === 1 ? "note" : "notes"}</span>
+            )
+        } else{
+            return(
+                <span className = "note-count"></span>
+            )
+        }
     }
 
     render(){
