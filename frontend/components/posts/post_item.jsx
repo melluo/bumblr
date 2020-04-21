@@ -6,9 +6,7 @@ class PostItem extends React.Component{
         super(props);
     }
     renderPost(){
-        let deletedPost = {
-            title: "fake post"
-        }
+        
         let post = (this.props.post.reblogged_post_id) ? (this.props.originalPost) ? (this.props.originalPost) : this.props.post : this.props.post
        
         let tags;
@@ -34,6 +32,30 @@ class PostItem extends React.Component{
         if ( post.body ){
             postBody = <p className="item-body">{post.body}</p>
         }
+        
+        let originalPost = this.props.originalPost;
+        let reblogPosts = [];
+        while (originalPost && originalPost.reblogged_post_id) {
+            if (originalPost.reblog_body){
+                reblogPosts.push([originalPost.author, originalPost.reblog_body])
+            };
+            originalPost = this.props.posts[originalPost.reblogged_post_id];
+        } 
+
+        let reblogList = reblogPosts.map((post) => {
+            return(
+                <div className = "reblog-list" key = {post[1]}>
+                    <div className = "reblog-header">
+                        <Avatar 
+                            avatarUrl = {post[0].avatarUrl}
+                        /> 
+                        <span>{post[0].username}</span>
+                    </div>
+                    <p className = "reblog-body">{post[1]}</p>
+                </div>
+            )
+        })
+          
 
         let quoteSource;
         if( post.post_type === "quote" && post.body ){
@@ -91,7 +113,7 @@ class PostItem extends React.Component{
         if (this.props.post.reblog_tags){
             reblogTagContainer = <ul className = "tag-container">{reblogTags}</ul>
         }
-        
+
         switch(post.post_type){
             case "text":
                 if (this.props.post.reblogged_post_id){
@@ -109,17 +131,17 @@ class PostItem extends React.Component{
                     } 
                     return(
                         <div className = "text-item">
-                            <div className = "original-text-post">
-                                <div className = "reblog-header">
-                                    <Avatar 
-                                        avatarUrl = {post.author.avatarUrl}
-                                    /> 
-                                    <span>{post.author.username}</span>
-                                </div>
+                        <div className = "original-text-post">
+                            <div className = "reblog-header">
+                                <Avatar 
+                                    avatarUrl = {originalPost.author.avatarUrl}
+                                /> 
+                                <span>{originalPost.author.username}</span>
+                            </div>
                             <h3 className = "item-title">{post.title}</h3>
                                 {postBody}
-                                {tagContainer}
-                            </div>     
+                        </div>     
+                                {reblogList}
                                 {reblogHeader}
                                 {reblogBody}
                                 {reblogTagContainer}
@@ -254,7 +276,7 @@ class PostItem extends React.Component{
     //     }
     // }
     renderEdit(){
-        const post = this.props.post;
+        let post = this.props.post;
         if(post.author.id === this.props.currentUser.id){
             switch(post.post_type){
                 case "text":

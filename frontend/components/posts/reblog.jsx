@@ -22,17 +22,30 @@ class Reblog extends React.Component {
             .then(() => this.props.closeModal());
     }
     renderPostContent(){
+
+        let originalPost;
+        if (this.props.rebloggedPost.reblogged_post_id) {
+            originalPost = this.props.posts[this.props.rebloggedPost.reblogged_post_id];
+        }
+            while (true) {
+                originalPost = this.props.posts[originalPost.reblogged_post_id];
+                if (!originalPost.reblogged_post_id){
+                    break;
+                }
+            }    
+        
+
         let postBody = (this.state.body) ? <div className = "reblog-body"><p></p>{this.state.body}</div> : <span></span>
-        if (this.props.originalPost.imageUrl){
+        if (originalPost.imageUrl){
             return (
                 <>
-                <img className = "image-preview" src = {this.props.originalPost.imageUrl} /> 
+                <img className = "image-preview" src = {originalPost.imageUrl} /> 
                     <div className = "reblog-container">    
                     <div className = "reblog-header">
                             <Avatar 
-                                avatarUrl = {this.props.originalPost.author.avatarUrl}
+                                avatarUrl = {originalPost.author.avatarUrl}
                             /> 
-                           <span>{this.props.originalPost.author.username}</span>
+                           <span>{originalPost.author.username}</span>
                     </div>
                     {postBody}
                     </div>
@@ -43,9 +56,9 @@ class Reblog extends React.Component {
             <div className = "reblog-container">
                 <div className = "reblog-header">
                     <Avatar 
-                        avatarUrl = {this.props.originalPost.author.avatarUrl}
+                        avatarUrl = {originalPost.author.avatarUrl}
                     /> 
-                    <span>{this.props.originalPost.author.username}</span>
+                    <span>{originalPost.author.username}</span>
                 </div>
                 <p className = "reblog-title">{this.state.title}</p> 
                 {postBody} 
@@ -54,12 +67,24 @@ class Reblog extends React.Component {
         }
     }
     render(){
+        let originalPost;
+        if (this.props.rebloggedPost.reblogged_post_id) {
+            originalPost = this.props.posts[this.props.rebloggedPost.reblogged_post_id];
+        }
+            while (true) {
+                originalPost = this.props.posts[originalPost.reblogged_post_id];
+              
+                if (!originalPost.reblogged_post_id){
+                   break;
+                }
+            }        
+    
         return(
             <div className="content-container">
                <section className = "author-username">
                     {this.props.currentUser.username}  
                     <span className = "author-header">
-                    &nbsp;<i className="fas fa-retweet"></i> {this.props.originalPost.author.username}
+                    &nbsp;<i className="fas fa-retweet"></i> {originalPost.author.username}
                     </span>
                 </section>
                 <form className = "text-form" onSubmit={this.handleSubmit}>
