@@ -6,7 +6,9 @@ import Reblog from "./reblog";
 const mapStateToProps = (state) => {
     const originalPost = state.ui.modal.post;
     const currentUser = state.entities.users[state.session.id];
+    debugger;
     return({
+        posts: state.entities.posts,
         originalPost: originalPost,
         rebloggedPost: {
             title: originalPost.title, 

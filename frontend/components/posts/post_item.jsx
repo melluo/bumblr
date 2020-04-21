@@ -59,6 +59,7 @@ class PostItem extends React.Component{
 
         switch(post.post_type){
             case "text":
+                debugger;
                 return(
                     <div className = "text-item">
                         <h3 className = "item-title">{post.title}</h3>
@@ -67,6 +68,7 @@ class PostItem extends React.Component{
                     </div>
                 )
             case "photo":
+                debugger;  //need to check the orignal post for its info, not the post.imageUrl
                 return(
                     <div>
                         <img className = "photo-item" src = {post.imageUrl}/>
@@ -150,6 +152,13 @@ class PostItem extends React.Component{
         }
 
     }
+    renderReblog(){
+        if(this.props.author.username !== this.props.currentUser.username) {
+            return(
+                <i className="fas fa-retweet" onClick={() => this.props.openModal("Reblog Post", this.props.post)}></i>
+            )
+        }
+    }
     renderFollow(){
         if(this.props.author.username !== this.props.currentUser.username && !this.props.following){
             return( 
@@ -206,6 +215,7 @@ class PostItem extends React.Component{
                 <div className = "post-footer">
                 {this.renderNotes()}
                     <ul className = "post-options">
+                        {this.renderReblog()}
                         {this.renderLike()}
                         {this.renderDelete()}
                         {this.renderEdit()}

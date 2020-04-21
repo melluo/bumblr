@@ -12,6 +12,7 @@ import EditLinkPost from "../posts/post_forms/edit_link_container";
 import ProfileDropdown from "../navbar/profile_dropdown_container";
 import UserShow from "../user_show/user_show_container";
 import SearchResult from "../navbar/search/searchresult_container";
+import NewReblogPost from "../posts/reblog_container";
 
 const Modal = ({modal, closeModal}) => {
   if (!modal) {
@@ -51,6 +52,9 @@ const Modal = ({modal, closeModal}) => {
         break;
     case "Search Result":
         component = <SearchResult />;
+        break;
+    case "Reblog Post":
+        component = <NewReblogPost />;
         break;
     default:
         return null;
