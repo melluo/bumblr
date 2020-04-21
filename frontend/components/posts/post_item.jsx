@@ -5,10 +5,12 @@ class PostItem extends React.Component{
     constructor(props) {
         super(props);
     }
-   
     renderPost(){
-        const post = this.props.post;
-
+        let deletedPost = {
+            title: "fake post"
+        }
+        let post = (this.props.post.reblogged_post_id) ? (this.props.originalPost) ? (this.props.originalPost) : this.props.post : this.props.post
+       
         let tags;
         let appendHash;
         if( post.tags ){
@@ -23,7 +25,7 @@ class PostItem extends React.Component{
             };
         } 
         let tagContainer;
-        if (post.tags){
+        if ( post.tags && !this.props.originalPost ){
             tagContainer = <ul className = "tag-container">{tags}</ul>
         } else{
             tagContainer = <span></span>
@@ -56,16 +58,83 @@ class PostItem extends React.Component{
                 cropLinkTitle = post.title;
             }
         }
+        
+        let reblogHeader; 
+        if  (this.props.post.reblogged_post_id && (this.props.post.reblog_body || this.props.post.reblog_tags)){
+            reblogHeader = <div className = "reblog-header">
+                <Avatar 
+                    avatarUrl = {this.props.post.author.avatarUrl}
+                /> 
+                <span>{this.props.post.author.username}</span>
+             </div>
+        }
 
+        let reblogBody;
+        if (this.props.post.reblog_body){
+            reblogBody = <p className="reblog-body">{this.props.post.reblog_body}</p>
+        } 
+        
+        let reblogTags;
+        if( this.props.post.reblog_tags ){
+            if( this.props.post.reblog_tags.includes(" ") ){
+                reblogTags =  this.props.post.reblog_tags.trim().split(" ").map((tag,idx) => {
+                    appendHash = "#".concat(tag);
+                    return(<li key = {idx}>{appendHash}</li>)
+                });
+            } else{
+                appendHash = "#".concat(this.props.post.reblog_tags);
+                reblogTags = <li key = {this.props.post.reblog_tags}>{appendHash}</li>
+            };
+        } 
+
+        let reblogTagContainer;
+        if (this.props.post.reblog_tags){
+            reblogTagContainer = <ul className = "tag-container">{reblogTags}</ul>
+        }
+        
         switch(post.post_type){
             case "text":
-                return(
-                    <div className = "text-item">
+                if (this.props.post.reblogged_post_id){
+                    if (typeof this.props.posts[this.props.post.reblogged_post_id] === "undefined"){
+                        return(
+                            <div className = "text-item">
+                                <div className = "original-text-post">
+                                    <h3 className = "item-title">Original post removed</h3>
+                                </div>
+                                {reblogHeader}
+                                {reblogBody}
+                                {reblogTagContainer}
+                            </div>
+                        )
+                    } 
+                    return(
+                        <div className = "text-item">
+                            <div className = "original-text-post">
+                                <div className = "reblog-header">
+                                    <Avatar 
+                                        avatarUrl = {post.author.avatarUrl}
+                                    /> 
+                                    <span>{post.author.username}</span>
+                                </div>
+                            <h3 className = "item-title">{post.title}</h3>
+                                {postBody}
+                                {tagContainer}
+                            </div>     
+                                {reblogHeader}
+                                {reblogBody}
+                                {reblogTagContainer}
+                        </div>
+                    )
+                    
+                } else {
+                    return(
+                        <div className = "text-item">
                         <h3 className = "item-title">{post.title}</h3>
-                        {postBody}
-                        {tagContainer}
-                    </div>
-                )
+                            {postBody}
+                            {tagContainer}
+                        </div>
+                    )
+                }
             case "photo":
                  //need to check the orignal post for its info, not the post.imageUrl 
                 return(
@@ -95,6 +164,95 @@ class PostItem extends React.Component{
                 )
         }
     }
+    // renderPost(){
+    //     const post = (this.props.post.reblogged_post_id) ? this.props.posts[this.props.post.reblogged_post_id] : this.props.post
+
+    //     let tags;
+    //     let appendHash;
+    //     if( post.tags ){
+    //         if( post.tags.includes(" ") ){
+    //             tags = post.tags.trim().split(" ").map((tag,idx) => {
+    //                 appendHash = "#".concat(tag);
+    //                 return(<li key = {idx}>{appendHash}</li>)
+    //             });
+    //         } else{
+    //             appendHash = "#".concat(post.tags);
+    //             tags = <li key = {post.tags}>{appendHash}</li>
+    //         };
+    //     } 
+    //     let tagContainer;
+    //     if (post.tags){
+    //         tagContainer = <ul className = "tag-container">{tags}</ul>
+    //     } else{
+    //         tagContainer = <span></span>
+    //     }
+    //     let postBody;
+    //     if ( post.body ){
+    //         postBody = <p className="item-body">{post.body}</p>
+    //     }
+
+    //     let quoteSource;
+    //     if( post.post_type === "quote" && post.body ){
+    //         quoteSource = "— ".concat(post.body);
+    //     }
+
+    //     let link;
+    //     if(post.title){
+    //         if( post.title.includes("https://") ){
+    //             link = post.title;
+    //         } else{
+    //             link = "https://".concat(post.title);
+    //         }
+    //     }
+
+    //     let cropLinkTitle;
+    //     if ( post.title ){
+    //         if ( post.title.includes(".") ){
+    //             let dotIndex = post.title.indexOf(".");
+    //             cropLinkTitle = post.title.slice(0, dotIndex);
+    //         } else{
+    //             cropLinkTitle = post.title;
+    //         }
+    //     }
+
+    //     switch(post.post_type){
+    //         case "text":
+    //             return(
+    //                 <div className = "text-item">
+    //                     <h3 className = "item-title">{post.title}</h3>
+    //                     {postBody}
+    //                     {tagContainer}
+    //                 </div>
+    //             )
+    //         case "photo":
+    //              //need to check the orignal post for its info, not the post.imageUrl 
+    //             return(
+    //                 <div>
+    //                     <img className = "photo-item" src = {post.imageUrl}/>
+    //                     {postBody}
+    //                     {tagContainer}
+    //                 </div>
+    //             )
+    //         case "quote":
+    //             return(
+    //                 <div>
+    //                     <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
+    //                     <p className = "quote-source">{quoteSource}</p>
+    //                     {tagContainer}
+    //                 </div>
+    //             )
+    //         case "link":
+    //             return(
+    //                 <div>
+    //                     <a href = {link} className = "link-container">
+    //                         <h3 className = "link-title">{cropLinkTitle}</h3>
+    //                         <p className = "link-body">{post.body}</p>
+    //                     </a>
+    //                     {tagContainer}
+    //                 </div>
+    //             )
+    //     }
+    // }
     renderEdit(){
         const post = this.props.post;
         if(post.author.id === this.props.currentUser.id){

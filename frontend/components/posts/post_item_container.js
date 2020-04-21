@@ -7,9 +7,12 @@ import { like, unlike } from "../../actions/like_actions";
 
 const mapStateToProps = (state, ownProps) => {
     const currentUser = state.entities.users[state.session.id];
-   
+    const posts = state.entities.posts;
+    const post = ownProps.post;
     return({
-        post: ownProps.post,
+        posts: posts,
+        post: post,
+        originalPost: posts[post.reblogged_post_id],
         author: ownProps.authoringUser,
         currentUser: currentUser,
         following: currentUser.following.includes(ownProps.authoringUser.id),

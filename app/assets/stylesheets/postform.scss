@@ -195,7 +195,7 @@
     width: 500px;
     border: none;
     color: black;
-    margin-top: 10px;
+    padding: 0 20px 0 20px;
 }
 
 .reblog-body{
@@ -204,7 +204,7 @@
     border: none;
     resize: none;
     color: black;
-    padding-top: 10px;
+    padding: 10px 20px 0 20px;
 }
 .author-header{
     color: rgba(0, 0, 0, .65);
@@ -221,6 +221,7 @@
 
 .reblog-header{
     display: flex;
+    padding: 0 20px 0 20px;
     flex-direction: row;
     color: black;
     font-weight: bold;
@@ -232,5 +233,7 @@
     margin: auto 0;
 }
 .reblog-container{
-    padding: 15px 20px 15px 20px;
+    padding: 15px 0 15px 0;
+    border-top: 1px solid rgba(0,0,0,.13);
+    border-bottom: 1.5px solid rgba(0,0,0,.13);
 }

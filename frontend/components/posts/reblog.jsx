@@ -33,7 +33,7 @@ class Reblog extends React.Component {
                                 avatarUrl = {this.props.originalPost.author.avatarUrl}
                             /> 
                            <span>{this.props.originalPost.author.username}</span>
-                        </div>
+                    </div>
                     {postBody}
                     </div>
                 </>

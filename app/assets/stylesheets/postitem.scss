@@ -144,3 +144,19 @@
     color: rgba(0, 0, 0, .65);
     font-weight: bold;
 }
+
+/* reblog */
+.original-text-post{
+    padding-bottom: 15px;
+    border-top: 1px solid rgba(0,0,0,.13);
+    border-bottom: 1px solid rgba(0,0,0,.13);
+    padding-top: 15px;
+}
+
+.original-text-post > .reblog-header{
+    padding: 0 20px 15px 20px;
+}
+
+.text-item > .reblog-header{
+    padding: 15px 20px 0 20px;
+}
