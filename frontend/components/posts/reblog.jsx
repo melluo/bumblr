@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from "../avatar/avatar";
 
 class Reblog extends React.Component {
     constructor(props){
@@ -20,23 +21,49 @@ class Reblog extends React.Component {
         this.props.processPost(this.state)
             .then(() => this.props.closeModal());
     }
-    renderPhotoOrTitle(){
-        return(
-            (this.props.originalPost && this.props.originalPost.imageUrl) ? 
-            <img className="image-preview" src={this.props.originalPost.imageUrl} /> :
-            <p className="title-input">{this.state.title}</p> 
-        )
+    renderPostContent(){
+        let postBody = (this.state.body) ? <div className = "reblog-body"><p></p>{this.state.body}</div> : <span></span>
+        if (this.props.originalPost.imageUrl){
+            return (
+                <>
+                <img className = "image-preview" src = {this.props.originalPost.imageUrl} /> 
+                    <div className = "reblog-container">    
+                    <div className = "reblog-header">
+                            <Avatar 
+                                avatarUrl = {this.props.originalPost.author.avatarUrl}
+                            /> 
+                           <span>{this.props.originalPost.author.username}</span>
+                        </div>
+                    {postBody}
+                    </div>
+                </>
+            )
+        } else{
+            return (
+            <div className = "reblog-container">
+                <div className = "reblog-header">
+                    <Avatar 
+                        avatarUrl = {this.props.originalPost.author.avatarUrl}
+                    /> 
+                    <span>{this.props.originalPost.author.username}</span>
+                </div>
+                <p className = "reblog-title">{this.state.title}</p> 
+                {postBody} 
+            </div>
+            )
+        }
     }
     render(){
         return(
             <div className="content-container">
-                <section className = "author-username">
-                    {this.props.currentUser.username}
+               <section className = "author-username">
+                    {this.props.currentUser.username}  
+                    <span className = "author-header">
+                    &nbsp;<i className="fas fa-retweet"></i> {this.props.originalPost.author.username}
+                    </span>
                 </section>
                 <form className = "text-form" onSubmit={this.handleSubmit}>
-                    {this.renderPhotoOrTitle()}
-                    <div className="body-input"><p></p>{this.state.body}</div> 
-                    <div className="tags-input"><p></p>{this.state.tags}</div> 
+                    {this.renderPostContent()} 
                     <textarea
                         className = "body-input"
                         type = "text"
