@@ -27,14 +27,10 @@ class Reblog extends React.Component {
         if (this.props.rebloggedPost.reblogged_post_id) {
             originalPost = this.props.posts[this.props.rebloggedPost.reblogged_post_id];
         }
-            while (true) {
+            while (originalPost.reblogged_post_id && typeof this.props.posts[originalPost.reblogged_post_id] !== "undefined") {
                 originalPost = this.props.posts[originalPost.reblogged_post_id];
-                if (!originalPost.reblogged_post_id){
-                    break;
-                }
             }    
         
-
         let postBody = (this.state.body) ? <div className = "reblog-body"><p></p>{this.state.body}</div> : <span></span>
         if (originalPost.imageUrl){
             return (
@@ -71,12 +67,8 @@ class Reblog extends React.Component {
         if (this.props.rebloggedPost.reblogged_post_id) {
             originalPost = this.props.posts[this.props.rebloggedPost.reblogged_post_id];
         }
-            while (true) {
+            while (originalPost.reblogged_post_id && typeof this.props.posts[originalPost.reblogged_post_id] !== "undefined") {
                 originalPost = this.props.posts[originalPost.reblogged_post_id];
-              
-                if (!originalPost.reblogged_post_id){
-                   break;
-                }
             }        
     
         return(

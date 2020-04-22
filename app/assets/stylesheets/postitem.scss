@@ -146,7 +146,7 @@
 }
 
 /* reblog */
-.original-text-post{
+.original-text-post, .original-photo-post{
     padding-bottom: 15px;
     border-top: 1px solid rgba(0,0,0,.13);
     border-bottom: 1px solid rgba(0,0,0,.13);
@@ -168,4 +168,12 @@
 .reblog-list{
     border-bottom: 1px solid rgba(0,0,0,.13);
     padding-bottom: 15px;
+}
+
+.photo-item > .reblog-header{
+    padding: 15px 20px 0 20px;
+}
+
+.original-photo-post > .reblog-header{
+    padding: 0 20px 15px 20px;
 }

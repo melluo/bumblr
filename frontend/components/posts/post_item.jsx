@@ -35,13 +35,14 @@ class PostItem extends React.Component{
         
         let originalPost = this.props.originalPost;
         let reblogPosts = [];
+       
         while (originalPost && originalPost.reblogged_post_id) {
             if (originalPost.reblog_body){
                 reblogPosts.push([originalPost.author, originalPost.reblog_body])
             };
             originalPost = this.props.posts[originalPost.reblogged_post_id];
         } 
-
+        
         let reblogList = reblogPosts.map((post) => {
             return(
                 <div className = "reblog-list" key = {post[1]}>
@@ -117,7 +118,7 @@ class PostItem extends React.Component{
         switch(post.post_type){
             case "text":
                 if (this.props.post.reblogged_post_id){
-                    if (typeof this.props.posts[this.props.post.reblogged_post_id] === "undefined"){
+                    if (!originalPost || typeof this.props.posts[this.props.post.reblogged_post_id] === "undefined"){
                         return(
                             <div className = "text-item">
                                 <div className = "original-text-post">
@@ -128,26 +129,26 @@ class PostItem extends React.Component{
                                 {reblogTagContainer}
                             </div>
                         )
-                    } 
-                    return(
-                        <div className = "text-item">
-                        <div className = "original-text-post">
-                            <div className = "reblog-header">
-                                <Avatar 
-                                    avatarUrl = {originalPost.author.avatarUrl}
-                                /> 
-                                <span>{originalPost.author.username}</span>
+                    } else {
+                        return(
+                            <div className = "text-item">
+                            <div className = "original-text-post">
+                                <div className = "reblog-header">
+                                    <Avatar 
+                                        avatarUrl = {originalPost.author.avatarUrl}
+                                    /> 
+                                    <span>{originalPost.author.username}</span>
+                                </div>
+                                <h3 className = "item-title">{post.title}</h3>
+                                    {postBody}
+                            </div>     
+                                    {reblogList}
+                                    {reblogHeader}
+                                    {reblogBody}
+                                    {reblogTagContainer}
                             </div>
-                            <h3 className = "item-title">{post.title}</h3>
-                                {postBody}
-                        </div>     
-                                {reblogList}
-                                {reblogHeader}
-                                {reblogBody}
-                                {reblogTagContainer}
-                        </div>
-                    )
-                    
+                        )
+                    }
                 } else {
                     return(
                         <div className = "text-item">
@@ -158,14 +159,47 @@ class PostItem extends React.Component{
                     )
                 }
             case "photo":
-                 //need to check the orignal post for its info, not the post.imageUrl 
-                return(
-                    <div>
-                        <img className = "photo-item" src = {post.imageUrl}/>
-                        {postBody}
-                        {tagContainer}
-                    </div>
-                )
+                if (this.props.post.reblogged_post_id){
+                    if (!originalPost || typeof this.props.posts[this.props.post.reblogged_post_id] === "undefined"){
+                        return(
+                            <div className = "photo-item">
+                                <div className = "original-photo-post">
+                                    <h3 className = "item-title">Original post removed</h3>
+                                </div>
+                                {reblogHeader}
+                                {reblogBody}
+                                {reblogTagContainer}
+                            </div>
+                        )
+                    } else {
+                        return(
+                            <div className = "photo-item">
+                            <div className = "original-photo-post">
+                                <div className = "reblog-header">
+                                    <Avatar 
+                                        avatarUrl = {originalPost.author.avatarUrl}
+                                    /> 
+                                    <span>{originalPost.author.username}</span>
+                                </div>
+                                <img className = "photo-item" src = {post.imageUrl}/>
+                                    {postBody}
+                            </div>     
+                                    {reblogList}
+                                    {reblogHeader}
+                                    {reblogBody}
+                                    {reblogTagContainer}
+                            </div>
+                        )
+                    }
+                } else {
+                    return(
+                        <div>
+                            <img className = "photo-item" src = {post.imageUrl}/>
+                            {postBody}
+                            {tagContainer}
+                        </div>
+                    )
+                }
             case "quote":
                 return(
                     <div>
@@ -186,95 +220,7 @@ class PostItem extends React.Component{
                 )
         }
     }
-    // renderPost(){
-    //     const post = (this.props.post.reblogged_post_id) ? this.props.posts[this.props.post.reblogged_post_id] : this.props.post
 
-    //     let tags;
-    //     let appendHash;
-    //     if( post.tags ){
-    //         if( post.tags.includes(" ") ){
-    //             tags = post.tags.trim().split(" ").map((tag,idx) => {
-    //                 appendHash = "#".concat(tag);
-    //                 return(<li key = {idx}>{appendHash}</li>)
-    //             });
-    //         } else{
-    //             appendHash = "#".concat(post.tags);
-    //             tags = <li key = {post.tags}>{appendHash}</li>
-    //         };
-    //     } 
-    //     let tagContainer;
-    //     if (post.tags){
-    //         tagContainer = <ul className = "tag-container">{tags}</ul>
-    //     } else{
-    //         tagContainer = <span></span>
-    //     }
-    //     let postBody;
-    //     if ( post.body ){
-    //         postBody = <p className="item-body">{post.body}</p>
-    //     }
-
-    //     let quoteSource;
-    //     if( post.post_type === "quote" && post.body ){
-    //         quoteSource = "— ".concat(post.body);
-    //     }
-
-    //     let link;
-    //     if(post.title){
-    //         if( post.title.includes("https://") ){
-    //             link = post.title;
-    //         } else{
-    //             link = "https://".concat(post.title);
-    //         }
-    //     }
-
-    //     let cropLinkTitle;
-    //     if ( post.title ){
-    //         if ( post.title.includes(".") ){
-    //             let dotIndex = post.title.indexOf(".");
-    //             cropLinkTitle = post.title.slice(0, dotIndex);
-    //         } else{
-    //             cropLinkTitle = post.title;
-    //         }
-    //     }
-
-    //     switch(post.post_type){
-    //         case "text":
-    //             return(
-    //                 <div className = "text-item">
-    //                     <h3 className = "item-title">{post.title}</h3>
-    //                     {postBody}
-    //                     {tagContainer}
-    //                 </div>
-    //             )
-    //         case "photo":
-    //              //need to check the orignal post for its info, not the post.imageUrl 
-    //             return(
-    //                 <div>
-    //                     <img className = "photo-item" src = {post.imageUrl}/>
-    //                     {postBody}
-    //                     {tagContainer}
-    //                 </div>
-    //             )
-    //         case "quote":
-    //             return(
-    //                 <div>
-    //                     <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
-    //                     <p className = "quote-source">{quoteSource}</p>
-    //                     {tagContainer}
-    //                 </div>
-    //             )
-    //         case "link":
-    //             return(
-    //                 <div>
-    //                     <a href = {link} className = "link-container">
-    //                         <h3 className = "link-title">{cropLinkTitle}</h3>
-    //                         <p className = "link-body">{post.body}</p>
-    //                     </a>
-    //                     {tagContainer}
-    //                 </div>
-    //             )
-    //     }
-    // }
     renderEdit(){
         let post = this.props.post;
         if(post.author.id === this.props.currentUser.id){
@@ -332,7 +278,7 @@ class PostItem extends React.Component{
 
     }
     renderReblog(){
-        if(this.props.author.username !== this.props.currentUser.username) {
+        if(this.props.author.username !== this.props.currentUser.username && this.props.post) {
             return(
                 <li onClick={() => this.props.openModal("Reblog Post", this.props.post)}>
                     <i className="fas fa-retweet"></i>
