@@ -6,6 +6,7 @@ import EditPhotoForm from "./edit_photo_form";
 const mapStateToProps = (state) => {
     return({
         post: state.ui.modal.post,
+        posts: state.entities.posts,
         currentUser: state.entities.users[state.session.id],
         formType: "Save"
     })

@@ -13,6 +13,7 @@ const mapStateToProps = ({entities, session}) => {
             post_type: "photo",
             author_id: currentUserId
         },
+        posts: entities.posts,
         currentUser: entities.users[session.id],
         formType: "Post"
     })

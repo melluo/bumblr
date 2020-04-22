@@ -13,6 +13,7 @@ class EditPhotoForm extends React.Component{
         return (
             <PhotoForm
                 post = {this.props.post}
+                posts = {this.props.posts}
                 formType = {this.props.formType}
                 currentUser = {this.props.currentUser}
                 processPost = {this.props.processPost}

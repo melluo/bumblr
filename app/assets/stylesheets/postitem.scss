@@ -35,6 +35,7 @@
     font-size: 16px;
     width: 500px;
     resize: none;
+    margin-top: 15px;
     border: none;
     min-height: 24px;
     overflow-wrap: break-word;
@@ -146,11 +147,16 @@
 }
 
 /* reblog */
-.original-text-post, .original-photo-post{
+.original-text-post{
     padding-bottom: 15px;
     border-top: 1px solid rgba(0,0,0,.13);
     border-bottom: 1px solid rgba(0,0,0,.13);
     padding-top: 15px;
+}
+.original-photo-post{
+    border-top: 1px solid rgba(0,0,0,.13);
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,.13);
 }
 
 .original-text-post > .reblog-header{

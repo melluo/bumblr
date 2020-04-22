@@ -22,9 +22,8 @@ class Reblog extends React.Component {
             .then(() => this.props.closeModal());
     }
     renderPostContent(){
-
-        let originalPost;
-        if (this.props.rebloggedPost.reblogged_post_id) {
+        let originalPost = this.props.rebloggedPost;
+        if (this.props.rebloggedPost.reblogged_post_id && typeof this.props.posts[this.props.rebloggedPost.reblogged_post_id] !== "undefined") {
             originalPost = this.props.posts[this.props.rebloggedPost.reblogged_post_id];
         }
             while (originalPost.reblogged_post_id && typeof this.props.posts[originalPost.reblogged_post_id] !== "undefined") {
@@ -63,8 +62,8 @@ class Reblog extends React.Component {
         }
     }
     render(){
-        let originalPost;
-        if (this.props.rebloggedPost.reblogged_post_id) {
+        let originalPost = this.props.rebloggedPost;
+        if (this.props.rebloggedPost.reblogged_post_id && typeof this.props.posts[this.props.rebloggedPost.reblogged_post_id] !== "undefined"){
             originalPost = this.props.posts[this.props.rebloggedPost.reblogged_post_id];
         }
             while (originalPost.reblogged_post_id && typeof this.props.posts[originalPost.reblogged_post_id] !== "undefined") {

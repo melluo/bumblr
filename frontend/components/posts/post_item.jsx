@@ -35,13 +35,16 @@ class PostItem extends React.Component{
         
         let originalPost = this.props.originalPost;
         let reblogPosts = [];
-       
-        while (originalPost && originalPost.reblogged_post_id) {
-            if (originalPost.reblog_body){
-                reblogPosts.push([originalPost.author, originalPost.reblog_body])
-            };
-            originalPost = this.props.posts[originalPost.reblogged_post_id];
-        } 
+       if (!originalPost){
+           originalPost = this.props.post;
+       } else{
+            while (originalPost && originalPost.reblogged_post_id) {
+                if (originalPost.reblog_body){
+                    reblogPosts.push([originalPost.author, originalPost.reblog_body])
+                };
+                originalPost = this.props.posts[originalPost.reblogged_post_id];
+            } 
+       }
         
         let reblogList = reblogPosts.map((post) => {
             return(
@@ -181,7 +184,7 @@ class PostItem extends React.Component{
                                     /> 
                                     <span>{originalPost.author.username}</span>
                                 </div>
-                                <img className = "photo-item" src = {post.imageUrl}/>
+                                <img className = "photo-item" src = {originalPost.imageUrl}/>
                                     {postBody}
                             </div>     
                                     {reblogList}
