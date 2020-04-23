@@ -81,7 +81,7 @@ class Likes extends React.Component{
     }
 
     renderRadar(){
-        let radarPosts =this.props.posts.filter((post) => post.likers.length >= 4 && post.author.id !== this.props.currentUser.id)
+        let radarPosts = Object.values(this.props.posts).filter((post) => post.likers.length >= 4 && post.author.id !== this.props.currentUser.id)
         let radar;
         if (radarPosts.length > 0){
             radar = radarPosts[0];
