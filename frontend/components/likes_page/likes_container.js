@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
     return{
         currentUser: currentUser,
         users: Object.values(state.entities.users),
-        posts: state.entities.posts,
+        posts: Object.values(state.entities.posts),
     }
 }
 

@@ -14,6 +14,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: calc(100vh - 250px);
+    overflow-y: auto;
+
 }
 
 .dropdown-background{

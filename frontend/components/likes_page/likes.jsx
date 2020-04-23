@@ -79,6 +79,24 @@ class Likes extends React.Component{
             )
         }
     }
+
+    renderRadar(){
+        let radarPosts =this.props.posts.filter((post) => post.likers.length >= 4 && post.author.id !== this.props.currentUser.id)
+        let radar;
+        if (radarPosts.length > 0){
+            radar = radarPosts[0];
+            return(
+                <div className = "radar-post">
+                    <h1 className = "radar-title">Radar</h1>
+                    <PostItem
+                        key = {radar.id}
+                        post = {radar}
+                        authoringUser = {radar.author}
+                    />
+                </div>
+            )
+        }
+    }
  
     render(){
         return(
@@ -88,6 +106,7 @@ class Likes extends React.Component{
                 {this.renderLikes()}
             <section className = "dashboard-right">
                 {this.renderRecommendedBlogs()}
+                {this.renderRadar()}
             </section>
         </div>
         )

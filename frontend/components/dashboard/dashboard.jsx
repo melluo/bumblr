@@ -3,6 +3,7 @@ import PostNavBar from "../posts_navbar/posts_navbar_container";
 import NavBar from "../navbar/navbar_container";
 import PostIndex from "../posts/post_index_container";
 import Avatar from "../avatar/avatar";
+import PostItem from "../posts/post_item_container";
 
 class Dashboard extends React.Component{
     constructor(props){
@@ -49,6 +50,23 @@ class Dashboard extends React.Component{
             </ul>
         )
     }
+    renderRadar(){
+        let radarPosts =this.props.posts.filter((post) => post.likers.length >= 4 && post.author.id !== this.props.currentUser.id)
+        let radar;
+        if (radarPosts.length > 0){
+            radar = radarPosts[0];
+            return(
+                <div className = "radar-post">
+                    <h1 className = "radar-title">Radar</h1>
+                    <PostItem
+                        key = {radar.id}
+                        post = {radar}
+                        authoringUser = {radar.author}
+                    />
+                </div>
+            )
+        }
+    }
     render() {
         return(
             <div className = "dashboard-container">
@@ -64,6 +82,7 @@ class Dashboard extends React.Component{
                 </section>
                 <section className = "dashboard-right">
                     {this.renderRecommendedBlogs()}
+                    {this.renderRadar()}
                 </section>
             </div>
         )

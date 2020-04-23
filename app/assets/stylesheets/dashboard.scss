@@ -17,6 +17,7 @@
     position: relative;
 }
 
+/* recommended blogs and radar */
 .dashboard-right{
    grid-column: 700;
    width: 300px;
@@ -59,4 +60,25 @@
 }
 .recommended-blogs > li > .avatar-container{
     height: 37px;
+}
+
+.radar-post > .posts > .avatar-container > .user-avatar{
+    display: none;
+}
+
+.radar-post > .posts {
+    padding-top: 8px;
+    width: 100%;
+}
+
+.radar-title {
+    padding-top: 30px;
+    text-align: left;
+    width: 300px;
+    border-bottom: 2px solid rgba(255,255,255,.13);
+    font-size: 21px;
+    font-weight: 700px;
+    color: white;
+    line-height: 1.2;
+    padding-bottom: 10px;
 }

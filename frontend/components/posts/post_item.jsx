@@ -338,18 +338,20 @@ class PostItem extends React.Component{
         }
     }
     renderLike(){
-        if(this.props.liked){
-            return(
-                <li onClick = {() => this.props.unlike(this.props.post.id)}>
-                    <i className = "fas fa-heart"></i>
-                </li>
-            )
-        } else {
-            return(
-                <li onClick = {() => this.props.like(this.props.post.id, this.props.currentUser.id)}>
-                    <i className = "far fa-heart"></i>
-                </li>
-            )
+        if(this.props.post.author.id !== this.props.currentUser.id){
+            if(this.props.liked){
+                return(
+                    <li onClick = {() => this.props.unlike(this.props.post.id)}>
+                        <i className = "fas fa-heart"></i>
+                    </li>
+                )
+            } else {
+                return(
+                    <li onClick = {() => this.props.like(this.props.post.id, this.props.currentUser.id)}>
+                        <i className = "far fa-heart"></i>
+                    </li>
+                )
+            }
         }
 
     }
