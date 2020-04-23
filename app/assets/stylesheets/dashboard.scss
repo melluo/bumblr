@@ -68,9 +68,12 @@
 
 .radar-post > .posts {
     padding-top: 8px;
-    width: 100%;
+    width: 300px;
 }
 
+.radar-post > .posts > .post-container{
+    width: 300px;
+}
 .radar-title {
     padding-top: 30px;
     text-align: left;

@@ -71,6 +71,7 @@ render() {
 - The dashboard consists of modular components such as the navigation bar, the radar and recommended blogs, which can be worked into other parts of the application. 
 
 ## User Posts: 
+![alt text](https://bumblr-dev.s3.us-east-2.amazonaws.com/61a5acff3af67ee52a71349697546d11.gif "post demo")
 - Users can create their own content ranging from text, images, gifs, quotes, links. Users may also add tags to their posts.
 ```javascript
 const Modal = ({modal, closeModal}) => {
@@ -122,6 +123,7 @@ const Modal = ({modal, closeModal}) => {
 - Modals are used to incorporate a wide variety of user interaction, ranging from creating new posts, editing these posts, as well as rendering account dropdown for the navgation page or a user's show page. 
 
 ## Content Interaction: 
+![alt text](https://bumblr-dev.s3.us-east-2.amazonaws.com/527b17f3aba8cd880ed6aad362278f20.gif "reblog demo")
 - Users can reblog content from their dashboard. Users may also like other user posts. Reblogs and likes increments the notes on a post.
 ``` javascript
  let originalPost = this.props.originalPost;
