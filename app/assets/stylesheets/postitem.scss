@@ -187,9 +187,23 @@
 .notes-dropdown{
     display: none;
     list-style: none;
+    position: absolute;
+    width: 150px;
 }
 
 .note-count:hover .notes-dropdown{
     display: block;
+    border: 1px solid rgba(0, 0, 0, 0.65);
+    border-bottom: none;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, 0.65);
+    background: white;
+    margin: 0 auto;
+    z-index: 5;
+}
+.notes-dropdown > li{
+    display: flex;
     justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+    padding: 10px 10px;
 }

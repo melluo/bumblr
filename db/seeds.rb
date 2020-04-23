@@ -40,10 +40,10 @@ user4.avatar.attach(io: user4_avie, filename: "whereami.png")
 demo_avatar = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/tumblr_ovpqz2NcGW1v1u7rro4_500.jpg")
 demo.avatar.attach(io: demo_avatar, filename: "cutiepie.jpg")
 # #followee, person being followed
-Follow.create(follower_id: demo.id, followee_id: user2.id) #demo follows user2
-Follow.create(follower_id: demo.id, followee_id: user1.id) #demo follows user1
-Follow.create(follower_id: user1.id, followee_id: user3.id) #user1 follows user3
-Follow.create(follower_id: user1.id, followee_id: user2.id) #user1 follows user2
+Follow.create(follower_id: demo.id, followee_id: user1.id) #demo follows user2
+Follow.create(follower_id: demo.id, followee_id: user2.id) #demo follows user1
+Follow.create(follower_id: demo.id, followee_id: user3.id) #user1 follows user3
+Follow.create(follower_id: user1.id, followee_id: user3.id) #user1 follows user2
 
 #posts
 background1_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/tadeusz-lakota-Xh4yVFNT5iw-unsplash.jpg")
@@ -70,9 +70,28 @@ background4.image.attach(io: background4_image, filename: "background4.jfif")
 # background6 = Post.create(post_type: "photo", author_id: demo.id)
 # background6.image.attach(io: background6_image, filename: "background6.jfif")
 
-text1 = Post.create(title: "hello", body: "world", tags:"my first post", post_type: "text", author_id: user4.id)
-text2 = Post.create(title: "Test", body: "Ok", post_type: "text", author_id: user3.id)
+text1 = Post.create(title: "hello", body: "world", tags:"my first post", post_type: "text", author_id: user3.id)
+quote1 = Post.create(title: "No matter how you're feeling, a little dog gonna love you.", body: "Waka Flocka Flame", post_type: "quote", author_id: user1.id)
+photo1_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/tumblr_40ad4dd535b3c3859167fd591e645744_e876faa0_1280.jpg")
+photo1 = Post.create(post_type: "photo", author_id: user1.id, body: "My brother in law")
+photo1.image.attach(io: photo1_image, filename: "shiba-brother.jpg")
+text2 = Post.create(title: "buzz buzz", body: "bee yourself! beeautiful you", post_type: "text", author_id: demo.id)
+photo2_image = open("https://bumblr-dev.s3.us-east-2.amazonaws.com/3a20ca05b273e669b991044ec6aa85cf.jpg")
+photo2 = Post.create(post_type: "photo", author_id: user3.id)
+photo2.image.attach(io: photo2_image, filename: "cool-outfit.jpg")
+text3 = Post.create(title: "Meow?", tags: "help mew", post_type: "text", author_id: user4.id)
 
 #likes
 like1 = Like.create(user_id: user1.id, post_id: text1.id)
 like2 = Like.create(user_id: user4.id, post_id: text2.id)
+like3 = Like.create(user_id: user1.id, post_id: quote1.id)
+like4 = Like.create(user_id: user2.id, post_id: quote1.id)
+like5 = Like.create(user_id: user3.id, post_id: quote1.id)
+like6 = Like.create(user_id: demo.id, post_id: quote1.id)
+like7 = Like.create(user_id: demo.id, post_id: photo1.id)
+like8 = Like.create(user_id: user2.id, post_id: photo1.id)
+like9 = Like.create(user_id: user2.id, post_id: photo2.id)
+like10 = Like.create(user_id: user2.id, post_id: text2.id)
+like11 = Like.create(user_id: user3.id, post_id: text2.id)
+
+
