@@ -4,6 +4,7 @@ import Avatar from "../avatar/avatar";
 class PostItem extends React.Component{
     constructor(props) {
         super(props);
+       
     }
     renderPost(){
         
@@ -34,33 +35,33 @@ class PostItem extends React.Component{
         }
         
         let originalPost = this.props.originalPost;
+        if (!originalPost){
+            originalPost = this.props.post;
+        }
         let reblogPosts = [];
-       if (!originalPost){
-           originalPost = this.props.post;
-       } else{
-            while (originalPost && originalPost.reblogged_post_id) {
+        while (originalPost && originalPost.reblogged_post_id) {
                 if (originalPost.reblog_body){
                     reblogPosts.push([originalPost.author, originalPost.reblog_body])
                 };
                 originalPost = this.props.posts[originalPost.reblogged_post_id];
             } 
-       }
-        
+       
+       
+    
         let reblogList = reblogPosts.map((post) => {
             return(
                 <div className = "reblog-list" key = {post[1]}>
-                    <div className = "reblog-header">
-                        <Avatar 
-                            avatarUrl = {post[0].avatarUrl}
-                        /> 
-                        <span>{post[0].username}</span>
-                    </div>
-                    <p className = "reblog-body">{post[1]}</p>
+                <div className = "reblog-header">
+                <Avatar 
+                avatarUrl = {post[0].avatarUrl}
+                /> 
+                <span>{post[0].username}</span>
                 </div>
-            )
-        })
-          
-
+                <p className = "reblog-body">{post[1]}</p>
+                </div>
+                )
+            })
+            
         let quoteSource;
         if( post.post_type === "quote" && post.body ){
             quoteSource = "— ".concat(post.body);
@@ -204,13 +205,49 @@ class PostItem extends React.Component{
                     )
                 }
             case "quote":
-                return(
-                    <div>
-                        <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
-                        <p className = "quote-source">{quoteSource}</p>
-                        {tagContainer}
-                    </div>
-                )
+                if (this.props.post.reblogged_post_id){
+                    if (!originalPost || typeof this.props.posts[this.props.post.reblogged_post_id] === "undefined"){
+                        debugger;
+                        return(
+                            <div className = "text-item">
+                                <div className = "original-quote-post">
+                                    <h3 className = "item-title">Original post removed</h3>
+                                </div>
+                                {reblogHeader}
+                                {reblogBody}
+                                {reblogTagContainer}
+                            </div>
+                        )
+                    } else {
+                        return(
+                            <div className = "text-item">
+                            <div className = "original-quote-post">
+                                <div className = "reblog-header">
+                                    <Avatar 
+                                        avatarUrl = {originalPost.author.avatarUrl}
+                                    /> 
+                                    <span>{originalPost.author.username}</span>
+                                </div>
+                                <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
+                            <p className = "quote-source">{quoteSource}</p>
+                            </div>     
+                                    {reblogList}
+                                    {reblogHeader}
+                                    {reblogBody}
+                                    {reblogTagContainer}
+                            </div>
+                        )
+                    }
+                } else {
+                    return(
+                        <div>
+                            <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
+                            <p className = "quote-source">{quoteSource}</p>
+                            {tagContainer}
+                        </div>
+                    )
+                }
+              
             case "link":
                 return(
                     <div>
@@ -317,9 +354,11 @@ class PostItem extends React.Component{
     }
     renderNotes(){
         let likeLength = this.props.likers.length;
-        let noteCount = likeLength;
+        let reblogLength = this.props.reblogs.length;
         
-        if (noteCount > 0){
+        let noteCount = likeLength + reblogLength;
+          
+        if(noteCount > 0){
             return(
                 <span className = "note-count">{noteCount} {noteCount === 1 ? "note" : "notes"}</span>
             )
