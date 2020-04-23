@@ -147,7 +147,7 @@
 }
 
 /* reblog */
-.original-text-post, .original-photo-post, .original-quote-post{
+.original-text-post, .original-photo-post, .original-quote-post, .original-link-post{
     padding-bottom: 15px;
     border-top: 1px solid rgba(0,0,0,.13);
     border-bottom: 1px solid rgba(0,0,0,.13);
@@ -177,4 +177,19 @@
 
 .original-photo-post > .reblog-header{
     padding: 0 20px 15px 20px;
+}
+
+.original-link-post > .reblog-header{
+    padding: 0 20px 15px 20px;
+}
+
+/* notes */
+.notes-dropdown{
+    display: none;
+    list-style: none;
+}
+
+.note-count:hover .notes-dropdown{
+    display: block;
+    justify-content: center;
 }

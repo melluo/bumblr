@@ -249,15 +249,51 @@ class PostItem extends React.Component{
                 }
               
             case "link":
-                return(
-                    <div>
-                        <a href = {link} className = "link-container">
-                            <h3 className = "link-title">{cropLinkTitle}</h3>
-                            <p className = "link-body">{post.body}</p>
-                        </a>
-                        {tagContainer}
-                    </div>
-                )
+                if (this.props.post.reblogged_post_id){
+                    if (!originalPost || typeof this.props.posts[this.props.post.reblogged_post_id] === "undefined"){
+                        return(
+                            <div className = "text-item">
+                                <div className = "original-link-post">
+                                    <h3 className = "item-title">Original post removed</h3>
+                                </div>
+                                {reblogHeader}
+                                {reblogBody}
+                                {reblogTagContainer}
+                            </div>
+                        )
+                    } else {
+                        return(
+                            <div className = "text-item">
+                            <div className = "original-link-post">
+                                <div className = "reblog-header">
+                                    <Avatar 
+                                        avatarUrl = {originalPost.author.avatarUrl}
+                                    /> 
+                                    <span>{originalPost.author.username}</span>
+                                </div>
+                                <a href = {link} className = "link-container">
+                                    <h3 className = "link-title">{cropLinkTitle}</h3>
+                                    <p className = "link-body">{post.body}</p>
+                                </a>
+                            </div>     
+                                    {reblogList}
+                                    {reblogHeader}
+                                    {reblogBody}
+                                    {reblogTagContainer}
+                            </div>
+                        )
+                    }
+                } else {
+                    return(
+                        <div>
+                            <a href = {link} className = "link-container">
+                                <h3 className = "link-title">{cropLinkTitle}</h3>
+                                <p className = "link-body">{post.body}</p>
+                            </a>
+                            {tagContainer}
+                        </div>
+                    )
+                }
         }
     }
 
@@ -360,7 +396,12 @@ class PostItem extends React.Component{
           
         if(noteCount > 0){
             return(
-                <span className = "note-count">{noteCount} {noteCount === 1 ? "note" : "notes"}</span>
+                <span className = "note-count">{noteCount} {noteCount === 1 ? "note" : "notes"}
+                    <ul className = "notes-dropdown">
+                        <li>{likeLength} {likeLength === 1 ? "like" : "likes"}</li> 
+                        <li>{reblogLength} {reblogLength === 1 ? "reblog" : "reblogs"}</li> 
+                    </ul>
+                </span>
             )
         } else{
             return(
