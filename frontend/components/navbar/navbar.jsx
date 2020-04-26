@@ -43,13 +43,13 @@ class NavBar extends React.Component {
             </li>
             <i className = "fas fa-user" onClick={() => this.props.openModal("Profile Dropdown")}></i>
             <li>
-                <a href = "https://github.com/melluo"><i className = "fab fa-github"></i></a>
+                <a href = "https://github.com/melluo" target="_blank" ><i className = "fab fa-github"></i></a>
             </li>
             <li>
-                <a href = "https://angel.co/u/melluo"><i className = "fab fa-angellist"></i></a>
+                <a href = "https://angel.co/u/melluo" target="_blank" ><i className = "fab fa-angellist"></i></a>
             </li>
             <li>
-            <a href = "https://www.linkedin.com/in/melodyluo/"><i className = "fab fa-linkedin"></i></a>
+            <a href = "https://www.linkedin.com/in/melodyluo/" target="_blank" ><i className = "fab fa-linkedin"></i></a>
             </li>
         </ul> 
         )
