@@ -1,4 +1,6 @@
-# [bumblr](http://bumblr-app.herokuapp.com "bumblr")
+# [bumblr](https://bumblr-app.herokuapp.com "bumblr")
+
+[Live Site](https://bumblr-app.herokuapp.com "bumblr")
 
 ##### bumblr is a full-stack web application utilizing a ruby on rails and postgreSQL database back-end and a react and redux front-end. bumblr incorporates Amazon AWS S3 technologies, allowing cloud-based hosting of image files for faster delivery speeds and better scalability. 
 
