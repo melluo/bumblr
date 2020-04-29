@@ -17,13 +17,19 @@ class Following extends React.Component{
         let usersLi = this.props.users.map((user) => {
             if (user.followers.includes(this.props.currentUser.id)){
                 followingLength += 1;
+                let avatarUrl;
+                if(!user.avatarUrl){
+                    avatarUrl = window.defaultAvatar;
+                } else{
+                    avatarUrl = user.avatarUrl;
+                }
                 return(
                     <li key = {user.id}>
                     <span>
                         <Avatar
                             authorId = {user.id}
                             openModal = {() => this.props.openModal("User Show")}
-                            avatarUrl = {user.avatarUrl}
+                            avatarUrl = {avatarUrl}
                         />
                     <span className = "following-user user-show-username" authorid = {user.id} onClick = {() => this.props.openModal("User Show")}>{user.username}</span></span>
                     <button className = "unfollow-but" onClick = {() => this.props.unfollow(user.id)}>Unfollow</button>

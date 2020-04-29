@@ -14,12 +14,18 @@ class SearchResult extends React.Component{
         let searchLength = 0;
         let searchResults = this.props.users.map((user) => {
             searchLength += 1;
+            let avatarUrl;
+            if(!user.avatarUrl){
+                avatarUrl = window.defaultAvatar;
+            } else{
+                avatarUrl = user.avatarUrl;
+            }
             return (
                 <li className = "search-user" id = "search-user" key = {user.id} onClick = {() => this.props.openModal("User Show")} authorid = {user.id}>
                     <Avatar 
                         onClick = {() => this.props.openModal("User Show")} 
                         authorId = {user.id}
-                        avatarUrl = {user.avatarUrl}
+                        avatarUrl = {avatarUrl}
                     />
                     <div className = "search-username">{user.username}</div>
                     {this.props.currentUser.following.includes(user.id) || user.id === this.props.currentUser.id ? 
