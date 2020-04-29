@@ -53,9 +53,11 @@ class PostItem extends React.Component{
                 <div className = "reblog-list" key = {post[1]}>
                 <div className = "reblog-header">
                 <Avatar 
-                avatarUrl = {post[0].avatarUrl}
+                    authorId = {post[0].id}
+                    avatarUrl = {post[0].avatarUrl}
+                    openModal = {() => this.props.openModal("User Show")}
                 /> 
-                <span>{post[0].username}</span>
+                <span className = "user-show-username" authorid = {post[0].id} onClick = {() => this.props.openModal("User Show")}>{post[0].username}</span>
                 </div>
                 <p className = "reblog-body">{post[1]}</p>
                 </div>
@@ -69,20 +71,10 @@ class PostItem extends React.Component{
 
         let link;
         if(post.title){
-            if( post.title.includes("https://") ){
+            if( post.title.includes("https://") || post.title.includes("http://")){
                 link = post.title;
             } else{
                 link = "https://".concat(post.title);
-            }
-        }
-
-        let cropLinkTitle;
-        if ( post.title ){
-            if ( post.title.includes(".") ){
-                let dotIndex = post.title.indexOf(".");
-                cropLinkTitle = post.title.slice(0, dotIndex);
-            } else{
-                cropLinkTitle = post.title;
             }
         }
         
@@ -90,9 +82,11 @@ class PostItem extends React.Component{
         if  (this.props.post.reblogged_post_id && (this.props.post.reblog_body || this.props.post.reblog_tags)){
             reblogHeader = <div className = "reblog-header">
                 <Avatar 
+                    authorId = {this.props.post.author.id}
+                    openModal = {() => this.props.openModal("User Show")}
                     avatarUrl = {this.props.post.author.avatarUrl}
                 /> 
-                <span>{this.props.post.author.username}</span>
+                <span className = "user-show-username" authorid = {this.props.post.author.id} onClick = {() => this.props.openModal("User Show")}>{this.props.post.author.username}</span>
              </div>
         }
 
@@ -139,9 +133,11 @@ class PostItem extends React.Component{
                             <div className = "original-text-post">
                                 <div className = "reblog-header">
                                     <Avatar 
+                                        authorId = {originalPost.author.id}
+                                        openModal = {() => this.props.openModal("User Show")}
                                         avatarUrl = {originalPost.author.avatarUrl}
                                     /> 
-                                    <span>{originalPost.author.username}</span>
+                                    <span className = "user-show-username" authorid = {originalPost.author.id} onClick = {() => this.props.openModal("User Show")}>{originalPost.author.username}</span>
                                 </div>
                                 <h3 className = "item-title">{post.title}</h3>
                                     {postBody}
@@ -181,9 +177,11 @@ class PostItem extends React.Component{
                             <div className = "original-photo-post">
                                 <div className = "reblog-header">
                                     <Avatar 
+                                        authorId = {originalPost.author.id}
+                                        openModal = {() => this.props.openModal("User Show")}
                                         avatarUrl = {originalPost.author.avatarUrl}
                                     /> 
-                                    <span>{originalPost.author.username}</span>
+                                    <span className = "user-show-username" authorid = {originalPost.author.id} onClick = {() => this.props.openModal("User Show")}>{originalPost.author.username}</span>
                                 </div>
                                 <img className = "photo-item" src = {originalPost.imageUrl}/>
                                     {postBody}
@@ -224,9 +222,11 @@ class PostItem extends React.Component{
                             <div className = "original-quote-post">
                                 <div className = "reblog-header">
                                     <Avatar 
+                                        authorId = {originalPost.author.id}
+                                        openModal = {() => this.props.openModal("User Show")}
                                         avatarUrl = {originalPost.author.avatarUrl}
                                     /> 
-                                    <span>{originalPost.author.username}</span>
+                                    <span className = "user-show-username" authorid = {originalPost.author.id} onClick = {() => this.props.openModal("User Show")}>{originalPost.author.username}</span>
                                 </div>
                                 <h3 className = "quote-content">&ldquo;{post.title}&rdquo;</h3>
                             <p className = "quote-source">{quoteSource}</p>
@@ -267,12 +267,14 @@ class PostItem extends React.Component{
                             <div className = "original-link-post">
                                 <div className = "reblog-header">
                                     <Avatar 
+                                        authorId = {originalPost.author.id}
+                                        openModal = {() => this.props.openModal("User Show")}
                                         avatarUrl = {originalPost.author.avatarUrl}
                                     /> 
-                                    <span>{originalPost.author.username}</span>
+                                    <span className = "user-show-username" authorid = {originalPost.author.id} onClick = {() => this.props.openModal("User Show")}>{originalPost.author.username}</span>
                                 </div>
                                 <a href = {link} className = "link-container">
-                                    <h3 className = "link-title">{cropLinkTitle}</h3>
+                                    <h3 className = "link-title">{post.title}</h3>
                                     <p className = "link-body">{post.body}</p>
                                 </a>
                             </div>     
@@ -287,7 +289,7 @@ class PostItem extends React.Component{
                     return(
                         <div>
                             <a href = {link} className = "link-container">
-                                <h3 className = "link-title">{cropLinkTitle}</h3>
+                                <h3 className = "link-title">{post.title}</h3>
                                 <p className = "link-body">{post.body}</p>
                             </a>
                             {tagContainer}
@@ -418,7 +420,7 @@ class PostItem extends React.Component{
             {this.renderAvatar()}
             <div className = "post-container">
                 <div className = "post-header">
-                    {this.props.author.username}
+                    <span className = "user-show-username" authorid = {this.props.author.id} onClick = {() => this.props.openModal("User Show")}>{this.props.author.username}</span>
                     {this.renderFollow()}
                 </div>
                 <div className = "post-content">

@@ -35,7 +35,7 @@ class Likes extends React.Component{
                     openModal = {() => this.props.openModal("User Show")}
                     avatarUrl = {avatarUrl}
                 />
-                {user.username}
+                <span className = "user-show-username" authorid = {user.id} onClick = {() => this.props.openModal("User Show")}>{user.username}</span>
                 <button className = "follow-button" onClick = { () => this.props.follow(user.id) }>Follow</button>
             </li>
             )
