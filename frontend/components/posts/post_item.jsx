@@ -273,7 +273,7 @@ class PostItem extends React.Component{
                                     /> 
                                     <span className = "user-show-username" authorid = {originalPost.author.id} onClick = {() => this.props.openModal("User Show")}>{originalPost.author.username}</span>
                                 </div>
-                                <a href = {link} className = "link-container">
+                                <a href = {link} target = "_blank" className = "link-container">
                                     <h3 className = "link-title">{post.title}</h3>
                                     <p className = "link-body">{post.body}</p>
                                 </a>
@@ -288,7 +288,7 @@ class PostItem extends React.Component{
                 } else {
                     return(
                         <div>
-                            <a href = {link} className = "link-container">
+                            <a href = {link} target= "_blank" className = "link-container">
                                 <h3 className = "link-title">{post.title}</h3>
                                 <p className = "link-body">{post.body}</p>
                             </a>
