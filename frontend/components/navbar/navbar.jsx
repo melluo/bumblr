@@ -28,13 +28,28 @@ class NavBar extends React.Component {
                     <i className = "fas fa-search"></i>
                     <input 
                         className = "search-bar" 
-                        placeholder = "Search bumblr">
+                        placeholder = "By Melody Luo">
                     </input>
                 </section>
             )
         }
     }
     
+    renderSocialLinks(){
+        return(
+            <ul className = "nav-right social-links">
+                <li>
+                    <a href = "https://github.com/melluo" target="_blank" ><i className = "fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a href = "https://angel.co/u/melluo" target="_blank" ><i className = "fab fa-angellist"></i></a>
+                </li>
+                <li>
+                <a href = "https://www.linkedin.com/in/melodyluo/" target="_blank" ><i className = "fab fa-linkedin"></i></a>
+                </li>
+            </ul>
+        )
+    }
     renderRightNav(){
         return(
         <ul className = "nav-right">
@@ -69,6 +84,7 @@ class NavBar extends React.Component {
                 <div className = "navbar">
                     {this.renderLogo()}
                     {this.renderSearch()}
+                    {this.renderSocialLinks()}
                 </div>
             )
         }

@@ -225,3 +225,11 @@
 .nav-right > .fa-user{
     cursor: pointer;
 }
+
+.social-links > li:hover{
+    transform: scale(1.2);
+}
+
+.search-bar::placeholder{
+    font-family: 'Trebuchet MS';
+}
