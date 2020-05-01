@@ -4,7 +4,7 @@
 
 ##### bumblr is a full-stack web application utilizing a ruby on rails and postgreSQL database back-end and a react and redux front-end. bumblr incorporates Amazon AWS S3 technologies, allowing cloud-based hosting of image files for faster delivery speeds and better scalability. 
 
-![alt text](https://bumblr-dev.s3.us-east-2.amazonaws.com/Screen+Shot+2020-04-29+at+8.23.47+PM.png "splash")
+![alt text](https://bumblr-dev.s3.us-east-2.amazonaws.com/bumblr-splash+(2).png "splash")
 
 ##### bumblr, a tumblr clone, is a content-driven social media site providing users a variety of posting options including text, images, quotes, and links. Users have access to personalized dashboards feeds with their posts and posts from users they follow.
 
