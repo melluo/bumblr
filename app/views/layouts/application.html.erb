@@ -4,13 +4,8 @@
     <title>bumblr</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-
-    <script src="https://kit.fontawesome.com/6559b35a1c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <meta property="og:title" content="bumblr" />
+    <meta property="og:type" content="website">
     <meta
       property="og:description"
       content="A pixel perfect tumblr clone perfect for your daily puppy fix. Built using Ruby on Rails, PostgreSQL, React/Redux and Amazon AWS."
@@ -19,6 +14,13 @@
       property="og:image"
       content="<%= image_url("splash.png") %>"
     />
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <script src="https://kit.fontawesome.com/6559b35a1c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    
   <script type='text/javascript'>
       window.defaultAvatar = "<%= image_url('default-avatar.jpg') %>"
   </script>
