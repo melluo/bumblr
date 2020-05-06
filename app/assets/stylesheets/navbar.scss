@@ -194,7 +194,8 @@
     border-bottom-right-radius: 3px;
 }
 
-.search-list > .search-user > .search-username{
+.search-list > .search-user > .user-show-username{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     padding-top: 8.5px;
