@@ -27,7 +27,7 @@ class SearchResult extends React.Component{
                         authorId = {user.id}
                         avatarUrl = {avatarUrl}
                     />
-                    <div className = "search-username">{user.username}</div>
+                    <span className = "user-show-username" authorid = {user.id} onClick = {() => this.props.openModal("User Show")}>{user.username}</span>
                     {this.props.currentUser.following.includes(user.id) || user.id === this.props.currentUser.id ? 
                     <button 
                         className = "unfollow-button" 
