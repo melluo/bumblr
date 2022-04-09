@@ -12,7 +12,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "jQuery": "^1.7.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.13.1",
     "react-datepicker": "^2.14.0",
     "react-dates": "^21.8.0",
